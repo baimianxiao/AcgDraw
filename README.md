@@ -1,20 +1,30 @@
 # Arknights-Draw
 有关明日方舟的模拟抽卡api
-### 演示地址
-[点击跳转](http://www.baimianxiao.cn/api/mrfz/api.php)
+## 演示地址
+[点击跳转](http://www.baimianxiao.cn/api/mrfz/apitest.php)
 
-api链接：http://www.baimianxiao.cn/api/mrfz/api.php
-### 使用方法
+api链接：http://www.baimianxiao.cn/api/mrfz/apitest.php
+## 使用方法
+### 部署方法
 1.修改api.php内的相关变量
 
 2.将api.php文件和image文件夹部署到网页目录
 
 3.访问api.php
+### 使用方法（如果不想部署可以使用直接演示链接）
 
-### 自定义
+## 自定义
 1.自定义干员：只需图片裁剪成2:1的比例，放入`image/ch`对应的文件夹中即可
 
+2.其余自定义请自行修改api.php内代码
+
 # 更新记录
+### v1.2.0beta
+1.新增两个入参：可选择返回类型和提升六星概率（低保）
+
+2.支持三种返回（默认图片2）：json，图片1（重定向至图片文件），图片2（直接输出）
+
+3.优化代码体积
 ### v1.1.0beta
 1.优化了代码体积与速度（7.32kb-->2.75kb,800ms-->500ms内）
 
