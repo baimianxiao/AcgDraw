@@ -5,12 +5,18 @@
 
 api链接：http://www.baimianxiao.cn/api/mrfz/apitest.php
 ## 使用方法
+####入参
+id（必须）：
+type（可选）：用于选择返回类型
 ### 部署方法
-1.修改api.php内的相关变量
 
-2.将api.php文件和image文件夹部署到网页目录
+1.修改三个php文件内的相关变量
 
-3.访问api.php
+2.将三个php文件和image文件夹部署到网页目录
+
+3.运行一次api_initialize.php(直接访问即可)
+
+4.访问api.php
 ### 使用方法（如果不想部署可以使用直接演示链接）
 
 ## 自定义
