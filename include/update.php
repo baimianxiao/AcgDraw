@@ -1,4 +1,6 @@
 <?php
+//数据目录路径
+$data_path="../data/";
 down_file("https://githubraw.baimianxiao.cn/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/character_table.json","../data/");
 //下载函数
 function down_file($url, $folder = "./") {
