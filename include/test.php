@@ -16,4 +16,5 @@ foreach ($data as $key => $value) {
 $character_data_list = fopen($data_path."character_list.json", "w");
 $character_data=json_encode($character_data,JSON_UNESCAPED_UNICODE);
 fwrite($character_data_list,$character_data);
+fclose($character_data_list);
 echo $character_data;
