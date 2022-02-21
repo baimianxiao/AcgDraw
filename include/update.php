@@ -1,4 +1,5 @@
 <?php
+include("./config.php");
 //数据目录路径
 $data_path = "../data/";
 
@@ -38,18 +39,25 @@ function mkdirs($path, $mode = "0755")
     return true;
 }
 
+//人物数据提取
 function character_list_create()
 {
     global $data_path;
-    $json_string = file_get_contents($data_path . "character_table.json");
+    $character_table = $data_path . "character_table.json";
+    if (is_file($character_table)) {
+        unlink($character_table);
+    }
+    $json_string = file_get_contents($character_table);
 
     // 用参数true把JSON字符串强制转成PHP数组 
     $data = json_decode($json_string, true);
+    // 遍历原文件提取需要的参数
     foreach ($data as $key => $value) {
         if ($value["itemObtainApproach"] == "招募寻访") {
             $character_data_single["name"] = $value["name"];
             $character_data_single["star"] = $value["rarity"];
             $character_data_single["class"] = $value["profession"];
+            $character_data_single["tag"] = $value["tagList"];
             $character_data[$key] = $character_data_single;
             echo "{$key}==>" . $value["name"] . "<br>";
         }
@@ -59,11 +67,14 @@ function character_list_create()
     fwrite($character_data_list, $character_data);
     fclose($character_data_list);
 }
+
+//爬取图片url加入character_list.json
+function add_imageUrl()
+{
+
+}
 $json_string = file_get_contents('../data/character_table.json');
 
-// 用参数true把JSON字符串强制转成PHP数组 
-$data = json_decode($json_string, true);
-echo ($data[1]);
 
 
 down_file("https://githubraw.baimianxiao.cn/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/character_table.json", "../data/");
