@@ -68,7 +68,10 @@ function curl_request($url, $post = [], $cookie = '',  $returnCookie = false)
     $info['content']  =  $body;
     return  $info;
   } else {
-    return  $curl;
+    return  $data;
   }
 }
-echo( (string)curl_request("https://www.baidu.com/"));
+$html=curl_request("https://www.baidu.com/");
+$a= preg_match_all("/ba+/i",$html,$matches);
+print_r($matches);
+
