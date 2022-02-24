@@ -71,7 +71,7 @@ function curl_request($url, $post = [], $cookie = '',  $returnCookie = false)
     return  $data;
   }
 }
-$html=curl_request("https://www.baidu.com/");
-$a= preg_match_all("/ba+/i",$html,$matches);
+$html=curl_request("https://prts.wiki/w/PRTS:%E6%96%87%E4%BB%B6%E4%B8%80%E8%A7%88/%E5%B9%B2%E5%91%98%E7%B2%BE%E8%8B%B10%E5%8D%8A%E8%BA%AB%E5%83%8F");
+$a= preg_match_all('/\/images\/thumb\/[0-9a-z]+\/[0-9a-z]+\/%E5%8D%8A%E8%BA%AB%E5%83%8F_/',$html,$matches);
 print_r($matches);
 

@@ -68,6 +68,13 @@ function character_list_create()
     fclose($character_data_list);
 }
 
+function imageUrl_get($url,$name){
+    $matches_str='/\/[0-9a-z]+\/[0-9a-z]+\/\%E5\%8D\%8A\%E8\%BA\%AB\%E5\%83\%8F_'.addcslashes(urlencode($name),"%").'\_1\.png'.'/';
+    $image_url= preg_match_all($matches_str,$url,$matches);
+    $image_url_all="https://prts.wiki//images".$matches[0][0];
+    return $image_url_all;
+  }
+  
 //爬取图片url加入character_list.json
 function add_imageUrl()
 {
