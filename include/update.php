@@ -6,7 +6,7 @@ include("./function.php");
 $data_path = "../data/";
 
 //人物数据提取
-function character_list_create()
+function character_list_create($mode = 0)
 {
     global $data_path;
     $character_table = $data_path . "character_table.json";
@@ -21,26 +21,32 @@ function character_list_create()
             $character_data_single["class"] = $value["profession"];
             $character_data_single["imageUrl"] = imageUrl_get($value["name"]);
             $character_data[$key] = $character_data_single;
-            if (!is_file($data_path . 'image/character/' . $key . '.png')) {
+            if (!file_exists($data_path . 'image/character/' . $key . '.png')) {
                 down_file($character_data_single["imageUrl"], $key . '.png', $data_path . 'image/character/');
+                echo ('下载');
             }
+            $character_star_list = array(
+                3 => array(),
+                4 => array(),
+                5 => array(),
+                6 => array()
+            );
             if ($character_data_single["star"] == 6) {
-                $character_star_list["6"] = $key;
+                $character_star_list[6][0] = $key;
             } elseif ($character_data_single["star"] == 5) {
-                $character_star_list["5"] = $key;
             } elseif ($character_data_single["star"] == 4) {
-                $character_star_list["4"] = $key;
             } elseif ($character_data_single["star"] == 3) {
-                $character_star_list["3"] = $key;
             } else {
-                $character_star_list["0"] = $key;
             }
         }
     }
+    print_r($character_star_list);
+    //保存全局人物信息
     $character_star = fopen($data_path . "star_list.json", "w");
     $character_star_list = json_encode($character_star_list, JSON_UNESCAPED_UNICODE);
     fwrite($character_star, $character_star_list);
     fclose($character_star);
+    //保存单个人物信息
     $character_data_list = fopen($data_path . "character_list.json", "w");
     $character_data = json_encode($character_data, JSON_UNESCAPED_UNICODE);
     fwrite($character_data_list, $character_data);
