@@ -9,38 +9,54 @@ $data_path = "../data/";
 function character_list_create($mode = 0)
 {
     global $data_path;
-    $character_table = $data_path . "character_table.json";
-    $json_string = file_get_contents($character_table);
-    // 用参数true把JSON字符串强制转成PHP数组 
-    $data = json_decode($json_string, true);
+    $character_file = $data_path . "character_table.json";
+    $character_table = file_get_contents($character_file);
+    $character_table = json_decode($character_table, true);
+
+    $list_file = $data_path . "character_list.json";
+    //
+    if (file_exists($list_file)) {
+        $character_list = file_get_contents($list_file);
+        $character_list = json_decode($character_list, true);
+    } else {
+        $character_list = array();
+    }
+    //初始化全局人物数组
+    $character_star_list = array(
+        3 => array(),
+        4 => array(),
+        5 => array(),
+        6 => array()
+    );
     // 遍历原文件提取需要的参数
-    foreach ($data as $key => $value) {
+    foreach ($character_table as $key => $value) {
         if ($value["itemObtainApproach"] == "招募寻访") {
             $character_data_single["name"] = $value["name"];
             $character_data_single["star"] = $value["rarity"] + 1;
             $character_data_single["class"] = $value["profession"];
-            $character_data_single["imageUrl"] = imageUrl_get($value["name"]);
+            if (!array_key_exists("imageUrl",$character_list[$key])) {
+                $character_data_single["imageUrl"] = imageUrl_get($value["name"]);
+                echo("爬取{$key}</br>");
+            }
             $character_data[$key] = $character_data_single;
             if (!file_exists($data_path . 'image/character/' . $key . '.png')) {
                 down_file($character_data_single["imageUrl"], $key . '.png', $data_path . 'image/character/');
-                echo ('下载');
+                echo ("下载{$key}.png</br>");
             }
-            $character_star_list = array(
-                3 => array(),
-                4 => array(),
-                5 => array(),
-                6 => array()
-            );
+            //根据星级分类
             if ($character_data_single["star"] == 6) {
-                $character_star_list[6][0] = $key;
+                $character_star_list[6][count((array)$character_star_list[6])] = $key;
             } elseif ($character_data_single["star"] == 5) {
+                $character_star_list[5][count((array)$character_star_list[5])] = $key;
             } elseif ($character_data_single["star"] == 4) {
+                $character_star_list[4][count((array)$character_star_list[4])] = $key;
             } elseif ($character_data_single["star"] == 3) {
+                $character_star_list[3][count((array)$character_star_list[3])] = $key;
             } else {
+                $character_star_list[0][count((array)$character_star_list[0])] = $key;
             }
         }
     }
-    print_r($character_star_list);
     //保存全局人物信息
     $character_star = fopen($data_path . "star_list.json", "w");
     $character_star_list = json_encode($character_star_list, JSON_UNESCAPED_UNICODE);

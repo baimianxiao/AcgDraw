@@ -23,6 +23,7 @@ function curl_request($url, $post = [], $cookie = '',  $returnCookie = false)
     return  curl_error($curl);
   }
   curl_close($curl);
+  //检查cookie
   if ($returnCookie) {
     list($header,  $body)  =  explode("\r\n\r\n",  $data,  2);
     preg_match_all("/Set\-Cookie:([^;]*);/",  $header,  $matches);
@@ -36,7 +37,7 @@ function curl_request($url, $post = [], $cookie = '',  $returnCookie = false)
 
 
 //下载函数
-function down_file($url,$file_name, $folder = "./")
+function down_file($url, $file_name, $folder = "./")
 {
   set_time_limit(24 * 60 * 60); // 设置超时时间
   $destination_folder = $folder . '/'; // 文件下载保存目录，默认为当前文件目录
@@ -45,7 +46,7 @@ function down_file($url,$file_name, $folder = "./")
   }
   $file = fopen($url, "rb"); // 远程下载文件，二进制模式
   if ($file) { // 如果下载成功
-    $newf = fopen($destination_folder.$file_name, "wb"); // 远在文件文件
+    $newf = fopen($destination_folder . $file_name, "wb"); // 远在文件文件
     if ($newf) // 如果文件保存成功
       while (!feof($file)) { // 判断附件写入是否完整
         fwrite($newf, fread($file, 1024 * 8), 1024 * 8); // 没有写完就继续
@@ -70,4 +71,17 @@ function mkdirs($path, $mode = "0755")
   return true;
 }
 
-echo(urlencode("明日方舟"));
+//获取ip地址
+function get_ip()
+{
+  if (getenv('HTTP_CLIENT_IP') && strcasecmp(getenv('HTTP_CLIENT_IP'), 'unknown')) {
+    $ip = getenv('HTTP_CLIENT_IP');
+  } else if (getenv('HTTP_X_FORWARDED_FOR') && strcasecmp(getenv('HTTP_X_FORWARDED_FOR'), 'unknown')) {
+    $ip = getenv('HTTP_X_FORWARDED_FOR');
+  } else if (getenv('REMOTE_ADDR') && strcasecmp(getenv('REMOTE_ADDR'), 'unknown')) {
+    $ip = getenv('REMOTE_ADDR');
+  } else if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], 'unknown')) {
+    $ip = $_SERVER['REMOTE_ADDR'];
+  }
+  return  preg_match('/[\d\.]{7,15}/', $ip, $matches) ? $matches[0] : '';
+}

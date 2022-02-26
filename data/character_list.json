@@ -1,932 +1,932 @@
 {
     "char_285_medic2": {
         "name": "Lancet-2",
-        "star": 0,
+        "star": 1,
         "class": "MEDIC"
     },
     "char_286_cast3": {
         "name": "Castle-3",
-        "star": 0,
+        "star": 1,
         "class": "WARRIOR"
     },
     "char_376_therex": {
         "name": "THRM-EX",
-        "star": 0,
+        "star": 1,
         "class": "SPECIAL"
     },
     "char_4000_jnight": {
         "name": "正义骑士号",
-        "star": 0,
+        "star": 1,
         "class": "SNIPER"
     },
     "char_502_nblade": {
         "name": "夜刀",
-        "star": 1,
+        "star": 2,
         "class": "PIONEER"
     },
     "char_500_noirc": {
         "name": "黑角",
-        "star": 1,
+        "star": 2,
         "class": "TANK"
     },
     "char_503_rang": {
         "name": "巡林者",
-        "star": 1,
+        "star": 2,
         "class": "SNIPER"
     },
     "char_501_durin": {
         "name": "杜林",
-        "star": 1,
+        "star": 2,
         "class": "CASTER"
     },
     "char_009_12fce": {
         "name": "12F",
-        "star": 1,
+        "star": 2,
         "class": "CASTER"
     },
     "char_123_fang": {
         "name": "芬",
-        "star": 2,
+        "star": 3,
         "class": "PIONEER"
     },
     "char_240_wyvern": {
         "name": "香草",
-        "star": 2,
+        "star": 3,
         "class": "PIONEER"
     },
     "char_192_falco": {
         "name": "翎羽",
-        "star": 2,
+        "star": 3,
         "class": "PIONEER"
     },
     "char_208_melan": {
         "name": "玫兰莎",
-        "star": 2,
+        "star": 3,
         "class": "WARRIOR"
     },
     "char_281_popka": {
         "name": "泡普卡",
-        "star": 2,
+        "star": 3,
         "class": "WARRIOR"
     },
     "char_209_ardign": {
         "name": "卡缇",
-        "star": 2,
+        "star": 3,
         "class": "TANK"
     },
     "char_122_beagle": {
         "name": "米格鲁",
-        "star": 2,
+        "star": 3,
         "class": "TANK"
     },
     "char_284_spot": {
         "name": "斑点",
-        "star": 2,
+        "star": 3,
         "class": "TANK"
     },
     "char_124_kroos": {
         "name": "克洛丝",
-        "star": 2,
+        "star": 3,
         "class": "SNIPER"
     },
     "char_211_adnach": {
         "name": "安德切尔",
-        "star": 2,
+        "star": 3,
         "class": "SNIPER"
     },
     "char_121_lava": {
         "name": "炎熔",
-        "star": 2,
+        "star": 3,
         "class": "CASTER"
     },
     "char_120_hibisc": {
         "name": "芙蓉",
-        "star": 2,
+        "star": 3,
         "class": "MEDIC"
     },
     "char_212_ansel": {
         "name": "安赛尔",
-        "star": 2,
+        "star": 3,
         "class": "MEDIC"
     },
     "char_210_stward": {
         "name": "史都华德",
-        "star": 2,
+        "star": 3,
         "class": "CASTER"
     },
     "char_278_orchid": {
         "name": "梓兰",
-        "star": 2,
+        "star": 3,
         "class": "SUPPORT"
     },
     "char_141_nights": {
         "name": "夜烟",
-        "star": 3,
+        "star": 4,
         "class": "CASTER"
     },
     "char_109_fmout": {
         "name": "远山",
-        "star": 3,
+        "star": 4,
         "class": "CASTER"
     },
     "char_253_greyy": {
         "name": "格雷伊",
-        "star": 3,
+        "star": 4,
         "class": "CASTER"
     },
     "char_328_cammou": {
         "name": "卡达",
-        "star": 3,
+        "star": 4,
         "class": "CASTER"
     },
     "char_469_indigo": {
         "name": "深靛",
-        "star": 3,
+        "star": 4,
         "class": "CASTER"
     },
     "char_235_jesica": {
         "name": "杰西卡",
-        "star": 3,
+        "star": 4,
         "class": "SNIPER"
     },
     "char_126_shotst": {
         "name": "流星",
-        "star": 3,
+        "star": 4,
         "class": "SNIPER"
     },
     "char_190_clour": {
         "name": "红云",
-        "star": 3,
+        "star": 4,
         "class": "SNIPER"
     },
     "char_133_mm": {
         "name": "梅",
-        "star": 3,
+        "star": 4,
         "class": "SNIPER"
     },
     "char_118_yuki": {
         "name": "白雪",
-        "star": 3,
+        "star": 4,
         "class": "SNIPER"
     },
     "char_440_pinecn": {
         "name": "松果",
-        "star": 3,
+        "star": 4,
         "class": "SNIPER"
     },
     "char_302_glaze": {
         "name": "安比尔",
-        "star": 3,
+        "star": 4,
         "class": "SNIPER"
     },
     "char_366_acdrop": {
         "name": "酸糖",
-        "star": 3,
+        "star": 4,
         "class": "SNIPER"
     },
     "char_149_scave": {
         "name": "清道夫",
-        "star": 3,
+        "star": 4,
         "class": "PIONEER"
     },
     "char_290_vigna": {
         "name": "红豆",
-        "star": 3,
+        "star": 4,
         "class": "PIONEER"
     },
     "char_151_myrtle": {
         "name": "桃金娘",
-        "star": 3,
+        "star": 4,
         "class": "PIONEER"
     },
     "char_452_bstalk": {
         "name": "豆苗",
-        "star": 3,
+        "star": 4,
         "class": "PIONEER"
     },
     "char_130_doberm": {
         "name": "杜宾",
-        "star": 3,
+        "star": 4,
         "class": "WARRIOR"
     },
     "char_289_gyuki": {
         "name": "缠丸",
-        "star": 3,
+        "star": 4,
         "class": "WARRIOR"
     },
     "char_193_frostl": {
         "name": "霜叶",
-        "star": 3,
+        "star": 4,
         "class": "WARRIOR"
     },
     "char_127_estell": {
         "name": "艾丝黛尔",
-        "star": 3,
+        "star": 4,
         "class": "WARRIOR"
     },
     "char_185_frncat": {
         "name": "慕斯",
-        "star": 3,
+        "star": 4,
         "class": "WARRIOR"
     },
     "char_301_cutter": {
         "name": "刻刀",
-        "star": 3,
+        "star": 4,
         "class": "WARRIOR"
     },
     "char_337_utage": {
         "name": "宴",
-        "star": 3,
+        "star": 4,
         "class": "WARRIOR"
     },
     "char_271_spikes": {
         "name": "芳汀",
-        "star": 3,
+        "star": 4,
         "class": "WARRIOR"
     },
     "char_237_gravel": {
         "name": "砾",
-        "star": 3,
+        "star": 4,
         "class": "SPECIAL"
     },
     "char_272_strong": {
         "name": "孑",
-        "star": 3,
+        "star": 4,
         "class": "SPECIAL"
     },
     "char_236_rope": {
         "name": "暗索",
-        "star": 3,
+        "star": 4,
         "class": "SPECIAL"
     },
     "char_117_myrrh": {
         "name": "末药",
-        "star": 3,
+        "star": 4,
         "class": "MEDIC"
     },
     "char_298_susuro": {
         "name": "苏苏洛",
-        "star": 3,
+        "star": 4,
         "class": "MEDIC"
     },
     "char_181_flower": {
         "name": "调香师",
-        "star": 3,
+        "star": 4,
         "class": "MEDIC"
     },
     "char_199_yak": {
         "name": "角峰",
-        "star": 3,
+        "star": 4,
         "class": "TANK"
     },
     "char_150_snakek": {
         "name": "蛇屠箱",
-        "star": 3,
+        "star": 4,
         "class": "TANK"
     },
     "char_381_bubble": {
         "name": "泡泡",
-        "star": 3,
+        "star": 4,
         "class": "TANK"
     },
     "char_196_sunbr": {
         "name": "古米",
-        "star": 3,
+        "star": 4,
         "class": "TANK"
     },
     "char_110_deepcl": {
         "name": "深海色",
-        "star": 3,
+        "star": 4,
         "class": "SUPPORT"
     },
     "char_183_skgoat": {
         "name": "地灵",
-        "star": 3,
+        "star": 4,
         "class": "SUPPORT"
     },
     "char_258_podego": {
         "name": "波登可",
-        "star": 3,
+        "star": 4,
         "class": "SUPPORT"
     },
     "char_484_robrta": {
         "name": "罗比菈塔",
-        "star": 3,
+        "star": 4,
         "class": "SUPPORT"
     },
     "char_277_sqrrel": {
         "name": "阿消",
-        "star": 3,
+        "star": 4,
         "class": "SPECIAL"
     },
     "char_128_plosis": {
         "name": "白面鸮",
-        "star": 4,
+        "star": 5,
         "class": "MEDIC"
     },
     "char_115_headbr": {
         "name": "凛冬",
-        "star": 4,
+        "star": 5,
         "class": "PIONEER"
     },
     "char_349_chiave": {
         "name": "贾维",
-        "star": 4,
+        "star": 5,
         "class": "PIONEER"
     },
     "char_261_sddrag": {
         "name": "苇草",
-        "star": 4,
+        "star": 5,
         "class": "PIONEER"
     },
     "char_401_elysm": {
         "name": "极境",
-        "star": 4,
+        "star": 5,
         "class": "PIONEER"
     },
     "char_476_blkngt": {
         "name": "夜半",
-        "star": 4,
+        "star": 5,
         "class": "PIONEER"
     },
     "char_308_swire": {
         "name": "诗怀雅",
-        "star": 4,
+        "star": 5,
         "class": "WARRIOR"
     },
     "char_106_franka": {
         "name": "芙兰卡",
-        "star": 4,
+        "star": 5,
         "class": "WARRIOR"
     },
     "char_155_tiger": {
         "name": "因陀罗",
-        "star": 4,
+        "star": 5,
         "class": "WARRIOR"
     },
     "char_415_flint": {
         "name": "燧石",
-        "star": 4,
+        "star": 5,
         "class": "WARRIOR"
     },
     "char_140_whitew": {
         "name": "拉普兰德",
-        "star": 4,
+        "star": 5,
         "class": "WARRIOR"
     },
     "char_294_ayer": {
         "name": "断崖",
-        "star": 4,
+        "star": 5,
         "class": "WARRIOR"
     },
     "char_143_ghost": {
         "name": "幽灵鲨",
-        "star": 4,
+        "star": 5,
         "class": "WARRIOR"
     },
     "char_356_broca": {
         "name": "布洛卡",
-        "star": 4,
+        "star": 5,
         "class": "WARRIOR"
     },
     "char_274_astesi": {
         "name": "星极",
-        "star": 4,
+        "star": 5,
         "class": "WARRIOR"
     },
     "char_475_akafyu": {
         "name": "赤冬",
-        "star": 4,
+        "star": 5,
         "class": "WARRIOR"
     },
     "char_421_crow": {
         "name": "羽毛笔",
-        "star": 4,
+        "star": 5,
         "class": "WARRIOR"
     },
     "char_129_bluep": {
         "name": "蓝毒",
-        "star": 4,
+        "star": 5,
         "class": "SNIPER"
     },
     "char_204_platnm": {
         "name": "白金",
-        "star": 4,
+        "star": 5,
         "class": "SNIPER"
     },
     "char_367_swllow": {
         "name": "灰喉",
-        "star": 4,
+        "star": 5,
         "class": "SNIPER"
     },
     "char_365_aprl": {
         "name": "四月",
-        "star": 4,
+        "star": 5,
         "class": "SNIPER"
     },
     "char_219_meteo": {
         "name": "陨星",
-        "star": 4,
+        "star": 5,
         "class": "SNIPER"
     },
     "char_379_sesa": {
         "name": "慑砂",
-        "star": 4,
+        "star": 5,
         "class": "SNIPER"
     },
     "char_279_excu": {
         "name": "送葬人",
-        "star": 4,
+        "star": 5,
         "class": "SNIPER"
     },
     "char_346_aosta": {
         "name": "奥斯塔",
-        "star": 4,
+        "star": 5,
         "class": "SNIPER"
     },
     "char_166_skfire": {
         "name": "天火",
-        "star": 4,
+        "star": 5,
         "class": "CASTER"
     },
     "char_306_leizi": {
         "name": "惊蛰",
-        "star": 4,
+        "star": 5,
         "class": "CASTER"
     },
     "char_344_beewax": {
         "name": "蜜蜡",
-        "star": 4,
+        "star": 5,
         "class": "CASTER"
     },
     "char_373_lionhd": {
         "name": "莱恩哈特",
-        "star": 4,
+        "star": 5,
         "class": "CASTER"
     },
     "char_338_iris": {
         "name": "爱丽丝",
-        "star": 4,
+        "star": 5,
         "class": "CASTER"
     },
     "char_489_serum": {
         "name": "蚀清",
-        "star": 4,
+        "star": 5,
         "class": "CASTER"
     },
     "char_242_otter": {
         "name": "梅尔",
-        "star": 4,
+        "star": 5,
         "class": "SUPPORT"
     },
     "char_108_silent": {
         "name": "赫默",
-        "star": 4,
+        "star": 5,
         "class": "MEDIC"
     },
     "char_171_bldsk": {
         "name": "华法琳",
-        "star": 4,
+        "star": 5,
         "class": "MEDIC"
     },
     "char_436_whispr": {
         "name": "絮雨",
-        "star": 4,
+        "star": 5,
         "class": "MEDIC"
     },
     "char_473_mberry": {
         "name": "桑葚",
-        "star": 4,
+        "star": 5,
         "class": "MEDIC"
     },
     "char_148_nearl": {
         "name": "临光",
-        "star": 4,
+        "star": 5,
         "class": "TANK"
     },
     "char_226_hmau": {
         "name": "吽",
-        "star": 4,
+        "star": 5,
         "class": "TANK"
     },
     "char_144_red": {
         "name": "红",
-        "star": 4,
+        "star": 5,
         "class": "SPECIAL"
     },
     "char_243_waaifu": {
         "name": "槐琥",
-        "star": 4,
+        "star": 5,
         "class": "SPECIAL"
     },
     "char_214_kafka": {
         "name": "卡夫卡",
-        "star": 4,
+        "star": 5,
         "class": "SPECIAL"
     },
     "char_455_nothin": {
         "name": "乌有",
-        "star": 4,
+        "star": 5,
         "class": "SPECIAL"
     },
     "char_107_liskam": {
         "name": "雷蛇",
-        "star": 4,
+        "star": 5,
         "class": "TANK"
     },
     "char_201_moeshd": {
         "name": "可颂",
-        "star": 4,
+        "star": 5,
         "class": "TANK"
     },
     "char_163_hpsts": {
         "name": "火神",
-        "star": 4,
+        "star": 5,
         "class": "TANK"
     },
     "char_378_asbest": {
         "name": "石棉",
-        "star": 4,
+        "star": 5,
         "class": "TANK"
     },
     "char_457_blitz": {
         "name": "闪击",
-        "star": 4,
+        "star": 5,
         "class": "TANK"
     },
     "char_431_ashlok": {
         "name": "灰毫",
-        "star": 4,
+        "star": 5,
         "class": "TANK"
     },
     "char_422_aurora": {
         "name": "极光",
-        "star": 4,
+        "star": 5,
         "class": "TANK"
     },
     "char_145_prove": {
         "name": "普罗旺斯",
-        "star": 4,
+        "star": 5,
         "class": "SNIPER"
     },
     "char_158_milu": {
         "name": "守林人",
-        "star": 4,
+        "star": 5,
         "class": "SNIPER"
     },
     "char_218_cuttle": {
         "name": "安哲拉",
-        "star": 4,
+        "star": 5,
         "class": "SNIPER"
     },
     "char_363_toddi": {
         "name": "熔泉",
-        "star": 4,
+        "star": 5,
         "class": "SNIPER"
     },
     "char_173_slchan": {
         "name": "崖心",
-        "star": 4,
+        "star": 5,
         "class": "SPECIAL"
     },
     "char_174_slbell": {
         "name": "初雪",
-        "star": 4,
+        "star": 5,
         "class": "SUPPORT"
     },
     "char_254_vodfox": {
         "name": "巫恋",
-        "star": 4,
+        "star": 5,
         "class": "SUPPORT"
     },
     "char_195_glassb": {
         "name": "真理",
-        "star": 4,
+        "star": 5,
         "class": "SUPPORT"
     },
     "char_326_glacus": {
         "name": "格劳克斯",
-        "star": 4,
+        "star": 5,
         "class": "SUPPORT"
     },
     "char_101_sora": {
         "name": "空",
-        "star": 4,
+        "star": 5,
         "class": "SUPPORT"
     },
     "char_343_tknogi": {
         "name": "月禾",
-        "star": 4,
+        "star": 5,
         "class": "SUPPORT"
     },
     "char_492_quercu": {
         "name": "夏栎",
-        "star": 4,
+        "star": 5,
         "class": "SUPPORT"
     },
     "char_215_mantic": {
         "name": "狮蝎",
-        "star": 4,
+        "star": 5,
         "class": "SPECIAL"
     },
     "char_478_kirara": {
         "name": "绮良",
-        "star": 4,
+        "star": 5,
         "class": "SPECIAL"
     },
     "char_241_panda": {
         "name": "食铁兽",
-        "star": 4,
+        "star": 5,
         "class": "SPECIAL"
     },
     "char_458_rfrost": {
         "name": "霜华",
-        "star": 4,
+        "star": 5,
         "class": "SPECIAL"
     },
     "char_103_angel": {
         "name": "能天使",
-        "star": 5,
+        "star": 6,
         "class": "SNIPER"
     },
     "char_332_archet": {
         "name": "空弦",
-        "star": 5,
+        "star": 6,
         "class": "SNIPER"
     },
     "char_456_ash": {
         "name": "灰烬",
-        "star": 5,
+        "star": 6,
         "class": "SNIPER"
     },
     "char_340_shwaz": {
         "name": "黑",
-        "star": 5,
+        "star": 6,
         "class": "SNIPER"
     },
     "char_430_fartth": {
         "name": "远牙",
-        "star": 5,
+        "star": 6,
         "class": "SNIPER"
     },
     "char_113_cqbw": {
         "name": "W",
-        "star": 5,
+        "star": 6,
         "class": "SNIPER"
     },
     "char_197_poca": {
         "name": "早露",
-        "star": 5,
+        "star": 6,
         "class": "SNIPER"
     },
     "char_391_rosmon": {
         "name": "迷迭香",
-        "star": 5,
+        "star": 6,
         "class": "SNIPER"
     },
     "char_1013_chen2": {
         "name": "假日威龙陈",
-        "star": 5,
+        "star": 6,
         "class": "SNIPER"
     },
     "char_112_siege": {
         "name": "推进之王",
-        "star": 5,
+        "star": 6,
         "class": "PIONEER"
     },
     "char_222_bpipe": {
         "name": "风笛",
-        "star": 5,
+        "star": 6,
         "class": "PIONEER"
     },
     "char_362_saga": {
         "name": "嵯峨",
-        "star": 5,
+        "star": 6,
         "class": "PIONEER"
     },
     "char_479_sleach": {
         "name": "琴柳",
-        "star": 5,
+        "star": 6,
         "class": "PIONEER"
     },
     "char_420_flamtl": {
         "name": "焰尾",
-        "star": 5,
+        "star": 6,
         "class": "PIONEER"
     },
     "char_134_ifrit": {
         "name": "伊芙利特",
-        "star": 5,
+        "star": 6,
         "class": "CASTER"
     },
     "char_213_mostma": {
         "name": "莫斯提马",
-        "star": 5,
+        "star": 6,
         "class": "CASTER"
     },
     "char_180_amgoat": {
         "name": "艾雅法拉",
-        "star": 5,
+        "star": 6,
         "class": "CASTER"
     },
     "char_2013_cerber": {
         "name": "刻俄柏",
-        "star": 5,
+        "star": 6,
         "class": "CASTER"
     },
     "char_2015_dusk": {
         "name": "夕",
-        "star": 5,
+        "star": 6,
         "class": "CASTER"
     },
     "char_472_pasngr": {
         "name": "异客",
-        "star": 5,
+        "star": 6,
         "class": "CASTER"
     },
     "char_426_billro": {
         "name": "卡涅利安",
-        "star": 5,
+        "star": 6,
         "class": "CASTER"
     },
     "char_377_gdglow": {
         "name": "澄闪",
-        "star": 5,
+        "star": 6,
         "class": "CASTER"
     },
     "char_206_gnosis": {
         "name": "灵知",
-        "star": 5,
+        "star": 6,
         "class": "SUPPORT"
     },
     "char_291_aglina": {
         "name": "安洁莉娜",
-        "star": 5,
+        "star": 6,
         "class": "SUPPORT"
     },
     "char_358_lisa": {
         "name": "铃兰",
-        "star": 5,
+        "star": 6,
         "class": "SUPPORT"
     },
     "char_248_mgllan": {
         "name": "麦哲伦",
-        "star": 5,
+        "star": 6,
         "class": "SUPPORT"
     },
     "char_1012_skadi2": {
         "name": "浊心斯卡蒂",
-        "star": 5,
+        "star": 6,
         "class": "SUPPORT"
     },
     "char_2023_ling": {
         "name": "令",
-        "star": 5,
+        "star": 6,
         "class": "SUPPORT"
     },
     "char_250_phatom": {
         "name": "傀影",
-        "star": 5,
+        "star": 6,
         "class": "SPECIAL"
     },
     "char_322_lmlee": {
         "name": "老鲤",
-        "star": 5,
+        "star": 6,
         "class": "SPECIAL"
     },
     "char_400_weedy": {
         "name": "温蒂",
-        "star": 5,
+        "star": 6,
         "class": "SPECIAL"
     },
     "char_225_haak": {
         "name": "阿",
-        "star": 5,
+        "star": 6,
         "class": "SPECIAL"
     },
     "char_437_mizuki": {
         "name": "水月",
-        "star": 5,
+        "star": 6,
         "class": "SPECIAL"
     },
     "char_147_shining": {
         "name": "闪灵",
-        "star": 5,
+        "star": 6,
         "class": "MEDIC"
     },
     "char_179_cgbird": {
         "name": "夜莺",
-        "star": 5,
+        "star": 6,
         "class": "MEDIC"
     },
     "char_003_kalts": {
         "name": "凯尔希",
-        "star": 5,
+        "star": 6,
         "class": "MEDIC"
     },
     "char_136_hsguma": {
         "name": "星熊",
-        "star": 5,
+        "star": 6,
         "class": "TANK"
     },
     "char_202_demkni": {
         "name": "塞雷娅",
-        "star": 5,
+        "star": 6,
         "class": "TANK"
     },
     "char_423_blemsh": {
         "name": "瑕光",
-        "star": 5,
+        "star": 6,
         "class": "TANK"
     },
     "char_2014_nian": {
         "name": "年",
-        "star": 5,
+        "star": 6,
         "class": "TANK"
     },
     "char_311_mudrok": {
         "name": "泥岩",
-        "star": 5,
+        "star": 6,
         "class": "TANK"
     },
     "char_416_zumama": {
         "name": "森蚺",
-        "star": 5,
+        "star": 6,
         "class": "TANK"
     },
     "char_264_f12yin": {
         "name": "山",
-        "star": 5,
+        "star": 6,
         "class": "WARRIOR"
     },
     "char_172_svrash": {
         "name": "银灰",
-        "star": 5,
+        "star": 6,
         "class": "WARRIOR"
     },
     "char_293_thorns": {
         "name": "棘刺",
-        "star": 5,
+        "star": 6,
         "class": "WARRIOR"
     },
     "char_010_chen": {
         "name": "陈",
-        "star": 5,
+        "star": 6,
         "class": "WARRIOR"
     },
     "char_017_huang": {
         "name": "煌",
-        "star": 5,
+        "star": 6,
         "class": "WARRIOR"
     },
     "char_350_surtr": {
         "name": "史尔特尔",
-        "star": 5,
+        "star": 6,
         "class": "WARRIOR"
     },
     "char_188_helage": {
         "name": "赫拉格",
-        "star": 5,
+        "star": 6,
         "class": "WARRIOR"
     },
     "char_485_pallas": {
         "name": "帕拉斯",
-        "star": 5,
+        "star": 6,
         "class": "WARRIOR"
     },
     "char_1014_nearl2": {
         "name": "耀骑士临光",
-        "star": 5,
+        "star": 6,
         "class": "WARRIOR"
     },
     "char_282_catap": {
         "name": "空爆",
-        "star": 2,
+        "star": 3,
         "class": "SNIPER"
     },
     "char_283_midn": {
         "name": "月见夜",
-        "star": 2,
+        "star": 3,
         "class": "WARRIOR"
     },
     "char_137_brownb": {
         "name": "猎蜂",
-        "star": 3,
+        "star": 4,
         "class": "WARRIOR"
     },
     "char_347_jaksel": {
         "name": "杰克",
-        "star": 3,
+        "star": 4,
         "class": "WARRIOR"
     },
     "char_164_nightm": {
         "name": "夜魔",
-        "star": 4,
+        "star": 5,
         "class": "CASTER"
     },
     "char_263_skadi": {
         "name": "斯卡蒂",
-        "star": 5,
+        "star": 6,
         "class": "WARRIOR"
     }
 }
