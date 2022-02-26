@@ -1,7 +1,6 @@
 <?php
 //引入设置文件,数据库操作,常用函数
 include("./include/config.php");
-include("./include/database.php");
 include("./include/function.php");
 
 //背景图片与遮罩图片路径
@@ -24,8 +23,8 @@ $character_list = file_get_contents($character_file);
 $character_list = json_decode($character_list, true);
 
 //获取不同星级人物列表
-$star_list_file = "star_list.json";
-$star_list = file_get_contents($star_list);
+$star_list_file = "./data/star_list.json";
+$star_list = file_get_contents($star_list_file);
 $star_list = json_decode($star_list, true);
 
 $sixStarHasGot = 0;
@@ -33,7 +32,7 @@ $minimun = 0;
 $srcBg = imagecreatefrompng($background);
 $im = imagecreatetruecolor(imagesx($srcBg), imagesy($srcBg));
 imagecopyresampled($im, $srcBg, 0, 0, 0, 0, imagesx($srcBg), imagesy($srcBg), imagesx($srcBg), imagesy($srcBg));
-//绘制背景
+
 for ($i = 1; $i <= 10; $i++) {
     $bgx = 70 + ($i - 1) * 82;
     $chx = 70 + ($i - 1) * 82;
@@ -70,19 +69,6 @@ for ($i = 1; $i <= 10; $i++) {
 
 $srcBg1 = imagecreatefrompng($background1);
 imagecopyresampled($im, $srcBg1, 0, 0, 0, 0, imagesx($srcBg1), imagesy($srcBg1), imagesx($srcBg1), imagesy($srcBg1));
-imagepng($im, $outPut2 . $randomname . ".png");
-$url = $outPut1 . $randomname . ".png";
 
-if ($type == "json") {
-    header('Content-Type:application/json; charset=utf-8');
-    $arr = array('six' => $sixStarHasGot, 'url' => $url);
-    $out = str_replace("\\", "", json_encode($arr));
-    exit($out);
-} elseif ($type == "image") {
-    header("Content-Type:image/jpeg");
-    imagepng($im);
-} else {
-    header("Content-Type:image/jpeg");
-    imagepng($im); //默认返回
-}
-//根据入参不同的返回
+
+

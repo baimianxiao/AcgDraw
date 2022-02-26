@@ -74,7 +74,7 @@ function imageUrl_get($name)
 {
     $url = curl_request("https://prts.wiki/w/PRTS:%E6%96%87%E4%BB%B6%E4%B8%80%E8%A7%88/%E5%B9%B2%E5%91%98%E7%B2%BE%E8%8B%B10%E5%8D%8A%E8%BA%AB%E5%83%8F");
     $matches_str = '/\/[0-9a-z]+\/[0-9a-z]+\/\%E5\%8D\%8A\%E8\%BA\%AB\%E5\%83\%8F_' . addcslashes(urlencode($name), "%") . '\_1\.png' . '/';
-    $image_url = preg_match_all($matches_str, $url, $matches);
+    preg_match_all($matches_str, $url, $matches);
     $image_url_all = "https://prts.wiki//images" . $matches[0][0];
     return $image_url_all;
 }
