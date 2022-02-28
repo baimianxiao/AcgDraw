@@ -1,9 +1,23 @@
 <?php
 //设置文件
 include("./config.php");
-//数据目录路径
+
 include("./function.php");
+//数据目录路径
 $data_path = "../data/";
+
+//获取更新文件版本
+function get_update_version($mode=0){
+    global $update_address;
+    echo($version_data=curl_request( $update_address. "/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/data_version.txt"));
+    preg_match_all("/VersionControl\:([0-9\.]+)/",$version_data,$match);
+    $VersionControl=$match[1][0];
+    preg_match_all("/Change:([0-9]+)/",$version_data,$match);
+    $version=$match[0][0];
+    preg_match_all("/[0-9\.]+\/[0-9\.]+\/[0-9\.]+/",$version_data,$match);
+    $VersionControl=$match[1][0];
+
+}
 
 //人物数据提取
 function character_list_create($mode = 0)
@@ -34,9 +48,9 @@ function character_list_create($mode = 0)
             $character_data_single["name"] = $value["name"];
             $character_data_single["star"] = $value["rarity"] + 1;
             $character_data_single["class"] = $value["profession"];
-            if (!array_key_exists("imageUrl",$character_list[$key])) {
+            if (!array_key_exists("imageUrl", $character_list[$key])) {
                 $character_data_single["imageUrl"] = imageUrl_get($value["name"]);
-                echo("爬取{$key}</br>");
+                echo ("爬取{$key}</br>");
             }
             $character_data[$key] = $character_data_single;
             if (!file_exists($data_path . 'image/character/' . $key . '.png')) {
