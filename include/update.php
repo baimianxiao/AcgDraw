@@ -11,11 +11,11 @@ function get_update_version($mode=0){
     global $update_address;
     echo($version_data=curl_request( $update_address. "/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/data_version.txt"));
     preg_match_all("/VersionControl\:([0-9\.]+)/",$version_data,$match);
-    $VersionControl=$match[1][0];
+    $version_control=$match[1][0];
     preg_match_all("/Change:([0-9]+)/",$version_data,$match);
     $version=$match[0][0];
     preg_match_all("/[0-9\.]+\/[0-9\.]+\/[0-9\.]+/",$version_data,$match);
-    $VersionControl=$match[1][0];
+    $update_date=$match[1][0];
 
 }
 
