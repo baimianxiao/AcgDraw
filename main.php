@@ -3,6 +3,19 @@
 include("./include/config.php");
 include("./include/function.php");
 
+//判断请求类型
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if($_GET["test"]==null){
+        $test="ggg";
+
+    }else{
+    $test= $_GET["test"];}
+    echo($test);
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
+} else {
+}
+
 //背景图片与遮罩图片路径
 $background = "./data/image/gacha/bg.png";
 $background1 = "./data/image/gacha/bg1.png";
@@ -38,11 +51,11 @@ for ($i = 1; $i <= 10; $i++) {
     $chx = 70 + ($i - 1) * 82;
     $classx = 80 + ($i - 1) * 82;
     $starType = rand(0, 1000);
-    if ($starType >= 0 && $starType <= 20) {
+    if ($starType >= 0 && $starType <= 20+$probability_up) {
         $star = 6;
         $sixStarHasGot = 1;
         $minimun = $minimun + 1;
-    } elseif ($starType >= 21 && $starType <= 100) {
+    } elseif ($starType >= 21+$probability_up && $starType <= 100+$probability_up) {
         $star = 5;
         $minimun = $minimun + 1;
     } elseif ($starType >= 101 && $starType <= 400) {
@@ -69,6 +82,3 @@ for ($i = 1; $i <= 10; $i++) {
 
 $srcBg1 = imagecreatefrompng($background1);
 imagecopyresampled($im, $srcBg1, 0, 0, 0, 0, imagesx($srcBg1), imagesy($srcBg1), imagesx($srcBg1), imagesy($srcBg1));
-
-
-

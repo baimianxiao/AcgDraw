@@ -8,8 +8,26 @@ preg_match_all("/==非标准寻访==[\s\S]*==标准寻访==/", $textarea, $match
 $table_data_text_1 = str_replace("==标准寻访==", "", str_replace("==非标准寻访==", "", $match[0][0]));
 //print_r($match[0][0]);
 preg_match_all("/==标准寻访==[\s\S]*/", $textarea, $match);
-$table_data_text_2=str_replace("==标准寻访==", "", str_replace("</textarea>", "", $match[0][0]));
+$table_data_text_2 = str_replace("==标准寻访==", "", str_replace("</textarea>", "", $match[0][0]));
+$table_data_array_1 = explode("|-", $table_data_text_1);
+$table_data_array_2 = explode("|-", $table_data_text_2);
+foreach ($table_data_array_1 as $key => $value) {
+
+  preg_match_all("/link=[\s\S]*?]/", $value, $match);
+
+  $table_data_single["id"] = str_replace("]", "", str_replace("link=", "", $match[0][0]));
+  preg_match_all("/\[\[[\s\S]*?\]\]/", $value, $match);
+
+  $table_data_single["name"] = str_replace("]]", "", str_replace("[[", "", $match[0][1]));
+  preg_match_all("/\|\{\{[\s\S]*\}\}\|/", $value, $match);
+
+  $table_data_single["star6_up"] = str_replace("}}", "", str_replace("\{{", "", $match[0][0]));
+  echo "<pre>";
+  print_r($table_data_single);
+  echo "<pre>";
+}
+
 echo "<pre>";
-print_r(explode("|-", $table_data_text_1));
-print_r(explode("|-", $table_data_text_2));
+print_r($table_data_array_1);
+print_r($table_data_array_2);
 echo "<pre>";
