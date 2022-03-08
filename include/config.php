@@ -1,11 +1,14 @@
 <?php
+//版本信息，用于更新
+$_updateVersionControl = "1.0.0";
+$_updateVersion = "1";
 
-
-//
-$mysqli_host="localhost";
-$mysqli_user="user_name";
-$mysqli_password="password";
-$mysqli_name="mysql_name";
+//数据库设置
+$mysqliSwitch=0;
+$mysqliHost="localhost";
+$mysqliUser="user_name";
+$mysqliPassword="password";
+$mysqliName="mysql_name";
 
 /*
 文件更新使用的网站
@@ -13,4 +16,4 @@ $mysqli_name="mysql_name";
 2.https://raw.githubusercontent.com/（原站，国内需要vpn）
 默认使用
 */
-$update_address="https://githubraw.baimianxiao.cn/";
+$updateAddress="https://githubraw.baimianxiao.cn/";

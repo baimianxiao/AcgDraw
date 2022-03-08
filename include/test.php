@@ -1,4 +1,8 @@
 <?php
+//版本信息，用于更新
+$_updateVersionControl = "1.0.0";
+$_updateVersion = "1";
+
 include("./config.php");
 include("./function.php");
 $table_data_html = curl_request("https://prts.wiki/index.php?title=%E5%8D%A1%E6%B1%A0%E4%B8%80%E8%A7%88/%E9%99%90%E6%97%B6%E5%AF%BB%E8%AE%BF&action=edit");
@@ -19,9 +23,9 @@ foreach ($table_data_array_1 as $key => $value) {
   preg_match_all("/\[\[[\s\S]*?\]\]/", $value, $match);
 
   $table_data_single["name"] = str_replace("]]", "", str_replace("[[", "", $match[0][1]));
-  preg_match_all("/\|\{\{[\s\S]*\}\}\|/", $value, $match);
+  preg_match_all("/[\s\S]*/", $value, $match);
 
-  $table_data_single["star6_up"] = str_replace("}}", "", str_replace("\{{", "", $match[0][0]));
+  $table_data_single["star6_up"] = str_replace("}}", "", str_replace("{{", "", $match[0][0]));
   echo "<pre>";
   print_r($table_data_single);
   echo "<pre>";

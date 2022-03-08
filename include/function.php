@@ -1,4 +1,8 @@
 <?php
+//版本信息，用于更新
+$_updateVersionControl = "1.0.0";
+$_updateVersion = "1";
+
 //curl爬虫
 function curl_request($url, $post = [], $cookie = '',  $returnCookie = false)
 {

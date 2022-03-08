@@ -2,931 +2,1117 @@
     "char_285_medic2": {
         "name": "Lancet-2",
         "star": 1,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/3\/34\/%E5%8D%8A%E8%BA%AB%E5%83%8F_Lancet-2_1.png"
     },
     "char_286_cast3": {
         "name": "Castle-3",
         "star": 1,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/d5\/%E5%8D%8A%E8%BA%AB%E5%83%8F_Castle-3_1.png"
     },
     "char_376_therex": {
         "name": "THRM-EX",
         "star": 1,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/e\/e0\/%E5%8D%8A%E8%BA%AB%E5%83%8F_THRM-EX_1.png"
     },
     "char_4000_jnight": {
         "name": "正义骑士号",
         "star": 1,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/c\/c3\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%AD%A3%E4%B9%89%E9%AA%91%E5%A3%AB%E5%8F%B7_1.png"
     },
     "char_502_nblade": {
         "name": "夜刀",
         "star": 2,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/ac\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%A4%9C%E5%88%80_1.png"
     },
     "char_500_noirc": {
         "name": "黑角",
         "star": 2,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/6\/6c\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%BB%91%E8%A7%92_1.png"
     },
     "char_503_rang": {
         "name": "巡林者",
         "star": 2,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/8\/87\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%B7%A1%E6%9E%97%E8%80%85_1.png"
     },
     "char_501_durin": {
         "name": "杜林",
         "star": 2,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/9c\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%9D%9C%E6%9E%97_1.png"
     },
     "char_009_12fce": {
         "name": "12F",
         "star": 2,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/1e\/%E5%8D%8A%E8%BA%AB%E5%83%8F_12F_1.png"
     },
     "char_123_fang": {
         "name": "芬",
         "star": 3,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/d9\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%8A%AC_1.png"
     },
     "char_240_wyvern": {
         "name": "香草",
         "star": 3,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/3\/3a\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%A6%99%E8%8D%89_1.png"
     },
     "char_192_falco": {
         "name": "翎羽",
         "star": 3,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/17\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%BF%8E%E7%BE%BD_1.png"
     },
     "char_208_melan": {
         "name": "玫兰莎",
         "star": 3,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/1c\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%8E%AB%E5%85%B0%E8%8E%8E_1.png"
     },
     "char_281_popka": {
         "name": "泡普卡",
         "star": 3,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/e\/e3\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%B3%A1%E6%99%AE%E5%8D%A1_1.png"
     },
     "char_209_ardign": {
         "name": "卡缇",
         "star": 3,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/c\/ca\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%8D%A1%E7%BC%87_1.png"
     },
     "char_122_beagle": {
         "name": "米格鲁",
         "star": 3,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/92\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%B1%B3%E6%A0%BC%E9%B2%81_1.png"
     },
     "char_284_spot": {
         "name": "斑点",
         "star": 3,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/74\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%96%91%E7%82%B9_1.png"
     },
     "char_124_kroos": {
         "name": "克洛丝",
         "star": 3,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/e\/e7\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%85%8B%E6%B4%9B%E4%B8%9D_1.png"
     },
     "char_211_adnach": {
         "name": "安德切尔",
         "star": 3,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/27\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%AE%89%E5%BE%B7%E5%88%87%E5%B0%94_1.png"
     },
     "char_121_lava": {
         "name": "炎熔",
         "star": 3,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/2b\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%82%8E%E7%86%94_1.png"
     },
     "char_120_hibisc": {
         "name": "芙蓉",
         "star": 3,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/7e\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%8A%99%E8%93%89_1.png"
     },
     "char_212_ansel": {
         "name": "安赛尔",
         "star": 3,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/2d\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%AE%89%E8%B5%9B%E5%B0%94_1.png"
     },
     "char_210_stward": {
         "name": "史都华德",
         "star": 3,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/d0\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%8F%B2%E9%83%BD%E5%8D%8E%E5%BE%B7_1.png"
     },
     "char_278_orchid": {
         "name": "梓兰",
         "star": 3,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/a8\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%A2%93%E5%85%B0_1.png"
     },
     "char_141_nights": {
         "name": "夜烟",
         "star": 4,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/a6\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%A4%9C%E7%83%9F_1.png"
     },
     "char_109_fmout": {
         "name": "远山",
         "star": 4,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/3\/31\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%BF%9C%E5%B1%B1_1.png"
     },
     "char_253_greyy": {
         "name": "格雷伊",
         "star": 4,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/9b\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%A0%BC%E9%9B%B7%E4%BC%8A_1.png"
     },
     "char_328_cammou": {
         "name": "卡达",
         "star": 4,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/3\/39\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%8D%A1%E8%BE%BE_1.png"
     },
     "char_469_indigo": {
         "name": "深靛",
         "star": 4,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/74\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%B7%B1%E9%9D%9B_1.png"
     },
     "char_235_jesica": {
         "name": "杰西卡",
         "star": 4,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/5\/51\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%9D%B0%E8%A5%BF%E5%8D%A1_1.png"
     },
     "char_126_shotst": {
         "name": "流星",
         "star": 4,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/8\/86\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%B5%81%E6%98%9F_1.png"
     },
     "char_190_clour": {
         "name": "红云",
         "star": 4,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/3\/35\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%BA%A2%E4%BA%91_1.png"
     },
     "char_133_mm": {
         "name": "梅",
         "star": 4,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/b\/b0\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%A2%85_1.png"
     },
     "char_118_yuki": {
         "name": "白雪",
         "star": 4,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/d4\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%99%BD%E9%9B%AA_1.png"
     },
     "char_440_pinecn": {
         "name": "松果",
         "star": 4,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/20\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%9D%BE%E6%9E%9C_1.png"
     },
     "char_302_glaze": {
         "name": "安比尔",
         "star": 4,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/6\/61\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%AE%89%E6%AF%94%E5%B0%94_1.png"
     },
     "char_366_acdrop": {
         "name": "酸糖",
         "star": 4,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/8\/82\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%85%B8%E7%B3%96_1.png"
     },
     "char_149_scave": {
         "name": "清道夫",
         "star": 4,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/b\/bc\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%B8%85%E9%81%93%E5%A4%AB_1.png"
     },
     "char_290_vigna": {
         "name": "红豆",
         "star": 4,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/a6\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%BA%A2%E8%B1%86_1.png"
     },
     "char_151_myrtle": {
         "name": "桃金娘",
         "star": 4,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/3\/33\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%A1%83%E9%87%91%E5%A8%98_1.png"
     },
     "char_452_bstalk": {
         "name": "豆苗",
         "star": 4,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/98\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%B1%86%E8%8B%97_1.png"
     },
     "char_130_doberm": {
         "name": "杜宾",
         "star": 4,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/f\/fb\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%9D%9C%E5%AE%BE_1.png"
     },
     "char_289_gyuki": {
         "name": "缠丸",
         "star": 4,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/b\/b4\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%BC%A0%E4%B8%B8_1.png"
     },
     "char_193_frostl": {
         "name": "霜叶",
         "star": 4,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/11\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%9C%9C%E5%8F%B6_1.png"
     },
     "char_127_estell": {
         "name": "艾丝黛尔",
         "star": 4,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/e\/ea\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%89%BE%E4%B8%9D%E9%BB%9B%E5%B0%94_1.png"
     },
     "char_185_frncat": {
         "name": "慕斯",
         "star": 4,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/9d\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%85%95%E6%96%AF_1.png"
     },
     "char_301_cutter": {
         "name": "刻刀",
         "star": 4,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/23\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%88%BB%E5%88%80_1.png"
     },
     "char_337_utage": {
         "name": "宴",
         "star": 4,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/4\/4e\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%AE%B4_1.png"
     },
     "char_271_spikes": {
         "name": "芳汀",
         "star": 4,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/dc\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%8A%B3%E6%B1%80_1.png"
     },
     "char_237_gravel": {
         "name": "砾",
         "star": 4,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/c\/c1\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%A0%BE_1.png"
     },
     "char_272_strong": {
         "name": "孑",
         "star": 4,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/7c\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%AD%91_1.png"
     },
     "char_236_rope": {
         "name": "暗索",
         "star": 4,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/2e\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%9A%97%E7%B4%A2_1.png"
     },
     "char_117_myrrh": {
         "name": "末药",
         "star": 4,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/5\/54\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%9C%AB%E8%8D%AF_1.png"
     },
     "char_298_susuro": {
         "name": "苏苏洛",
         "star": 4,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/79\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%8B%8F%E8%8B%8F%E6%B4%9B_1.png"
     },
     "char_181_flower": {
         "name": "调香师",
         "star": 4,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/d8\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%B0%83%E9%A6%99%E5%B8%88_1.png"
     },
     "char_199_yak": {
         "name": "角峰",
         "star": 4,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/7d\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%A7%92%E5%B3%B0_1.png"
     },
     "char_150_snakek": {
         "name": "蛇屠箱",
         "star": 4,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/a6\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%9B%87%E5%B1%A0%E7%AE%B1_1.png"
     },
     "char_381_bubble": {
         "name": "泡泡",
         "star": 4,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/6\/64\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%B3%A1%E6%B3%A1_1.png"
     },
     "char_196_sunbr": {
         "name": "古米",
         "star": 4,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/d3\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%8F%A4%E7%B1%B3_1.png"
     },
     "char_110_deepcl": {
         "name": "深海色",
         "star": 4,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/27\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%B7%B1%E6%B5%B7%E8%89%B2_1.png"
     },
     "char_183_skgoat": {
         "name": "地灵",
         "star": 4,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/0\/0e\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%9C%B0%E7%81%B5_1.png"
     },
     "char_258_podego": {
         "name": "波登可",
         "star": 4,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/6\/67\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%B3%A2%E7%99%BB%E5%8F%AF_1.png"
     },
     "char_484_robrta": {
         "name": "罗比菈塔",
         "star": 4,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/f\/f2\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%BD%97%E6%AF%94%E8%8F%88%E5%A1%94_1.png"
     },
     "char_277_sqrrel": {
         "name": "阿消",
         "star": 4,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/20\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%98%BF%E6%B6%88_1.png"
     },
     "char_128_plosis": {
         "name": "白面鸮",
         "star": 5,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/f\/fb\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%99%BD%E9%9D%A2%E9%B8%AE_1.png"
     },
     "char_115_headbr": {
         "name": "凛冬",
         "star": 5,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/6\/60\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%87%9B%E5%86%AC_1.png"
     },
     "char_349_chiave": {
         "name": "贾维",
         "star": 5,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/2e\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%B4%BE%E7%BB%B4_1.png"
     },
     "char_261_sddrag": {
         "name": "苇草",
         "star": 5,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/e\/e1\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%8B%87%E8%8D%89_1.png"
     },
     "char_401_elysm": {
         "name": "极境",
         "star": 5,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/0\/03\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%9E%81%E5%A2%83_1.png"
     },
     "char_476_blkngt": {
         "name": "夜半",
         "star": 5,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/b\/bf\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%A4%9C%E5%8D%8A_1.png"
     },
     "char_308_swire": {
         "name": "诗怀雅",
         "star": 5,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/f\/ff\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%AF%97%E6%80%80%E9%9B%85_1.png"
     },
     "char_106_franka": {
         "name": "芙兰卡",
         "star": 5,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/8\/81\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%8A%99%E5%85%B0%E5%8D%A1_1.png"
     },
     "char_155_tiger": {
         "name": "因陀罗",
         "star": 5,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/f\/f6\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%9B%A0%E9%99%80%E7%BD%97_1.png"
     },
     "char_415_flint": {
         "name": "燧石",
         "star": 5,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/4\/4f\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%87%A7%E7%9F%B3_1.png"
     },
     "char_140_whitew": {
         "name": "拉普兰德",
         "star": 5,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/b\/ba\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%8B%89%E6%99%AE%E5%85%B0%E5%BE%B7_1.png"
     },
     "char_294_ayer": {
         "name": "断崖",
         "star": 5,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/13\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%96%AD%E5%B4%96_1.png"
     },
     "char_143_ghost": {
         "name": "幽灵鲨",
         "star": 5,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/f\/f8\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%B9%BD%E7%81%B5%E9%B2%A8_1.png"
     },
     "char_356_broca": {
         "name": "布洛卡",
         "star": 5,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/97\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%B8%83%E6%B4%9B%E5%8D%A1_1.png"
     },
     "char_274_astesi": {
         "name": "星极",
         "star": 5,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/6\/61\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%98%9F%E6%9E%81_1.png"
     },
     "char_475_akafyu": {
         "name": "赤冬",
         "star": 5,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/9b\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%B5%A4%E5%86%AC_1.png"
     },
     "char_421_crow": {
         "name": "羽毛笔",
         "star": 5,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/12\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%BE%BD%E6%AF%9B%E7%AC%94_1.png"
     },
     "char_129_bluep": {
         "name": "蓝毒",
         "star": 5,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/ac\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%93%9D%E6%AF%92_1.png"
     },
     "char_204_platnm": {
         "name": "白金",
         "star": 5,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/c\/c6\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%99%BD%E9%87%91_1.png"
     },
     "char_367_swllow": {
         "name": "灰喉",
         "star": 5,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/4\/4b\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%81%B0%E5%96%89_1.png"
     },
     "char_365_aprl": {
         "name": "四月",
         "star": 5,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/0\/05\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%9B%9B%E6%9C%88_1.png"
     },
     "char_219_meteo": {
         "name": "陨星",
         "star": 5,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/af\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%99%A8%E6%98%9F_1.png"
     },
     "char_379_sesa": {
         "name": "慑砂",
         "star": 5,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/5\/57\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%85%91%E7%A0%82_1.png"
     },
     "char_279_excu": {
         "name": "送葬人",
         "star": 5,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/9d\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%80%81%E8%91%AC%E4%BA%BA_1.png"
     },
     "char_346_aosta": {
         "name": "奥斯塔",
         "star": 5,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/6\/6d\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%A5%A5%E6%96%AF%E5%A1%94_1.png"
     },
     "char_166_skfire": {
         "name": "天火",
         "star": 5,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/1d\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%A4%A9%E7%81%AB_1.png"
     },
     "char_306_leizi": {
         "name": "惊蛰",
         "star": 5,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/5\/5a\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%83%8A%E8%9B%B0_1.png"
     },
     "char_344_beewax": {
         "name": "蜜蜡",
         "star": 5,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/9b\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%9C%9C%E8%9C%A1_1.png"
     },
     "char_373_lionhd": {
         "name": "莱恩哈特",
         "star": 5,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/16\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%8E%B1%E6%81%A9%E5%93%88%E7%89%B9_1.png"
     },
     "char_338_iris": {
         "name": "爱丽丝",
         "star": 5,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/11\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%88%B1%E4%B8%BD%E4%B8%9D_1.png"
     },
     "char_489_serum": {
         "name": "蚀清",
         "star": 5,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/5\/5a\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%9A%80%E6%B8%85_1.png"
     },
     "char_242_otter": {
         "name": "梅尔",
         "star": 5,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/11\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%A2%85%E5%B0%94_1.png"
     },
     "char_108_silent": {
         "name": "赫默",
         "star": 5,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/a5\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%B5%AB%E9%BB%98_1.png"
     },
     "char_171_bldsk": {
         "name": "华法琳",
         "star": 5,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/4\/49\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%8D%8E%E6%B3%95%E7%90%B3_1.png"
     },
     "char_436_whispr": {
         "name": "絮雨",
         "star": 5,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/b\/b4\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%B5%AE%E9%9B%A8_1.png"
     },
     "char_473_mberry": {
         "name": "桑葚",
         "star": 5,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/6\/6c\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%A1%91%E8%91%9A_1.png"
     },
     "char_148_nearl": {
         "name": "临光",
         "star": 5,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/5\/5c\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E4%B8%B4%E5%85%89_1.png"
     },
     "char_226_hmau": {
         "name": "吽",
         "star": 5,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/77\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%90%BD_1.png"
     },
     "char_144_red": {
         "name": "红",
         "star": 5,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/8\/81\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%BA%A2_1.png"
     },
     "char_243_waaifu": {
         "name": "槐琥",
         "star": 5,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/b\/b6\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%A7%90%E7%90%A5_1.png"
     },
     "char_214_kafka": {
         "name": "卡夫卡",
         "star": 5,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/6\/63\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%8D%A1%E5%A4%AB%E5%8D%A1_1.png"
     },
     "char_455_nothin": {
         "name": "乌有",
         "star": 5,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/12\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E4%B9%8C%E6%9C%89_1.png"
     },
     "char_107_liskam": {
         "name": "雷蛇",
         "star": 5,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/b\/b5\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%9B%B7%E8%9B%87_1.png"
     },
     "char_201_moeshd": {
         "name": "可颂",
         "star": 5,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/3\/32\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%8F%AF%E9%A2%82_1.png"
     },
     "char_163_hpsts": {
         "name": "火神",
         "star": 5,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/d7\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%81%AB%E7%A5%9E_1.png"
     },
     "char_378_asbest": {
         "name": "石棉",
         "star": 5,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/c\/c3\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%9F%B3%E6%A3%89_1.png"
     },
     "char_457_blitz": {
         "name": "闪击",
         "star": 5,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/8\/8a\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%97%AA%E5%87%BB_1.png"
     },
     "char_431_ashlok": {
         "name": "灰毫",
         "star": 5,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/13\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%81%B0%E6%AF%AB_1.png"
     },
     "char_422_aurora": {
         "name": "极光",
         "star": 5,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/16\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%9E%81%E5%85%89_1.png"
     },
     "char_145_prove": {
         "name": "普罗旺斯",
         "star": 5,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/9a\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%99%AE%E7%BD%97%E6%97%BA%E6%96%AF_1.png"
     },
     "char_158_milu": {
         "name": "守林人",
         "star": 5,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/b\/b0\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%AE%88%E6%9E%97%E4%BA%BA_1.png"
     },
     "char_218_cuttle": {
         "name": "安哲拉",
         "star": 5,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/8\/88\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%AE%89%E5%93%B2%E6%8B%89_1.png"
     },
     "char_363_toddi": {
         "name": "熔泉",
         "star": 5,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/3\/34\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%86%94%E6%B3%89_1.png"
     },
     "char_173_slchan": {
         "name": "崖心",
         "star": 5,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/7d\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%B4%96%E5%BF%83_1.png"
     },
     "char_174_slbell": {
         "name": "初雪",
         "star": 5,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/d6\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%88%9D%E9%9B%AA_1.png"
     },
     "char_254_vodfox": {
         "name": "巫恋",
         "star": 5,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/dd\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%B7%AB%E6%81%8B_1.png"
     },
     "char_195_glassb": {
         "name": "真理",
         "star": 5,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/17\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%9C%9F%E7%90%86_1.png"
     },
     "char_326_glacus": {
         "name": "格劳克斯",
         "star": 5,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/e\/ef\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%A0%BC%E5%8A%B3%E5%85%8B%E6%96%AF_1.png"
     },
     "char_101_sora": {
         "name": "空",
         "star": 5,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/7b\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%A9%BA_1.png"
     },
     "char_343_tknogi": {
         "name": "月禾",
         "star": 5,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/8\/8f\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%9C%88%E7%A6%BE_1.png"
     },
     "char_492_quercu": {
         "name": "夏栎",
         "star": 5,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/a2\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%A4%8F%E6%A0%8E_1.png"
     },
     "char_215_mantic": {
         "name": "狮蝎",
         "star": 5,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/c\/ce\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%8B%AE%E8%9D%8E_1.png"
     },
     "char_478_kirara": {
         "name": "绮良",
         "star": 5,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/5\/5f\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%BB%AE%E8%89%AF_1.png"
     },
     "char_241_panda": {
         "name": "食铁兽",
         "star": 5,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/27\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%A3%9F%E9%93%81%E5%85%BD_1.png"
     },
     "char_458_rfrost": {
         "name": "霜华",
         "star": 5,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/6\/62\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%9C%9C%E5%8D%8E_1.png"
     },
     "char_103_angel": {
         "name": "能天使",
         "star": 6,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/2e\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%83%BD%E5%A4%A9%E4%BD%BF_1.png"
     },
     "char_332_archet": {
         "name": "空弦",
         "star": 6,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/8\/86\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%A9%BA%E5%BC%A6_1.png"
     },
     "char_456_ash": {
         "name": "灰烬",
         "star": 6,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/f\/fa\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%81%B0%E7%83%AC_1.png"
     },
     "char_340_shwaz": {
         "name": "黑",
         "star": 6,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/23\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%BB%91_1.png"
     },
     "char_430_fartth": {
         "name": "远牙",
         "star": 6,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/4\/4f\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%BF%9C%E7%89%99_1.png"
     },
     "char_113_cqbw": {
         "name": "W",
         "star": 6,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/4\/45\/%E5%8D%8A%E8%BA%AB%E5%83%8F_W_1.png"
     },
     "char_197_poca": {
         "name": "早露",
         "star": 6,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/92\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%97%A9%E9%9C%B2_1.png"
     },
     "char_391_rosmon": {
         "name": "迷迭香",
         "star": 6,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/9a\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%BF%B7%E8%BF%AD%E9%A6%99_1.png"
     },
     "char_1013_chen2": {
         "name": "假日威龙陈",
         "star": 6,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/5\/51\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%81%87%E6%97%A5%E5%A8%81%E9%BE%99%E9%99%88_1.png"
     },
     "char_112_siege": {
         "name": "推进之王",
         "star": 6,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/98\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%8E%A8%E8%BF%9B%E4%B9%8B%E7%8E%8B_1.png"
     },
     "char_222_bpipe": {
         "name": "风笛",
         "star": 6,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/e\/ea\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%A3%8E%E7%AC%9B_1.png"
     },
     "char_362_saga": {
         "name": "嵯峨",
         "star": 6,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/a4\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%B5%AF%E5%B3%A8_1.png"
     },
     "char_479_sleach": {
         "name": "琴柳",
         "star": 6,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/28\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%90%B4%E6%9F%B3_1.png"
     },
     "char_420_flamtl": {
         "name": "焰尾",
         "star": 6,
-        "class": "PIONEER"
+        "class": "PIONEER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/92\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%84%B0%E5%B0%BE_1.png"
     },
     "char_134_ifrit": {
         "name": "伊芙利特",
         "star": 6,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/23\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E4%BC%8A%E8%8A%99%E5%88%A9%E7%89%B9_1.png"
     },
     "char_213_mostma": {
         "name": "莫斯提马",
         "star": 6,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/f\/fc\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%8E%AB%E6%96%AF%E6%8F%90%E9%A9%AC_1.png"
     },
     "char_180_amgoat": {
         "name": "艾雅法拉",
         "star": 6,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/3\/36\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%89%BE%E9%9B%85%E6%B3%95%E6%8B%89_1.png"
     },
     "char_2013_cerber": {
         "name": "刻俄柏",
         "star": 6,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/6\/69\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%88%BB%E4%BF%84%E6%9F%8F_1.png"
     },
     "char_2015_dusk": {
         "name": "夕",
         "star": 6,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/f\/f2\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%A4%95_1.png"
     },
     "char_472_pasngr": {
         "name": "异客",
         "star": 6,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/d3\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%BC%82%E5%AE%A2_1.png"
     },
     "char_426_billro": {
         "name": "卡涅利安",
         "star": 6,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/3\/36\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%8D%A1%E6%B6%85%E5%88%A9%E5%AE%89_1.png"
     },
     "char_377_gdglow": {
         "name": "澄闪",
         "star": 6,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/17\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%BE%84%E9%97%AA_1.png"
     },
     "char_206_gnosis": {
         "name": "灵知",
         "star": 6,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/a9\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%81%B5%E7%9F%A5_1.png"
     },
     "char_291_aglina": {
         "name": "安洁莉娜",
         "star": 6,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/3\/30\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%AE%89%E6%B4%81%E8%8E%89%E5%A8%9C_1.png"
     },
     "char_358_lisa": {
         "name": "铃兰",
         "star": 6,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/f\/fe\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%93%83%E5%85%B0_1.png"
     },
     "char_248_mgllan": {
         "name": "麦哲伦",
         "star": 6,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/c\/c7\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%BA%A6%E5%93%B2%E4%BC%A6_1.png"
     },
     "char_1012_skadi2": {
         "name": "浊心斯卡蒂",
         "star": 6,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/7f\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%B5%8A%E5%BF%83%E6%96%AF%E5%8D%A1%E8%92%82_1.png"
     },
     "char_2023_ling": {
         "name": "令",
         "star": 6,
-        "class": "SUPPORT"
+        "class": "SUPPORT",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/d6\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E4%BB%A4_1.png"
     },
     "char_250_phatom": {
         "name": "傀影",
         "star": 6,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/ad\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%82%80%E5%BD%B1_1.png"
     },
     "char_322_lmlee": {
         "name": "老鲤",
         "star": 6,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/e\/e8\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%80%81%E9%B2%A4_1.png"
     },
     "char_400_weedy": {
         "name": "温蒂",
         "star": 6,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/5\/5f\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%B8%A9%E8%92%82_1.png"
     },
     "char_225_haak": {
         "name": "阿",
         "star": 6,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/72\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%98%BF_1.png"
     },
     "char_437_mizuki": {
         "name": "水月",
         "star": 6,
-        "class": "SPECIAL"
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/22\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%B0%B4%E6%9C%88_1.png"
     },
     "char_147_shining": {
         "name": "闪灵",
         "star": 6,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/d6\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%97%AA%E7%81%B5_1.png"
     },
     "char_179_cgbird": {
         "name": "夜莺",
         "star": 6,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/e\/e9\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%A4%9C%E8%8E%BA_1.png"
     },
     "char_003_kalts": {
         "name": "凯尔希",
         "star": 6,
-        "class": "MEDIC"
+        "class": "MEDIC",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/c\/c0\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%87%AF%E5%B0%94%E5%B8%8C_1.png"
     },
     "char_136_hsguma": {
         "name": "星熊",
         "star": 6,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/22\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%98%9F%E7%86%8A_1.png"
     },
     "char_202_demkni": {
         "name": "塞雷娅",
         "star": 6,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/4\/44\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%A1%9E%E9%9B%B7%E5%A8%85_1.png"
     },
     "char_423_blemsh": {
         "name": "瑕光",
         "star": 6,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/a6\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%91%95%E5%85%89_1.png"
     },
     "char_2014_nian": {
         "name": "年",
         "star": 6,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/4\/4d\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%B9%B4_1.png"
     },
     "char_311_mudrok": {
         "name": "泥岩",
         "star": 6,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/0\/08\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%B3%A5%E5%B2%A9_1.png"
     },
     "char_416_zumama": {
         "name": "森蚺",
         "star": 6,
-        "class": "TANK"
+        "class": "TANK",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/4\/4a\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%A3%AE%E8%9A%BA_1.png"
     },
     "char_264_f12yin": {
         "name": "山",
         "star": 6,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/7b\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%B1%B1_1.png"
     },
     "char_172_svrash": {
         "name": "银灰",
         "star": 6,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/9\/90\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%93%B6%E7%81%B0_1.png"
     },
     "char_293_thorns": {
         "name": "棘刺",
         "star": 6,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/0\/08\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%A3%98%E5%88%BA_1.png"
     },
     "char_010_chen": {
         "name": "陈",
         "star": 6,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/e\/e1\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%99%88_1.png"
     },
     "char_017_huang": {
         "name": "煌",
         "star": 6,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/1c\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%85%8C_1.png"
     },
     "char_350_surtr": {
         "name": "史尔特尔",
         "star": 6,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/5\/58\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%8F%B2%E5%B0%94%E7%89%B9%E5%B0%94_1.png"
     },
     "char_188_helage": {
         "name": "赫拉格",
         "star": 6,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/8\/82\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%B5%AB%E6%8B%89%E6%A0%BC_1.png"
     },
     "char_485_pallas": {
         "name": "帕拉斯",
         "star": 6,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/7\/72\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%B8%95%E6%8B%89%E6%96%AF_1.png"
     },
     "char_1014_nearl2": {
         "name": "耀骑士临光",
         "star": 6,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/db\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%80%80%E9%AA%91%E5%A3%AB%E4%B8%B4%E5%85%89_1.png"
     },
     "char_282_catap": {
         "name": "空爆",
         "star": 3,
-        "class": "SNIPER"
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/dc\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%A9%BA%E7%88%86_1.png"
     },
     "char_283_midn": {
         "name": "月见夜",
         "star": 3,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/d\/dd\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%9C%88%E8%A7%81%E5%A4%9C_1.png"
     },
     "char_137_brownb": {
         "name": "猎蜂",
         "star": 4,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/ad\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E7%8C%8E%E8%9C%82_1.png"
     },
     "char_347_jaksel": {
         "name": "杰克",
         "star": 4,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/2\/27\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%9D%B0%E5%85%8B_1.png"
     },
     "char_164_nightm": {
         "name": "夜魔",
         "star": 5,
-        "class": "CASTER"
+        "class": "CASTER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/f\/f7\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E5%A4%9C%E9%AD%94_1.png"
     },
     "char_263_skadi": {
         "name": "斯卡蒂",
         "star": 6,
-        "class": "WARRIOR"
+        "class": "WARRIOR",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/a\/a5\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E6%96%AF%E5%8D%A1%E8%92%82_1.png"
     }
 }

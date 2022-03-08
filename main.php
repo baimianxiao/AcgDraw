@@ -5,14 +5,13 @@ include("./include/function.php");
 
 //判断请求类型
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    if($_GET["test"]==null){
-        $test="ggg";
-
-    }else{
-    $test= $_GET["test"];}
-    echo($test);
+    if ($_GET["test"] == null) {
+        $test = "ggg";
+    } else {
+        $test = $_GET["test"];
+    }
+    echo ($test);
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
 } else {
 }
 
@@ -51,11 +50,11 @@ for ($i = 1; $i <= 10; $i++) {
     $chx = 70 + ($i - 1) * 82;
     $classx = 80 + ($i - 1) * 82;
     $starType = rand(0, 1000);
-    if ($starType >= 0 && $starType <= 20+$probability_up) {
+    if ($starType >= 0 && $starType <= 20 + $probability_up) {
         $star = 6;
         $sixStarHasGot = 1;
         $minimun = $minimun + 1;
-    } elseif ($starType >= 21+$probability_up && $starType <= 100+$probability_up) {
+    } elseif ($starType >= 21 + $probability_up && $starType <= 100 + $probability_up) {
         $star = 5;
         $minimun = $minimun + 1;
     } elseif ($starType >= 101 && $starType <= 400) {
@@ -65,13 +64,13 @@ for ($i = 1; $i <= 10; $i++) {
         $star = 3;
     }
     //强行保底4星
-    if ($i = 10 and $minimun = 0) {
+    if ($i == 10 and $minimun = 0) {
         $star = 4;
     }
-    $character_name = array_rand($star_list[$star]);
-    $ch = $character_path . $character_name . ".png";
+    $characterKey = $star_list[$star][array_rand($star_list[$star])];
+    $ch = $character_path . $characterKey . ".png";
     $bg = $backgroud_path . $star . ".png";
-    $class = $class_path . $character_list[$character_name]["class"] . ".png";
+    $class = $class_path . $character_list[$characterKey]["class"] . ".png";
     $srcImage1 = imagecreatefrompng($bg);
     imagecopyresampled($im, $srcImage1, $bgx, 0, 0, 0, imagesx($srcImage1), imagesy($srcImage1), imagesx($srcImage1), imagesy($srcImage1));
     $srcImage2 = imagecreatefrompng($ch);
@@ -82,3 +81,16 @@ for ($i = 1; $i <= 10; $i++) {
 
 $srcBg1 = imagecreatefrompng($background1);
 imagecopyresampled($im, $srcBg1, 0, 0, 0, 0, imagesx($srcBg1), imagesy($srcBg1), imagesx($srcBg1), imagesy($srcBg1));
+
+
+//返回信息
+if ($backMode == "image") {
+    header("Content-Type:image/png");
+    imagepng($im);
+} elseif ($backMode == "json") {
+    header("Content-Type:image/png");
+    imagepng($im);
+} else {
+    header("Content-Type:image/png");
+    imagepng($im);
+}

@@ -1,21 +1,30 @@
 <?php
+//版本信息，用于更新
+$_updateVersionControl = "1.0.0";
+$_updateVersion = "1";
+
 //设置文件
 include("./config.php");
-
 include("./function.php");
 //数据目录路径
 $data_path = "../data/";
 
 //获取更新文件版本
-function get_update_version($mode=0){
-    global $update_address;
-    echo($version_data=curl_request( $update_address. "/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/data_version.txt"));
-    preg_match_all("/VersionControl\:([0-9\.]+)/",$version_data,$match);
-    $version_control=$match[1][0];
-    preg_match_all("/Change:([0-9]+)/",$version_data,$match);
-    $version=$match[0][0];
-    preg_match_all("/[0-9\.]+\/[0-9\.]+\/[0-9\.]+/",$version_data,$match);
-    $update_date=$match[1][0];
+function get_update_version($mode = 0)
+{
+    if ($mode == 0) {
+        global $updateAddress;
+        $version_data = curl_request($updateAddress . "/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/data_version.txt");
+        preg_match_all("/VersionControl\:([0-9\.]+)/", $version_data, $match);
+        $characterTableVersion['control'] = $match[1][0];
+        preg_match_all("/Change:([0-9]+)/", $version_data, $match);
+        $characterTableVersion['id'] = $match[0][0];
+        preg_match_all("/[0-9\.]+\/[0-9\.]+\/[0-9\.]+/", $version_data, $match);
+        $characterTableVersion['date'] = $match[1][0];
+        return $characterTableVersion;
+    } elseif ($mode = 1) {
+
+    }
 
 }
 
