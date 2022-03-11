@@ -4,7 +4,7 @@ $_updateVersionControl = "1.0.0";
 $_updateVersion = "1";
 
 //数据库设置
-$mysqliSwitch=0;
+$mysqliSwitch=1; //是否使用数据库
 $mysqliHost="localhost";
 $mysqliUser="user_name";
 $mysqliPassword="password";

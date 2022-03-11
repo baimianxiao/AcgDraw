@@ -60,6 +60,9 @@ function character_list_create($mode = 0)
             if (!array_key_exists("imageUrl", $character_list[$key])) {
                 $character_data_single["imageUrl"] = imageUrl_get($value["name"]);
                 echo ("爬取{$key}</br>");
+            }else{
+                //防止imagUrl存在时被空参数覆盖
+                $character_data_single["imageUrl"] = $character_list[$key]["imageUrl"];
             }
             $character_data[$key] = $character_data_single;
             if (!file_exists($data_path . 'image/character/' . $key . '.png')) {

@@ -39,7 +39,6 @@ function curl_request($url, $post = [], $cookie = '',  $returnCookie = false)
   }
 }
 
-
 //下载函数
 function down_file($url, $file_name, $folder = "./")
 {
@@ -89,3 +88,5 @@ function get_ip()
   }
   return  preg_match('/[\d\.]{7,15}/', $ip, $matches) ? $matches[0] : '';
 }
+
+?>
