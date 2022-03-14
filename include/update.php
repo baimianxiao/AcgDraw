@@ -23,6 +23,7 @@ function get_update_version($mode = 0)
         $characterTableVersion['date'] = $match[1][0];
         return $characterTableVersion;
     } elseif ($mode = 1) {
+        include("./admin.php");
 
     }
 
