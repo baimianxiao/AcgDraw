@@ -1,7 +1,7 @@
 <?php
 //版本信息，用于更新
-$_updateVersionControl = "1.0.0";
-$_updateVersion = "1";
+$_updateVersionControl = "1.0.10";
+$_updateVersion = "10";
 
 //设置文件
 include("./config.php");

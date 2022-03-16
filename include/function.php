@@ -1,7 +1,7 @@
 <?php
 //版本信息，用于更新
-$_updateVersionControl = "1.0.0";
-$_updateVersion = "1";
+$_updateVersionControl = "1.0.3";
+$_updateVersion = "3";
 
 //curl爬虫
 function curl_request($url, $post = [], $cookie = '',  $returnCookie = false)
@@ -89,4 +89,22 @@ function get_ip()
   return  preg_match('/[\d\.]{7,15}/', $ip, $matches) ? $matches[0] : '';
 }
 
-?>
+//
+function table_change($array, $vableToChange = "", $mode = 0)
+{
+  if ($mode == 0) {
+    foreach ($array as $key => $vable) {
+      $newKey = $array[$key];
+      $newArray[$newKey] = $key;
+    }
+  } elseif ($mode == 1) {
+    if ($vableToChange == "") {
+      return false;
+    }
+    foreach ($array as $key => $vable) {
+      $newKey = $vable[$vableToChange];
+      $newArray[$newKey] = $key;
+    }
+  }
+  return $newArray;
+}
