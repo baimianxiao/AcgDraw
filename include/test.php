@@ -49,7 +49,6 @@ function manage_table_data($tableData)
     $table_data_single["time"]=$match[0];
     preg_match_all("/{{[\s\S]*?}}/", $characterData, $match);
     $characterList = $match[0];
-    $table_data_single["star6_up"] =  $characterList;
     //对匹配出的人物信息字符串进行遍历处理
     foreach ($characterList as $key => $value) {
       //判断是否为限定

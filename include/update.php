@@ -12,21 +12,26 @@ $data_path = "../data/";
 //获取更新文件版本
 function get_update_version($mode = 0)
 {
-    if ($mode == 0) {
-        global $updateAddress;
+    
+        global $updateAddress,$data_path;
         $version_data = curl_request($updateAddress . "/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/data_version.txt");
         preg_match_all("/VersionControl\:([0-9\.]+)/", $version_data, $match);
         $characterTableVersion['control'] = $match[1][0];
         preg_match_all("/Change:([0-9]+)/", $version_data, $match);
-        $characterTableVersion['id'] = $match[0][0];
+        $characterTableVersion['id'] = $match[1][0];
         preg_match_all("/[0-9\.]+\/[0-9\.]+\/[0-9\.]+/", $version_data, $match);
         $characterTableVersion['date'] = $match[1][0];
-        return $characterTableVersion;
+        if ($mode == 0) { return $characterTableVersion;
     } elseif ($mode = 1) {
-        include("./admin.php");
-
+        
+        $updateVersion = fopen($data_path . "update_version.json", "w");
+        $characterTableVersion = json_encode($characterTableVersion, JSON_UNESCAPED_UNICODE);
+        fwrite($updateVersion, $characterTableVersion);
+        fclose($updateVersion);
+        return true;
+    }else{
+        return false;
     }
-
 }
 
 //人物数据提取
@@ -58,10 +63,10 @@ function character_list_create($mode = 0)
             $character_data_single["name"] = $value["name"];
             $character_data_single["star"] = $value["rarity"] + 1;
             $character_data_single["class"] = $value["profession"];
-            if (!array_key_exists("imageUrl", $character_list[$key])) {
+            if ($character_list[$key]["imageUrl"] == "" or $character_list[$key]["imageUrl"] == null) {
                 $character_data_single["imageUrl"] = imageUrl_get($value["name"]);
                 echo ("爬取{$key}</br>");
-            }else{
+            } else {
                 //防止imagUrl存在时被空参数覆盖
                 $character_data_single["imageUrl"] = $character_list[$key]["imageUrl"];
             }
@@ -109,6 +114,7 @@ function imageUrl_get($name)
 
 
 //down_file("https://githubraw.baimianxiao.cn/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/character_table.json","character_table.json", "../data/");
-if (true) {
-    character_list_create();
-}
+
+//character_list_create();
+
+get_update_version(1);
