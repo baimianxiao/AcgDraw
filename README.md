@@ -1,7 +1,7 @@
 # Arknights-Draw
 
 ### 简介
-有关明日方舟的模拟抽卡api
+ - 有关明日方舟的模拟抽卡api
 
 - 编写语言PHP html css js
 
