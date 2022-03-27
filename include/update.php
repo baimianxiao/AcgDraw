@@ -12,24 +12,24 @@ $data_path = "../data/";
 //获取更新文件版本
 function get_update_version($mode = 0)
 {
-    
-        global $updateAddress,$data_path;
-        $version_data = curl_request($updateAddress . "/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/data_version.txt");
-        preg_match_all("/VersionControl\:([0-9\.]+)/", $version_data, $match);
-        $characterTableVersion['control'] = $match[1][0];
-        preg_match_all("/Change:([0-9]+)/", $version_data, $match);
-        $characterTableVersion['id'] = $match[1][0];
-        preg_match_all("/[0-9\.]+\/[0-9\.]+\/[0-9\.]+/", $version_data, $match);
-        $characterTableVersion['date'] = $match[1][0];
-        if ($mode == 0) { return $characterTableVersion;
-    } elseif ($mode = 1) {
-        
+    global $updateAddress, $data_path;
+    $version_data = curl_request($updateAddress . "/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/data_version.txt");
+    preg_match_all("/VersionControl\:([0-9\.]+)/", $version_data, $match);
+    $characterTableVersion['control'] = $match[1][0];
+    preg_match_all("/Change:([0-9]+)/", $version_data, $match);
+    $characterTableVersion['id'] = $match[1][0];
+    preg_match_all("/[0-9]+\/[0-9]+\/[0-9]+/", $version_data, $match);
+    $characterTableVersion['date'] = $match[0][0];
+    if ($mode == 0) {
+        return $characterTableVersion;
+    } elseif ($mode == 1) {
+
         $updateVersion = fopen($data_path . "update_version.json", "w");
         $characterTableVersion = json_encode($characterTableVersion, JSON_UNESCAPED_UNICODE);
         fwrite($updateVersion, $characterTableVersion);
         fclose($updateVersion);
         return true;
-    }else{
+    } else {
         return false;
     }
 }
@@ -111,10 +111,31 @@ function imageUrl_get($name)
     return $image_url_all;
 }
 
+//获取本地版本信息
+function get_local_version()
+{
+    global $data_path;
+    $localFileVersion = $data_path . "update_version.json";
+    $localFileVersion = file_get_contents($localFileVersion);
+    $localFileVersion = json_decode($localFileVersion, true);
+    return $localFileVersion;
+}
 
-
+function character_change()
+{
+    global $data_path;
+    $character_file = $data_path . "character_list.json";
+    $character_table = file_get_contents($character_file);
+    $characterList = json_decode($character_table, true);
+    $characterNameList = table_change($characterList, "name", 1);
+    $character_data_list = fopen($data_path . "character_name_list.json", "w");
+    $character_data = json_encode($characterNameList, JSON_UNESCAPED_UNICODE);
+    fwrite($character_data_list, $character_data);
+    fclose($character_data_list);
+    return true;
+}
 //down_file("https://githubraw.baimianxiao.cn/Kengxxiao/ArknightsGameData/master/zh_CN/gamedata/excel/character_table.json","character_table.json", "../data/");
 
 //character_list_create();
 
-get_update_version(1);
+print_r(character_change());

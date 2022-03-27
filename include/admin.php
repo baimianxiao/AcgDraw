@@ -7,3 +7,24 @@ $_updateVersion = "1";
 include("./config.php");
 include("./database.php");
 include("./function.php");
+include("./update.php");
+
+function need_update()
+{
+    $cloudVersionId = get_update_version(0);
+    $cloudVersionId = $cloudVersionId['id'];
+    $localVersionId = get_local_version();
+    $localVersionId = $localVersionId['id'];
+    if ($localVersionId >= $cloudVersionId) {
+        $versionId['need'] = false;
+    } else {
+        $versionId['need'] = true;
+    }
+    $versionId['cloud'] = $cloudVersionId;
+    $versionId['local'] = $localVersionId;
+    return $versionId;
+}
+
+function start_update()
+{
+}

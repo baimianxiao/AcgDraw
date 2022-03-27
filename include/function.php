@@ -108,3 +108,17 @@ function table_change($array, $vableToChange = "", $mode = 0)
   }
   return $newArray;
 }
+
+function get_json_file($file){
+    $fileConnect = file_get_contents($file);
+    if($fileConnect==null)
+    {
+        throw new Exception("get_json_file() not find file");
+    }
+    $jsonData = json_decode($fileConnect, true);
+    return $jsonData;
+}
+
+function json_write($jsonData,$jsonPath){
+    
+}
