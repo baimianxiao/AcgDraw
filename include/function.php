@@ -120,5 +120,8 @@ function get_json_file($file){
 }
 
 function json_write($jsonData,$jsonPath){
-    
+  $updateVersion = fopen($jsonPath, "w");
+  $characterTableVersion = json_encode($jsonData, JSON_UNESCAPED_UNICODE);
+  fwrite($updateVersion, $characterTableVersion);
+  fclose($updateVersion);
 }
