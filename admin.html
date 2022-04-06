@@ -3,35 +3,131 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <title>Arknights-Draw 管理面板</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
         body {
-            background-color: yellow;
+            height: 100%;
+            width: 100%;
+            background: url('background.jpg') no-repeat;
+            background-size: cover;
+            background-position: 50%;
+            overflow: hidden;
+            left: 50%;
+        }
+
+        #main {
+            position: absolute;
+            margin: -200px;
+            padding: 50px;
+            height: 300px;
+            width: 300px;
+            left: 50%;
+            top: 50%;
+            border-radius: 40px;
+            background: #00000075;
+        }
+
+        #main label {
+            color: rgb(255, 255, 255);
+        }
+
+        #main a {
+            color: rgb(255, 255, 255);
         }
 
         p {
             color: blue;
         }
+
+        #update-button {
+            position:relative;
+        }
     </style>
     <script type="text/javascript">
-        function get_version(params) {
+        $(function get_version() {
+            $.ajax({
+                type: "post",
+                url: "include/admin.php",
+                data: {
+                    mode: "get_version",
+                    data: ""
+                },
+                dataType: "json",//回调函数接收数据的数据格式
+                success: function (result) {
+                    $('#now-version').text(result.data.local);
+                    $('#new-version').text(result.data.cloud);   
+                    var json_data = '';
+                    if (result.data.need==true) {
+                        $('#need').text("需要更新数据"); 
+                    }else{
+                        $('#need').text("已经是最新的数据"); 
+                    }
+                    
+                },
+                error: function (msg) {
+                    alert("error");
+                    console.log(msg);
+                }
+            });
+        });
 
-            $.ajax
-        }
         function update(params) {
-
+            $.ajax({
+                type: "post",
+                url: "include/admin.php",
+                data: {
+                    mode: "update",
+                    data: ""
+                },
+                dataType: "json",//回调函数接收数据的数据格式
+                success: function (result) {
+                    $('#now-version').text(result.data.local);
+                    $('#new-version').text(result.data.cloud);   
+                    var json_data = '';
+                    if (result.data==true) {
+                        $('#need').text("更新成功"); 
+                    }else{
+                        $('#need').text("更新失败"); 
+                    }
+                    
+                },
+                error: function (msg) {
+                    alert("error");
+                    console.log(msg);
+                }
+            });
         }
     </script>
 </head>
 
 <body>
-    <div>
+
+    <div id="main">
         <div id="version-data">
-            <label>现版本：</label>
-            <label>最新版本：</label>
+            <div id="now">
+                <label>现版本：</label><a id="now-version">正在获取</a>
+            </div>
+            <div id="new">
+                <label>最新版本：</label><a id="new-version">正在获取</a>
+            </div>
+            <a id="need"></a>
         </div>
         <div>
-            <button onclick="update()">一键更新</button>
+            <button id="update-button" onclick="update()">一键更新</button>
         </div>
     </div>
 </body>
