@@ -36,13 +36,12 @@ function start_update()
     character_list_create();
     character_change();
     $table_data = get_table_data("https://prts.wiki/index.php?title=%E5%8D%A1%E6%B1%A0%E4%B8%80%E8%A7%88/%E9%99%90%E6%97%B6%E5%AF%BB%E8%AE%BF&action=edit", 0);
-    print_r(manage_table_data($table_data));
-  get_update_version(1);
+    get_update_version(1);
  return true;
     
 }
 
-function api_success($data, $msg = "操作成功", $code = 200, $redirect_url = '')
+function api_success($data=[], $msg = "操作成功", $code = 200, $redirect_url = '')
 {
     header('Content-Type:application/json'); //加上这行,前端那边就不需要var result = $.parseJSON(data);
     $ret = ["code" => $code, "msg" => $msg, "data" => $data, 'redirect_url' => $redirect_url];
@@ -52,6 +51,7 @@ function api_success($data, $msg = "操作成功", $code = 200, $redirect_url = 
 if($mode=="get_version"){
     echo (api_success(need_update(0)));
 }elseif($mode=="update"){
-    echo(api_success(start_update()));
+    start_update();
+    echo(api_success(need_update(0)));
 }
 

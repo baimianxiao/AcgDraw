@@ -773,6 +773,12 @@
         "class": "SPECIAL",
         "imageUrl": "https:\/\/prts.wiki\/\/images\/6\/62\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%9C%9C%E5%8D%8E_1.png"
     },
+    "char_4016_kazema": {
+        "name": "风丸",
+        "star": 5,
+        "class": "SPECIAL",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/1\/19\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E9%A3%8E%E4%B8%B8_1.png"
+    },
     "char_103_angel": {
         "name": "能天使",
         "star": 6,
@@ -808,6 +814,12 @@
         "star": 6,
         "class": "SNIPER",
         "imageUrl": "https:\/\/prts.wiki\/\/images\/4\/45\/%E5%8D%8A%E8%BA%AB%E5%83%8F_W_1.png"
+    },
+    "char_300_phenxi": {
+        "name": "菲亚梅塔",
+        "star": 6,
+        "class": "SNIPER",
+        "imageUrl": "https:\/\/prts.wiki\/\/images\/f\/f8\/%E5%8D%8A%E8%BA%AB%E5%83%8F_%E8%8F%B2%E4%BA%9A%E6%A2%85%E5%A1%94_1.png"
     },
     "char_197_poca": {
         "name": "早露",

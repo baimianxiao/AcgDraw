@@ -45,20 +45,24 @@
             color: rgb(255, 255, 255);
         }
 
-        #main a {
+        #main a{
             color: rgb(255, 255, 255);
         }
 
+        #main h1{
+            color: white;
+        }
         p {
             color: blue;
         }
-
+        
         #update-button {
             position:relative;
         }
     </style>
     <script type="text/javascript">
-        $(function get_version() {
+        $(get_version());
+        function get_version() {
             $.ajax({
                 type: "post",
                 url: "include/admin.php",
@@ -73,19 +77,23 @@
                     var json_data = '';
                     if (result.data.need==true) {
                         $('#need').text("需要更新数据"); 
+                        return result.data;
                     }else{
                         $('#need').text("已经是最新的数据"); 
+                        return result.data;
                     }
                     
                 },
                 error: function (msg) {
                     alert("error");
                     console.log(msg);
+                    return false;
                 }
             });
-        });
+        }
 
-        function update(params) {
+        function update_down(params) {
+        
             $.ajax({
                 type: "post",
                 url: "include/admin.php",
@@ -93,15 +101,16 @@
                     mode: "update",
                     data: ""
                 },
+                timeout: 30000,
                 dataType: "json",//回调函数接收数据的数据格式
                 success: function (result) {
                     $('#now-version').text(result.data.local);
-                    $('#new-version').text(result.data.cloud);   
+                    $('#new-version').text(result.data.cloud);   a
                     var json_data = '';
-                    if (result.data==true) {
-                        $('#need').text("更新成功"); 
-                    }else{
+                    if (result.data.need==true) {
                         $('#need').text("更新失败"); 
+                    }else{
+                        $('#need').text("更新成功"); 
                     }
                     
                 },
@@ -110,6 +119,7 @@
                     console.log(msg);
                 }
             });
+            $('#need').text("正在更新,请不要刷新该页面"); 
         }
     </script>
 </head>
@@ -117,6 +127,7 @@
 <body>
 
     <div id="main">
+        <h1>Arknights-Draw </h1>
         <div id="version-data">
             <div id="now">
                 <label>现版本：</label><a id="now-version">正在获取</a>
@@ -127,7 +138,7 @@
             <a id="need"></a>
         </div>
         <div>
-            <button id="update-button" onclick="update()">一键更新</button>
+            <button id="update-button" onclick="update_down()">一键更新</button>
         </div>
     </div>
 </body>
