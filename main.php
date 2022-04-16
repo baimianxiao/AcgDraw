@@ -7,11 +7,15 @@ include("./include/function.php");
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $drawMode = $_GET["drawMode"];
     $backMode = $_GET["backMode"];
-    $tableName = $_GET["tableName"];
     if ($_GET["probabilityUp"] == null) {
         $probabilityUp = 0;
     } else {
         $probabilityUp = $_GET["probabilityUp"];
+    }
+    if ($drawMode== 1) {
+        $tableName = $_GET["tableName"];
+    } else {
+        $tableName = 0;
     }
 } elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $drawMode = $_POST["drawMode"];
@@ -21,6 +25,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         $probabilityUp = 0;
     } else {
         $probabilityUp = $_POST["probabilityUp"];
+    }
+    if ($drawMode== 1) {
+        $tableName = $_POST["tableName"];
+    } else {
+        $tableName = 0;
     }
 }
 
@@ -48,8 +57,28 @@ $star_list_file = "./data/star_list.json";
 $star_list = file_get_contents($star_list_file);
 $star_list = json_decode($star_list, true);
 
+//读取卡池文件
+$characterTableList=get_json_file("./data/table_data.json");
+
+$characterName=get_json_file("./data/character_name_list.json");
+
 $sixStarHasGot = 0;
 $minimun = 0;
+$ex=0;
+
+if($tableName==0){
+    $tableName=array_rand($characterTableList);
+}else{
+    if(isset($characterTableList[$tableName])==false){
+        $tableName=array_rand($characterTableList);
+    }
+}
+
+$tableData=$characterTableList[$tableName];
+$tableNameAll=$tableData["name"];
+$star6UP=$tableData["star6_up"];
+$star5UP=$tableData["star5_up"];
+
 $srcBg = imagecreatefrompng($background);
 $im = imagecreatetruecolor(imagesx($srcBg), imagesy($srcBg));
 imagecopyresampled($im, $srcBg, 0, 0, 0, 0, imagesx($srcBg), imagesy($srcBg), imagesx($srcBg), imagesy($srcBg));
@@ -59,24 +88,41 @@ for ($i = 1; $i <= 10; $i++) {
     $chx = 70 + ($i - 1) * 82;
     $classx = 80 + ($i - 1) * 82;
     $starType = rand(0, 1000);
+    $up = rand(0, 100);
     if ($starType >= 0 && $starType <= 20 + $probabilityUp) {
-        $star = 6;
+        if($up<=50){
+            $character=$star6UP[array_rand($star6UP)] ;
+            $characterKey= $characterName[$character];
+        }else{
+            $characterKey = $star_list[6][array_rand($star_list[6])];
+            $ex=1;
+        }
+        $star=6;
         $sixStarHasGot = 1;
         $minimun = $minimun + 1;
     } elseif ($starType >= 21 + $probabilityUp && $starType <= 100 + $probabilityUp) {
-        $star = 5;
+        if($up<=50){
+            $character=$star5UP[array_rand($star5UP)] ;
+            $characterKey= $characterName[$character];
+        }else{
+            $characterKey = $star_list[5][array_rand($star_list[5])];
+        }
+        $star=5;
         $minimun = $minimun + 1;
     } elseif ($starType >= 101 && $starType <= 400) {
-        $star = 4;
+        $characterKey = $star_list[4][array_rand($star_list[4])];
         $minimun = $minimun + 1;
+        $star=4;
     } else {
-        $star = 3;
+        $characterKey = $star_list[3][array_rand($star_list[3])];
+        $star=3;
     }
     //强行保底4星
     if ($i == 10 and $minimun = 0) {
-        $star = 4;
+        $characterKey = $star_list[4][array_rand($star_list[4])];
+        $star=4;
     }
-    $characterKey = $star_list[$star][array_rand($star_list[$star])];
+    
     $ch = $character_path . $characterKey . ".png";
     $bg = $backgroud_path . $star . ".png";
     $class = $class_path . $character_list[$characterKey]["class"] . ".png";
@@ -91,13 +137,28 @@ for ($i = 1; $i <= 10; $i++) {
 $srcBg1 = imagecreatefrompng($background1);
 imagecopyresampled($im, $srcBg1, 0, 0, 0, 0, imagesx($srcBg1), imagesy($srcBg1), imagesx($srcBg1), imagesy($srcBg1));
 
+function getrandstr($length){
+    $str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890';
+    $randStr = str_shuffle($str);//打乱字符串
+    $rands= substr($randStr,0,$length);//substr(string,start,length);返回字符串的一部分
+    return $rands;
+   }
 //返回信息
 if ($backMode == "image") {
     header("Content-Type:image/png");
     imagepng($im);
 } elseif ($backMode == "json") {
-    header("Content-Type:image/png");
-    imagepng($im);
+    header("Content-Type:application/json");
+    $imageName=getrandstr(7).".png";
+    imagepng($im ,"./data/image/out/".$imageName);
+    $imageUrl="http://test.baimianxiao.cn/arknights/arknightsdraw/data/image/out/".$imageName;
+    $return_data=array(
+        "sixStarHasGot" => $sixStarHasGot,
+        "ex"=>$ex,
+        "tableName"=>$tableNameAll,
+        "imageUrl"=>$imageUrl
+    );
+    echo(json_encode($return_data,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES));
 } else {
     header("Content-Type:image/png");
     imagepng($im);
