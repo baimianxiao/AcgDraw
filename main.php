@@ -151,7 +151,7 @@ if ($backMode == "image") {
     header("Content-Type:application/json");
     $imageName=getrandstr(7).".png";
     imagepng($im ,"./data/image/out/".$imageName);
-    $imageUrl="http://test.baimianxiao.cn/arknights/arknightsdraw/data/image/out/".$imageName;
+    $imageUrl=$rootUrl."http://test.baimianxiao.cn/arknights/arknightsdraw/'data/image/out/".$imageName;
     $return_data=array(
         "sixStarHasGot" => $sixStarHasGot,
         "ex"=>$ex,

@@ -3,6 +3,9 @@
 $_updateVersionControl = "1.0.0";
 $_updateVersion = "1";
 
+//API根目录url
+$rootUrl="http://test.baimianxiao.cn/arknights/arknightsdraw/";
+ 
 //数据库设置
 $mysqliSwitch=1; //是否使用数据库
 $mysqliHost="localhost";
@@ -17,3 +20,6 @@ $mysqliName="mysql_name";
 默认使用
 */
 $updateAddress="https://githubraw.baimianxiao.cn/";
+
+//定时清理缓存间隔,单位：秒
+$cleartime=6000;
