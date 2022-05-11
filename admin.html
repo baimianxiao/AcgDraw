@@ -105,7 +105,7 @@
                 dataType: "json",//回调函数接收数据的数据格式
                 success: function (result) {
                     $('#now-version').text(result.data.local);
-                    $('#new-version').text(result.data.cloud);   a
+                    $('#new-version').text(result.data.cloud); 
                     var json_data = '';
                     if (result.data.need==true) {
                         $('#need').text("更新失败"); 
