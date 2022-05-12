@@ -39,18 +39,31 @@ function start_update()
     get_update_version(1);
 }
 
-function api_success($data=[], $msg = "操作成功", $code = 200, $redirect_url = '')
+function auto_clear($mode = 2)
 {
-    header('Content-Type:application/json'); 
+    if ($mode = 0) {
+        
+    } elseif ($mode == 1) {
+    } elseif ($mode == 2) {
+    }
+}
+function auto_update($mode = 2)
+{
+}
+
+function api_success($data = [], $msg = "操作成功", $code = 200, $redirect_url = '')
+{
+    header('Content-Type:application/json');
     $ret = ["code" => $code, "msg" => $msg, "data" => $data, 'redirect_url' => $redirect_url];
     return json_encode($ret, JSON_UNESCAPED_UNICODE);
 }
 
-if($mode=="get_version"){
+if ($mode == "get_version") {
     echo (api_success(need_update(0)));
-}elseif($mode=="update"){
+} elseif ($mode == "update") {
     start_update();
-    echo(api_success(need_update(0)));
-}else{start_update();
-    echo(api_success(need_update(0)));}
-
+    echo (api_success(need_update(0)));
+} else {
+    start_update();
+    echo (api_success(need_update(0)));
+}
