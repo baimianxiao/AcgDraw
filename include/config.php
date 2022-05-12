@@ -1,7 +1,7 @@
 <?php
 //版本信息，用于更新
-$_updateVersionControl = "1.0.0";
-$_updateVersion = "1";
+$_updateVersionControl = "1.0.2";
+$_updateVersion = "2";
 
 //API根目录url
 $rootUrl="http://test.baimianxiao.cn/arknights/arknightsdraw/";
