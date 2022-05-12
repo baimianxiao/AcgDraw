@@ -59,7 +59,6 @@ $expect = 0;
 
 //判断传入的卡池名是否存在，否则随机卡池
 if (isset($characterTableList[$tableName]) == false) {
-    $x = 111;
     $tableName = array_rand($characterTableList);
 }
 
@@ -144,7 +143,7 @@ if ($backMode == "image") {
     $imageUrl = $rootUrl . "http://test.baimianxiao.cn/arknights/arknightsdraw/'data/image/out/" . $imageName;
     $return_data = array(
         "sixStarHasGot" => $sixStarHasGot,
-        "expect" => $ex,
+        "expect" => $expect,
         "tableName" => $tableNameAll,
         "imageUrl" => $imageUrl,
         "test" => $tableData
