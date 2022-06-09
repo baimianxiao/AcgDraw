@@ -38,3 +38,4 @@
 - 快来和咱一起找bug（指有问题在issue中反馈）
 
 ## 效果图
+![main](https://github.com/baimianxiao/Arknights-Draw/blob/master/docs/main.png)
