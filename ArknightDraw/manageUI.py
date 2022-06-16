@@ -2,10 +2,12 @@
 
 import thinker
 
-class MainWindows(thinker):
+
+class MainWindows():
     def __int__(self):
         pass
 
-class WarningWindows(thinker):
+
+class WarningWindows():
     def __int__(self):
         pass
