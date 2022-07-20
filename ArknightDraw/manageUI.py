@@ -1,24 +1,21 @@
 # -*- encoding:utf-8 -*-
+from tkinter import *
 
-import thinker
 
+# 程序主窗口
+class MainWindows(Tk):
+    def __init__(self):
+        super().__init__()
+        self.title("AcgDraw管理面板")
+        self.geometry("640x320")
+        self.iconbitmap("../static/image/logo.ico")
 
-class MainWindows():
-    def __int__(self):
+    # 查询版本函数
+    def query_version(self):
+
         pass
 
 
-class Add:
-    def __init__(self, num1):
-        self.num1 = num1
-
-    def print(self, num2):
-        print(num2 + self.num1)
-
-
-add_1 = Add(1)
-add_1.print(2)
-add_1.print(4)
-
-add_3=Add(3)
-add_3.print(4)
+if __name__ == "__main__":
+    app = MainWindows()
+    app.mainloop()
