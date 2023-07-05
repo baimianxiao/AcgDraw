@@ -13,8 +13,7 @@ def arknights():
     return "sss"
 
 
-
-@app.route('/',methods=['POST', 'GET'])
+@app.route('/', methods=['POST', 'GET'])
 def arknights_draw():
     # 从数组加载图片
     # arr = np.array(raw_data)
@@ -26,7 +25,6 @@ def arknights_draw():
     img.save(file_object, 'PNG')
     file_object.seek(0)
     return send_file(file_object, mimetype='image/PNG')
-
 
 
 if __name__ == "__main__":

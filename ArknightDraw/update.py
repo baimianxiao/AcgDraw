@@ -13,14 +13,7 @@ class TableData:
     pass
 
 
-class CharData:
-    name: str  # 名称
-    star: int  # 星级
-    limited: bool  # 限定
-    getWay: str  # 获得途径
-    pass
-
-
+# 更新核心函数
 class UpdateHandle:
 
     def __init__(self, data_path: str, conf_path: str):
@@ -72,7 +65,7 @@ class UpdateHandle:
     def request_data(self, url: str, cookie: list):
         pass
 
-
+    # 获取url链接内容
     async def get_url(self, url: str) -> str:
         result = ""
         retry = 5
@@ -88,12 +81,11 @@ class UpdateHandle:
                 await asyncio.sleep(1)
         return result
 
+    # 显示日志
     def log_print(self, message: str) -> bool:
         pass
 
-    def test(self):
-        loop = asyncio.get_event_loop()
-        loop.run_until_complete(self.get_info())
+    #
 
 
 if __name__ == "__main__":
