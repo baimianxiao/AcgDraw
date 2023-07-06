@@ -60,4 +60,4 @@ class UpdateHandleArk(UpdateHandle):
 
 
 if __name__ == "__main__":
-    UpdateHandleArk("../data/", "../conf/").test()
+    UpdateHandleArk("../data/Arknights", "../conf/").test()
