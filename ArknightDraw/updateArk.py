@@ -23,6 +23,7 @@ class UpdateHandleArk(UpdateHandle):
             try:
                 avatar = char.xpath("./td[1]/div/div/div/a/img/@srcset")[0]
                 name = char.xpath("./td[2]/a/text()")[0]
+                profession =  char.xpath("./td[4]/img/@alt")[0]
                 star = char.xpath("./td[5]/text()")[0]
                 sources = [_.strip('\n') for _ in char.xpath("./td[8]/text()")]
 
@@ -39,6 +40,7 @@ class UpdateHandleArk(UpdateHandle):
             char_dict = {
                 "头像": unquote(str(avatar).split(" ")[-2]),
                 "名称": name,
+                "职业": str(profession),
                 "星级": int(str(star).strip()),
                 "获取途径": sources,
                 "半身像": "https://prts.wiki" + str(image_url_path.group()) + "/半身像_" + name + "_1.png",
