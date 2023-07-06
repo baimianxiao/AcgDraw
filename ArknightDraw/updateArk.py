@@ -10,6 +10,7 @@ class UpdateHandleArk(UpdateHandle):
     def __init__(self, data_path: str, conf_path: str):
         super().__init__(data_path, conf_path)
 
+    # 获取人物更新信息
     async def get_info(self):
         char_data_list = {}
         url = "https://wiki.biligame.com/arknights/干员数据表"
@@ -24,6 +25,15 @@ class UpdateHandleArk(UpdateHandle):
                 name = char.xpath("./td[2]/a/text()")[0]
                 star = char.xpath("./td[5]/text()")[0]
                 sources = [_.strip('\n') for _ in char.xpath("./td[8]/text()")]
+
+                # 获取半身图/全身立绘
+                url_root = "https://prts.wiki/w/文件:半身像_" + name + "_1.png"
+                result = await self.get_url(url_root)
+                if not result:
+                    return ""
+                dom = etree.HTML(result, etree.HTMLParser())
+                image_url_1 = dom.xpath("//img[@decoding='async' and @width='180'and @height='360']/@src")
+                image_url_path = re.search("\/\w+\/\w+\/\w+", image_url_1[0], re.M | re.I)
             except IndexError:
                 continue
             char_dict = {
@@ -31,28 +41,18 @@ class UpdateHandleArk(UpdateHandle):
                 "名称": name,
                 "星级": int(str(star).strip()),
                 "获取途径": sources,
-                "半身像": None,
-                "立绘": None
+                "半身像": "https://prts.wiki" + str(image_url_path.group()) + "/半身像_" + name + "_1.png",
+                "立绘": "https://prts.wiki" + str(image_url_path.group()) + "/立绘_" + name + "_1.png"
             }
-            # print(json.dumps(char_dict,ensure_ascii=False,indent=2))
+            print(json.dumps(char_dict, ensure_ascii=False, indent=2))
             # await self.download_file(member_dict["头像"], name + ".png", "image/ch/")
             char_data_list[name] = char_dict
-        # print(json.dumps(member_data_list,ensure_ascii=False,indent=2))
+        print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
+        with open(self.data_path + 'char_data_list.json', 'w', encoding='utf-8') as f:
+            f.write(json.dumps(char_data_list, ensure_ascii=False, indent=2))
 
-        # 获取半身图/全身立绘
-        for char in char_data_list:
-            url_root = "https://prts.wiki/w/文件:半身像_" + char + "_1.png"
-            result = await self.get_url(url_root)
-            if not result:
-                return ""
-            dom = etree.HTML(result, etree.HTMLParser())
-            image_url_1 = dom.xpath("//img[@decoding='async' and @width='180'and @height='360']/@src")
-            print(image_url_1)
-            image_url_1=re.match("/image",image_url_1[0])
-            print(image_url_1)
-            char_dict=char_data_list[char]
-
-
+    async def char_image_download(self):
+        pass
 
     def test(self):
         loop = asyncio.get_event_loop()
