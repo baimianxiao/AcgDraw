@@ -1,7 +1,5 @@
 # -*- encoding:utf-8 -*-
 import json
-import re
-from urllib.parse import unquote
 
 from update import *
 
@@ -23,7 +21,7 @@ class UpdateHandleArk(UpdateHandle):
             try:
                 avatar = char.xpath("./td[1]/div/div/div/a/img/@srcset")[0]
                 name = char.xpath("./td[2]/a/text()")[0]
-                profession =  char.xpath("./td[4]/img/@alt")[0]
+                profession = char.xpath("./td[4]/img/@alt")[0]
                 star = char.xpath("./td[5]/text()")[0]
                 sources = [_.strip('\n') for _ in char.xpath("./td[8]/text()")]
 
@@ -46,20 +44,30 @@ class UpdateHandleArk(UpdateHandle):
                 "半身像": "https://prts.wiki" + str(image_url_path.group()) + "/半身像_" + name + "_1.png",
                 "立绘": "https://prts.wiki" + str(image_url_path.group()) + "/立绘_" + name + "_1.png"
             }
-            print(json.dumps(char_dict, ensure_ascii=False, indent=2))
-            # await self.download_file(member_dict["头像"], name + ".png", "image/ch/")
+            # print(json.dumps(char_dict, ensure_ascii=False, indent=2))
+            print(str(list(char_list).index(char))+"/"+str(len(char_list))+" 人物"+name+"信息获取完毕")
+
             char_data_list[name] = char_dict
-        print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
+
+        # print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
+
         with open(self.data_path + 'char_data_list.json', 'w', encoding='utf-8') as f:
             f.write(json.dumps(char_data_list, ensure_ascii=False, indent=2))
+            return char_data_list
 
-    async def char_image_download(self):
-        pass
+    async def char_image_download(self, char_list):
+        download_path = "image/char/"
+        for char in char_list:
+            print(str(list(char_list).index(char) + 1) + "/" + str(len(char_list)))
+            await self.download_file(char_list[char]["半身像"], "半身像_" + char + ".png", download_path)
+            await self.download_file(char_list[char]["立绘"], "立绘_" + char + ".png", download_path)
+
 
     def test(self):
         loop = asyncio.get_event_loop()
-        loop.run_until_complete(self.get_info())
+        char_list = loop.run_until_complete(self.get_info())
+        loop.run_until_complete(self.char_image_download(char_list))
 
 
 if __name__ == "__main__":
-    UpdateHandleArk("../data/Arknights", "../conf/").test()
+    UpdateHandleArk("../data/Arknights/", "../conf/").test()
