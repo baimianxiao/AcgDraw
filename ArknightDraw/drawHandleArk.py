@@ -1,33 +1,12 @@
 # -*- encoding:utf-8 -*-
+import json
+import os.path
+
 from PIL import Image
 
 # 图片资源地址
-background_path = "../data/Arknights/image/gacha/background.png"
-star_image_path = {
-    6: "../data/Arknights/image/gacha/6_star.png",
-    5: "../data/Arknights/image/gacha/5_star.png",
-    4: "../data/Arknights/image/gacha/4_star.png",
-    3: "../data/Arknights/image/gacha/3_star.png"
-}
-# 干员职业图标
-profession_image_path = {
-    "先锋": "../data/Arknights/image/gacha/先锋.png",
-    "医疗": "../data/Arknights/image/gacha/医疗.png",
-    "术士": "../data/Arknights/image/gacha/术士.png",
-    "特种": "../data/Arknights/image/gacha/特种.png",
-    "狙击": "../data/Arknights/image/gacha/狙击.png",
-    "辅助": "../data/Arknights/image/gacha/辅助.png",
-    "近卫": "../data/Arknights/image/gacha/近卫.png",
-    "重装": "../data/Arknights/image/gacha/重装.png"
-}
-
-# 干员背景光效
-back_image_path = {
-    6: "../data/Arknights/image/gacha/6_back.png",
-    5: "../data/Arknights/image/gacha/5_back.png",
-    4: "../data/Arknights/image/gacha/4_back.png",
-    3: "../data/Arknights/image/gacha/3_back.png"
-}
+background_path = os.path.join("..", "data", "Arknights", "image", "gacha", "background.png")
+image_path = os.path.join("..", "data", "Arknights", "image", "gacha")
 
 
 # 单抽图片处理
@@ -41,11 +20,11 @@ def ten_image_handle(draw_list=None):
     if draw_list is None:
         draw_list = {}
         return False
+    char_list = json_read(os.path.join("..","data", "Arknights", "char_data_list.json"))
     im = Image.open(background_path, mode="r")
     for char in draw_list:
-        star_image = Image.open()
-        profession_image = Image.open()
-
+        star_image = Image.open(os.path.join(image_path, str(char_list[char]["星级"])+"_star.png"))
+        profession_image = Image.open(os.path.join(image_path, str(char_list[char]["职业"])+".png"))
     im.show()
 
 
@@ -58,5 +37,24 @@ def ten_draw(mode=None, group=None):
     pass
 
 
+def json_write(path, data) -> bool:
+    try:
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(json.dumps(data, ensure_ascii=False, indent=2))
+        return True
+    except:
+        return False
+
+
+def json_read(path):
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            data = f.read()
+        return json.loads(data)
+    except:
+        return False
+
+
 if __name__ == "__main__":
-    ten_image_handle()
+    dic = ["香草"]
+    ten_image_handle(dic)
