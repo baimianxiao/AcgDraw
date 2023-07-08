@@ -48,14 +48,14 @@ class UpdateHandle:
             os.makedirs(dir_path)
             return True
         if os.path.exists(file_path):
-            print("文件"+name+"已存在")
+            # print("文件"+name+"已存在")
             return True
         try:
             async with aiohttp.ClientSession(headers=self.headers) as session:
                 async with session.get(url, timeout=10) as response:
                     async with aiofiles.open(str(file_path), "wb") as f:
                         await f.write(await response.read())
-            print(f"下载文件{name}成功")
+            # print(f"下载文件{name}成功")
             # print(f"下载文件{name}成功，url：{url}，储存目录：{path}")
             return True
         except TimeoutError:
