@@ -1,3 +1,2 @@
-.vscode/*
-./data/Arknights/image/char/*.png
 .idea/*
+/data/Arknights/image/char/
