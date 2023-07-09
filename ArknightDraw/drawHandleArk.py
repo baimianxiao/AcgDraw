@@ -6,7 +6,8 @@ from PIL import Image
 
 # 图片资源地址
 background_path = os.path.join("..", "data", "Arknights", "image", "gacha", "background.png")
-image_path = os.path.join("..", "data", "Arknights", "image", "gacha")
+gacha_image_path = os.path.join("..", "data", "Arknights", "image", "gacha")
+char_image_path = os.path.join("..", "data", "Arknights", "image", "char")
 
 
 # 单抽图片处理
@@ -23,9 +24,16 @@ def ten_image_handle(draw_list=None):
     char_list = json_read(os.path.join("..","data", "Arknights", "char_data_list.json"))
     im = Image.open(background_path, mode="r")
     for char in draw_list:
-        star_image = Image.open(os.path.join(image_path, str(char_list[char]["星级"])+"_star.png"))
-        profession_image = Image.open(os.path.join(image_path, str(char_list[char]["职业"])+".png"))
+        star_image = Image.open(os.path.join(gacha_image_path, str(char_list[char]["星级"]) + "_star.png"))
+        back_image = Image.open(os.path.join(gacha_image_path, str(char_list[char]["星级"]) + "_back.png"))
+        profession_image = Image.open(os.path.join(gacha_image_path, str(char_list[char]["职业"]) + ".png"))
+        char_image = Image.open(os.path.join(char_image_path,"半身像_"+str(char)+".png"))
+        im.paste(back_image,(0,0))
+        im.paste(char_image, (0, 0))
+        # im.paste(profession_image, (0, 0))
+        # im.paste(star_image, (30, 0))
     im.show()
+
 
 
 def hundred_image_handle():
@@ -56,5 +64,5 @@ def json_read(path):
 
 
 if __name__ == "__main__":
-    dic = ["香草"]
+    dic = ["陈"]
     ten_image_handle(dic)
