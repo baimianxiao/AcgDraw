@@ -1,9 +1,8 @@
 # -*- encoding:utf-8 -*-
 import os
 
-import drawHandleArk
 from flask import Flask, send_file
-
+import ArknightDraw.drawHandleArk
 # import numpy as np
 import io
 
@@ -12,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/arknights/arknightsdraw", methods=['POST', 'GET'])
 def arknights():
-    img = drawHandleArk.ten_draw()
+    img = ArknightDraw.drawHandleArk.ten_draw()
     file_object = io.BytesIO()
     img.save(file_object, 'PNG')
     file_object.seek(0)
@@ -21,7 +20,7 @@ def arknights():
 
 @app.route('/', methods=['POST', 'GET'])
 def arknights_draw():
-    img = drawHandleArk.ten_draw()
+    img = ArknightDraw.drawHandleArk.ten_draw()
     file_object = io.BytesIO()
     img.save(file_object, 'PNG')
     file_object.seek(0)

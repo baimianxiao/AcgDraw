@@ -2,7 +2,7 @@
 import json
 import time
 from tqdm import tqdm, trange
-from update import *
+from ArknightDraw.update import *
 
 
 class UpdateHandleArk(UpdateHandle):
