@@ -19,9 +19,9 @@ class UpdateHandleArk(UpdateHandle):
             3: []
         }
         limit_activity = {
-            "全部活动":[],
-            "linkage":{},
-            "limit_":{}
+            "全部活动": [],
+            "linkage": {},
+            "limit_": {}
         }
         url = "https://wiki.biligame.com/arknights/干员数据表"
         result = await self.get_url(url)
@@ -74,8 +74,8 @@ class UpdateHandleArk(UpdateHandle):
             char_data_list[name] = char_dict
 
         # print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
-        json_write(self.data_path + 'simple_star_list.json',simple_star_list)
-        json_write(self.data_path + 'char_data_list.json', char_data_list)
+        json_write(self.data_path+'simple_star_list.json', simple_star_list)
+        json_write(self.data_path+'char_data_list.json', char_data_list)
         return char_data_list
 
     # 下载图片数据

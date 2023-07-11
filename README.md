@@ -29,8 +29,6 @@
 
 - API地址：<http://api.baimianxiao.cn/arknights/arknightsdraw/main.php>
 
-- PS菜鸡，对背景图的处理太菜了，有机会在继续完善
-
 - 感谢
 
 - 快来和咱一起找bug（指有问题在issue中反馈）

@@ -22,12 +22,14 @@ def mkdir(path):
 create_dir_list = [
     "./static/image",
     "./templates",
-    "./data/image"
+    "./data/"
 ]
 for create_dir in create_dir_list:
     mkdir(create_dir)
 
 if not os.path.exists("./data/lock.lock"):
-    pass
+    ArknightDraw.updateArk.UpdateHandleArk("./data/Arknights/","./conf/Arknights/").start_update()
+    with open("./data/lock.lock", 'w', encoding='utf-8') as f:
+        f.write("")
 ArknightDraw.server.server_start()
 
