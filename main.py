@@ -5,6 +5,7 @@
 import os
 import time
 import ArknightDraw
+from gevent import pywsgi
 
 
 # 判断目录是否存在，并且在不存在时创建目录
@@ -28,5 +29,5 @@ for create_dir in create_dir_list:
 
 if not os.path.exists("./data/lock.lock"):
     pass
-server = ArknightDraw.server.app
-server.run()
+ArknightDraw.server.server_start()
+

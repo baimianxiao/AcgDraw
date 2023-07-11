@@ -7,9 +7,9 @@ from PIL import Image
 
 
 # 图片资源
-background_path = os.path.join("..", "data", "Arknights", "image", "gacha", "background.png")
-gacha_image_path = os.path.join("..", "data", "Arknights", "image", "gacha")
-char_image_path = os.path.join("..", "data", "Arknights", "image", "char")
+background_path = os.path.join(".", "data", "Arknights", "image", "gacha", "background.png")
+gacha_image_path = os.path.join(".", "data", "Arknights", "image", "gacha")
+char_image_path = os.path.join(".", "data", "Arknights", "image", "char")
 
 
 # 单抽图片处理
@@ -23,7 +23,7 @@ def ten_image_handle(draw_list=None):
     if draw_list is None:
         draw_list = {}
         return False
-    char_list = json_read(os.path.join("..", "data", "Arknights", "char_data_list.json"))
+    char_list = json_read(os.path.join(".", "data", "Arknights", "char_data_list.json"))
     main_image = Image.open(background_path, mode="r")
     x = 0
     for char in draw_list:
@@ -51,7 +51,7 @@ def hundred_image_handle():
 
 
 def ten_draw(mode=None, group=None):
-    simple_star_list = os.path.join("..", "data", "Arknights", "simple_star_list.json")
+    simple_star_list = os.path.join(".", "data", "Arknights", "simple_star_list.json")
     char_list = []
     simple_star_list = json_read(simple_star_list)
     for i in range(10):
