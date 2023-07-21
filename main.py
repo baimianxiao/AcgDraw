@@ -4,9 +4,13 @@
 """
 import os
 import time
+from os.path import abspath, dirname,join
+
 import ArknightDraw
 from gevent import pywsgi
 
+# 取根目录
+dir = dirname(abspath(__file__))
 
 # 判断目录是否存在，并且在不存在时创建目录
 def mkdir(path):

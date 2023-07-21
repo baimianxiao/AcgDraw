@@ -1,15 +1,17 @@
 # -*- encoding:utf-8 -*-
 import json
-import os.path
 import random
 
 from PIL import Image
+from os.path import dirname, abspath, join
 
+# 取根目录
+dir = dirname(abspath(__file__))
 
 # 图片资源
-background_path = os.path.join(".", "data", "Arknights", "image", "gacha", "background.png")
-gacha_image_path = os.path.join(".", "data", "Arknights", "image", "gacha")
-char_image_path = os.path.join(".", "data", "Arknights", "image", "char")
+background_path = join(dir, "..", "data", "Arknights", "image", "gacha", "background.png")
+gacha_image_path = join(dir, "..", "data", "Arknights", "image", "gacha")
+char_image_path = join(dir, "..", "data", "Arknights", "image", "char")
 
 
 # 单抽图片处理
@@ -23,18 +25,18 @@ def ten_image_handle(draw_list=None):
     if draw_list is None:
         draw_list = {}
         return False
-    char_list = json_read(os.path.join(".", "data", "Arknights", "char_data_list.json"))
+    char_list = json_read(join(dir, "..", "data", "Arknights", "char_data_list.json"))
     main_image = Image.open(background_path, mode="r")
     x = 0
     for char in draw_list:
         x = x + 1
         # 获取单次光效/背景/图标
-        star_image = Image.open(os.path.join(gacha_image_path, str(char_list[char]["星级"]) + "_star.png"))
-        back_image = Image.open(os.path.join(gacha_image_path, str(char_list[char]["星级"]) + "_back.png"))
-        light_image = Image.open(os.path.join(gacha_image_path, str(char_list[char]["星级"]) + "_light.png"))
-        profession_image = Image.open(os.path.join(gacha_image_path, str(char_list[char]["职业"]) + ".png"))
+        star_image = Image.open(join(gacha_image_path, str(char_list[char]["星级"]) + "_star.png"))
+        back_image = Image.open(join(gacha_image_path, str(char_list[char]["星级"]) + "_back.png"))
+        light_image = Image.open(join(gacha_image_path, str(char_list[char]["星级"]) + "_light.png"))
+        profession_image = Image.open(join(gacha_image_path, str(char_list[char]["职业"]) + ".png"))
         # 获取角色半身图并将其缩放
-        char_image = Image.open(os.path.join(char_image_path, "半身像_" + str(char) + ".png"))
+        char_image = Image.open(join(char_image_path, "半身像_" + str(char) + ".png"))
         char_image = char_image.resize((85, 254), resample=Image.LANCZOS, reducing_gap=3.0, box=(30, 0, 150, 360))
         # 合成图片
         main_image = get_mongolia(main_image, light_image, 18 + x * 84, 5)
@@ -51,7 +53,7 @@ def hundred_image_handle():
 
 
 def ten_draw(mode=None, group=None):
-    simple_star_list = os.path.join(".", "data", "Arknights", "simple_star_list.json")
+    simple_star_list = join(dir, "..", "data", "Arknights", "simple_star_list.json")
     char_list = []
     simple_star_list = json_read(simple_star_list)
     for i in range(10):
