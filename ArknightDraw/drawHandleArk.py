@@ -1,6 +1,6 @@
 # -*- encoding:utf-8 -*-
-import json
-import random
+from json import dumps,loads
+from random import randint,choice
 
 from PIL import Image
 from os.path import dirname, abspath, join
@@ -57,15 +57,15 @@ def ten_draw(mode=None, group=None):
     char_list = []
     simple_star_list = json_read(simple_star_list)
     for i in range(10):
-        x = random.randint(0, 1000)
+        x = randint(0, 1000)
         if 0 <= x <= 20:
-            char_list.append(random.choice(simple_star_list["6"]))
+            char_list.append(choice(simple_star_list["6"]))
         elif 21 <= x <= 100:
-            char_list.append(random.choice(simple_star_list["5"]))
+            char_list.append(choice(simple_star_list["5"]))
         elif 101 <= x <= 200:
-            char_list.append(random.choice(simple_star_list["4"]))
+            char_list.append(choice(simple_star_list["4"]))
         else:
-            char_list.append(random.choice(simple_star_list["3"]))
+            char_list.append(choice(simple_star_list["3"]))
     im = ten_image_handle(char_list)
     return im
 
@@ -86,7 +86,7 @@ def get_mongolia(im1, im2, width=0, height=0):
 def json_write(path, data) -> bool:
     try:
         with open(path, 'w', encoding='utf-8') as f:
-            f.write(json.dumps(data, ensure_ascii=False, indent=2))
+            f.write(dumps(data, ensure_ascii=False, indent=2))
         return True
     except:
         return False
@@ -96,7 +96,7 @@ def json_read(path):
     try:
         with open(path, 'r', encoding='utf-8') as f:
             data = f.read()
-        return json.loads(data)
+        return loads(data)
     except:
         return False
 
