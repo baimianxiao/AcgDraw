@@ -62,7 +62,7 @@ if not os.path.exists("./data/lock.lock"):
         ArknightDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
         with open("./data/lock.lock", 'w', encoding='utf-8') as f:
             f.write("")
-        ArknightDraw.server.server_start()
+        ArknightDraw.server.server_start(host=host,port=port)
     except:
         print("部署发生错误，请重试")
         input("按任意键继续")
@@ -70,7 +70,7 @@ else:
     print("服务器已部署\n1.启动服务器\n2.启动更新")
     x = input("请选择操作:")
     if int(x) == 1:
-        ArknightDraw.server.server_start()
+        ArknightDraw.server.server_start(host=host,port=port)
     elif int(x) == 2:
         ArknightDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
-        ArknightDraw.server.server_start()
+        ArknightDraw.server.server_start(host=host,port=port)
