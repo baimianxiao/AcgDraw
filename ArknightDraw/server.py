@@ -4,7 +4,7 @@ import os
 from flask import Flask, send_file
 import ArknightDraw.drawHandleArk
 # import numpy as np
-import io
+from io import BytesIO
 from gevent import pywsgi
 
 app = Flask(__name__)
@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route("/arknights/arknightsdraw", methods=['POST', 'GET'])
 def arknights():
     img = ArknightDraw.drawHandleArk.ten_draw()
-    file_object = io.BytesIO()
+    file_object = BytesIO()
     img.save(file_object, 'PNG')
     file_object.seek(0)
     return send_file(file_object, mimetype='image/PNG')
@@ -22,7 +22,7 @@ def arknights():
 @app.route('/', methods=['POST', 'GET'])
 def arknights_draw():
     img = ArknightDraw.drawHandleArk.ten_draw()
-    file_object = io.BytesIO()
+    file_object = BytesIO()
     img.save(file_object, 'PNG')
     file_object.seek(0)
     return send_file(file_object, mimetype='image/PNG')

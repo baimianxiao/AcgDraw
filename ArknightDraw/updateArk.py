@@ -1,6 +1,5 @@
 # -*- encoding:utf-8 -*-
 import json
-import time
 from tqdm import tqdm, trange
 from ArknightDraw.update import *
 
