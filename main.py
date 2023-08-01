@@ -3,14 +3,13 @@
 
 """
 import os
-import time
-from os.path import abspath, dirname,join
-
+from os.path import abspath, dirname, join
+from json import dumps, loads
 import ArknightDraw
-from gevent import pywsgi
 
 # 取根目录
 dir = dirname(abspath(__file__))
+
 
 # 判断目录是否存在，并且在不存在时创建目录
 def mkdir(path):
@@ -21,6 +20,29 @@ def mkdir(path):
     else:
         return False
 
+
+# 写入json
+def json_write(path, data) -> bool:
+    try:
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(dumps(data, ensure_ascii=False, indent=2))
+        return True
+    except:
+        return False
+
+
+# 读取json
+def json_read(path):
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            data = f.read()
+        return loads(data)
+    except:
+        return False
+
+
+host = json_read(join(dir, "conf", "global.json"))["host"]
+port = int(json_read(join(dir, "conf", "global.json"))["port"])
 
 # 初始化目录
 create_dir_list = [
