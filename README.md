@@ -6,9 +6,7 @@
 
 ## 简介
 
-## 声明
-
-## 功能
+基于python的模拟抽卡图片合成API，使用了flask以及pillow
 
 ## 进度
 
@@ -25,11 +23,14 @@
 - [ ] 自定义卡池
 - [ ] 寻访记录查询
 
+## 部署
+#### Windows平台
+
 ## 其他
 
-- API地址：<http://api.baimianxiao.cn/arknights/arknightsdraw/main.php>
+- API地址：<http://api.elapsetower.com/arknightsdraw>
 
-- 感谢
+- 感谢分子对图片素材的处理
 
 - 快来和咱一起找bug（指有问题在issue中反馈）
 
