@@ -10,7 +10,7 @@ from gevent import pywsgi
 app = Flask(__name__)
 
 
-@app.route("/arknights/arknightsdraw", methods=['POST', 'GET'])
+@app.route("/arknightsdraw", methods=['POST', 'GET'])
 def arknights():
     img = ArknightDraw.drawHandleArk.ten_draw()
     file_object = BytesIO()
