@@ -57,16 +57,22 @@ def ten_draw(mode=None, group=None):
         simple_star_list = join(dir, "..", "data", "Arknights", "simple_star_list.json")
         char_list = []
         simple_star_list = json_read(simple_star_list)
+        limit = 0
         for i in range(10):
             x = randint(0, 1000)
             if 0 <= x <= 20:
                 char_list.append(choice(simple_star_list["6"]))
+                limit = limit + 6
             elif 21 <= x <= 100:
                 char_list.append(choice(simple_star_list["5"]))
+                limit = limit + 5
             elif 101 <= x <= 200:
                 char_list.append(choice(simple_star_list["4"]))
+                limit = limit + 4
             else:
                 char_list.append(choice(simple_star_list["3"]))
+        if limit == 0:
+            char_list[randint(0,9)] = choice(simple_star_list["4"])
         im = ten_image_handle(char_list)
         return im
     elif mode == "input":
