@@ -1,6 +1,6 @@
 # -*- encoding:utf-8 -*-
-from json import dumps,loads
-from random import randint,choice
+from json import dumps, loads
+from random import randint, choice
 
 from PIL import Image
 from os.path import dirname, abspath, join
@@ -53,21 +53,28 @@ def hundred_image_handle():
 
 
 def ten_draw(mode=None, group=None):
-    simple_star_list = join(dir, "..", "data", "Arknights", "simple_star_list.json")
-    char_list = []
-    simple_star_list = json_read(simple_star_list)
-    for i in range(10):
-        x = randint(0, 1000)
-        if 0 <= x <= 20:
-            char_list.append(choice(simple_star_list["6"]))
-        elif 21 <= x <= 100:
-            char_list.append(choice(simple_star_list["5"]))
-        elif 101 <= x <= 200:
-            char_list.append(choice(simple_star_list["4"]))
-        else:
-            char_list.append(choice(simple_star_list["3"]))
-    im = ten_image_handle(char_list)
-    return im
+    if mode is None or mode == "default":
+        simple_star_list = join(dir, "..", "data", "Arknights", "simple_star_list.json")
+        char_list = []
+        simple_star_list = json_read(simple_star_list)
+        for i in range(10):
+            x = randint(0, 1000)
+            if 0 <= x <= 20:
+                char_list.append(choice(simple_star_list["6"]))
+            elif 21 <= x <= 100:
+                char_list.append(choice(simple_star_list["5"]))
+            elif 101 <= x <= 200:
+                char_list.append(choice(simple_star_list["4"]))
+            else:
+                char_list.append(choice(simple_star_list["3"]))
+        im = ten_image_handle(char_list)
+        return im
+    elif mode == "input":
+        pass
+    elif mode == "special":
+        pass
+    else:
+        print("[warning]未知的抽卡模式")
 
 
 # 透明通道合成
