@@ -23,8 +23,9 @@
 - [ ] 自定义卡池
 - [ ] 寻访记录查询
 
-## 部署
-#### Windows平台
+## 文档
+
+https://baimianxiao.github.io/Arknights-Draw/
 
 ## 其他
 
