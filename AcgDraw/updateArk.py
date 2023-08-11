@@ -1,5 +1,4 @@
 # -*- encoding:utf-8 -*-
-import json
 from tqdm import tqdm, trange
 from AcgDraw.update import *
 
@@ -73,8 +72,8 @@ class UpdateHandleArk(UpdateHandle):
             char_data_list[name] = char_dict
 
         # print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
-        json_write(self.data_path+'simple_star_list.json', simple_star_list)
-        json_write(self.data_path+'char_data_list.json', char_data_list)
+        json_write(self.data_path + 'simple_star_list.json', simple_star_list)
+        json_write(self.data_path + 'char_data_list.json', char_data_list)
         return char_data_list
 
     # 下载图片数据
@@ -94,24 +93,6 @@ class UpdateHandleArk(UpdateHandle):
         char_list = loop.run_until_complete(self.get_info())
 
         loop.run_until_complete(self.char_image_download(char_list))
-
-
-def json_write(path, data) -> bool:
-    try:
-        with open(path, 'w', encoding='utf-8') as f:
-            f.write(json.dumps(data, ensure_ascii=False, indent=2))
-        return True
-    except:
-        return False
-
-
-def json_read(path):
-    try:
-        with open(path, 'r', encoding='utf-8') as f:
-            data = f.read()
-        return json.loads(data)
-    except:
-        return False
 
 
 if __name__ == "__main__":

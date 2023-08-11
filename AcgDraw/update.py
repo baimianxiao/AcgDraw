@@ -3,7 +3,7 @@ import asyncio
 import os
 from urllib.parse import unquote
 import re
-
+from json import dumps, loads
 import aiofiles as aiofiles
 import aiohttp
 from lxml import etree, html
@@ -88,7 +88,23 @@ class UpdateHandle:
     def log_print(self, message: str) -> bool:
         pass
 
-    #
+
+def json_write(path, data) -> bool:
+    try:
+        with open(path, 'w', encoding='utf-8') as f:
+            f.write(dumps(data, ensure_ascii=False, indent=2))
+        return True
+    except:
+        return False
+
+
+def json_read(path):
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            data = f.read()
+        return loads(data)
+    except:
+        return False
 
 
 if __name__ == "__main__":
