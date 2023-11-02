@@ -1,0 +1,7 @@
+Pillow~=10.1.0
+Flask==3.0.0
+gevent==23.9.1
+aiofiles~=23.2.1
+aiohttp==3.8.6
+lxml~=4.9.3
+tqdm~=4.66.1
