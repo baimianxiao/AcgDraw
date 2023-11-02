@@ -4,7 +4,7 @@ from os.path import dirname, abspath, join
 from random import randint, choice
 from PIL import Image
 
-from drawHandle import json_read, get_mongolia
+from AcgDraw.drawHandle import json_read, get_mongolia
 
 # 取根目录
 dir = dirname(abspath(__file__))
