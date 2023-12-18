@@ -46,11 +46,13 @@ https://baimianxiao.github.io/AcgDraw/
 ```shell
 python3 main.py init # Windows请使用python main.py init
 ```
-2.使用仓库中的Dockerfile构建镜像
+2.将conf/global.json中的`"host":"127.0.0.1"`改为`"host":"0.0.0.0"`，因为Docker中的127.0.0.1默认不会监听容器外的地址
+
+3.使用仓库中的Dockerfile构建镜像
 ```shell
 docker build -t acgdraw .
 ```
-3.运行容器(端口可根据您设置的config文件自行调整)
+4.运行容器(端口可根据您设置的config文件自行调整)
 ```shell
 docker run -d -p 11451:11451 --name=acgdraw acgdraw
 ```
