@@ -3,6 +3,7 @@
 
 """
 import os
+import sys
 from os.path import abspath, dirname, join
 from json import dumps, loads
 import AcgDraw
@@ -53,24 +54,46 @@ create_dir_list = [
 ]
 
 print("Arknights-Draw")
-input("按任意键继续")
-if not os.path.exists("./data/lock.lock"):
-    print("服务器未部署，开始部署")
-    for create_dir in create_dir_list:
-        mkdir(create_dir)
-    try:
-        AcgDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
-        with open("./data/lock.lock", 'w', encoding='utf-8') as f:
-            f.write("")
-        AcgDraw.server.server_start(host=host, port=port)
-    except:
-        print("部署发生错误，请重试")
-        input("按任意键继续")
-else:
-    print("服务器已部署\n1.启动服务器\n2.启动更新")
-    x = input("请选择操作:")
-    if int(x) == 1:
-        AcgDraw.server.server_start(host=host, port=port)
-    elif int(x) == 2:
+if len(sys.argv) > 1: # 自动运行
+    if sys.argv[1] == "init":
+        print("服务器未部署，开始部署")
+        for create_dir in create_dir_list:
+            mkdir(create_dir)
+        try:
+            AcgDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
+            with open("./data/lock.lock", 'w', encoding='utf-8') as f:
+                f.write("")
+        except:
+            print("部署发生错误，请重试")
+            exit(1)
+        exit(0)
+    elif sys.argv[1] == "update":
         AcgDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
         AcgDraw.server.server_start(host=host, port=port)
+    elif sys.argv[1] == "start":
+        AcgDraw.server.server_start(host=host, port=port)
+    else:
+        print("参数错误")
+        exit(1)
+else: # 交互式
+    input("按任意键继续")
+    if not os.path.exists("./data/lock.lock"):
+        print("服务器未部署，开始部署")
+        for create_dir in create_dir_list:
+            mkdir(create_dir)
+        try:
+            AcgDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
+            with open("./data/lock.lock", 'w', encoding='utf-8') as f:
+                f.write("")
+            AcgDraw.server.server_start(host=host, port=port)
+        except:
+            print("部署发生错误，请重试")
+            input("按任意键继续")
+    else:
+        print("服务器已部署\n1.启动服务器\n2.启动更新")
+        x = input("请选择操作:")
+        if int(x) == 1:
+            AcgDraw.server.server_start(host=host, port=port)
+        elif int(x) == 2:
+            AcgDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
+            AcgDraw.server.server_start(host=host, port=port)

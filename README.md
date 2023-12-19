@@ -40,6 +40,23 @@
 
 https://baimianxiao.github.io/AcgDraw/
 
+## Docker运行
+1.在编译镜像之前请手动运行一次init以下载素材。如果data中已经下载好素材了(即已经手动运行成功过)则可以跳过这一步 \
+请注意运行init也需要先在本机安装requirements.txt中的依赖
+```shell
+python3 main.py init # Windows请使用python main.py init
+```
+2.将conf/global.json中的`"host":"127.0.0.1"`改为`"host":"0.0.0.0"`，因为Docker中的127.0.0.1默认不会监听容器外的地址
+
+3.使用仓库中的Dockerfile构建镜像
+```shell
+docker build -t acgdraw .
+```
+4.运行容器(端口可根据您设置的config文件自行调整)
+```shell
+docker run -d -p 11451:11451 --name=acgdraw acgdraw
+```
+
 ## 协议
 GPL-3.0 license
 
