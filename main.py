@@ -5,8 +5,8 @@
 import os
 import sys
 from os.path import abspath, dirname, join
-from json import dumps, loads
 import AcgDraw
+from AcgDraw.systemAction import json_read,json_write
 
 # 取根目录
 dir = dirname(abspath(__file__))
@@ -23,23 +23,6 @@ def mkdir(path):
 
 
 # 写入json
-def json_write(path, data) -> bool:
-    try:
-        with open(path, 'w', encoding='utf-8') as f:
-            f.write(dumps(data, ensure_ascii=False, indent=2))
-        return True
-    except:
-        return False
-
-
-# 读取json
-def json_read(path):
-    try:
-        with open(path, 'r', encoding='utf-8') as f:
-            data = f.read()
-        return loads(data)
-    except:
-        return False
 
 
 host = json_read(join(dir, "conf", "global.json"))["host"]
@@ -54,7 +37,9 @@ create_dir_list = [
 ]
 
 print("Arknights-Draw")
-if len(sys.argv) > 1: # 自动运行
+
+# 自动运行
+if len(sys.argv) > 1:
     if sys.argv[1] == "init":
         print("服务器未部署，开始部署")
         for create_dir in create_dir_list:
@@ -75,7 +60,8 @@ if len(sys.argv) > 1: # 自动运行
     else:
         print("参数错误")
         exit(1)
-else: # 交互式
+# 交互式
+else:
     input("按任意键继续")
     if not os.path.exists("./data/lock.lock"):
         print("服务器未部署，开始部署")

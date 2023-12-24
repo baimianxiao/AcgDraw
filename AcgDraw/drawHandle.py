@@ -1,6 +1,5 @@
 # -*- encoding:utf-8 -*-
 
-from json import dumps, loads
 from PIL import Image
 
 
@@ -15,21 +14,3 @@ def get_mongolia(im1, im2, width=0, height=0):
     mongolia = Image.alpha_composite(im1_crop, im2_crop)
     im1.paste(mongolia, (width, height), mongolia)
     return im1
-
-
-def json_write(path, data) -> bool:
-    try:
-        with open(path, 'w', encoding='utf-8') as f:
-            f.write(dumps(data, ensure_ascii=False, indent=2))
-        return True
-    except:
-        return False
-
-
-def json_read(path):
-    try:
-        with open(path, 'r', encoding='utf-8') as f:
-            data = f.read()
-        return loads(data)
-    except:
-        return False
