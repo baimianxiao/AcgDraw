@@ -1,5 +1,12 @@
 # -*- encoding:utf-8 -*-
+
+import re
+from urllib.parse import unquote
+
+from lxml import etree
 from tqdm import tqdm, trange
+
+from AcgDraw.systemAction import json_write
 from AcgDraw.update import *
 
 
@@ -88,10 +95,9 @@ class UpdateHandleArk(UpdateHandle):
                 pbar.update(1)
 
     def start_update(self):
-
-        loop = asyncio.get_event_loop()
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
         char_list = loop.run_until_complete(self.get_info())
-
         loop.run_until_complete(self.char_image_download(char_list))
 
 
