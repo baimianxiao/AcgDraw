@@ -1,6 +1,7 @@
 # -*- encoding:utf-8 -*-
 
 import sqlite3
+from datetime import datetime
 from json import dumps, loads
 
 
@@ -20,6 +21,10 @@ def json_read(path):
         return loads(data)
     except:
         return False
+
+
+def log_output(type: str, message: str) -> None:
+    print("{}[{}]{}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), type, message))
 
 
 class UserDataHandle:
@@ -48,9 +53,9 @@ class UserDataHandle:
         return result
 
     # 更新用户数据
-    def user_data_update(self,QQ, Ex, Level, Hcy, Time,Name=""):
+    def user_data_update(self, QQ, Ex, Level, Hcy, Time, Name=""):
         if self.user_data_select(QQ) is not None:
-            if Name =="":
+            if Name == "":
                 self.cur.execute(
                     f"UPDATE USERDATA set  Ex={Ex},Level={Level},Hcy={Hcy},Time= '{Time}' where QQ='{QQ}'")
                 self.conn.commit()
