@@ -1,4 +1,7 @@
 {
   "host":"127.0.0.1",
-  "port":"11451"
+  "port":"11451",
+  "autoUpdateMode": 1,
+  "autoUpdateCycle":"week",
+  "autoUpdateTime": "1:00"
 }
