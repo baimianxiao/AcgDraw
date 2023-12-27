@@ -1,8 +1,8 @@
 Pillow~=10.1.0
 Flask==3.0.0
+Flask-APScheduler~=1.13.1
 gevent==23.9.1
 aiofiles~=23.2.1
 aiohttp==3.9.1
 lxml==4.9.4
 tqdm~=4.66.1
-schedule~=1.2.1
