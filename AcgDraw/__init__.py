@@ -1,5 +1,6 @@
 # -*- encoding:utf-8 -*-
 
+import AcgDraw.autoUpdate
 import AcgDraw.drawHandle
 import AcgDraw.drawHandleArk
 import AcgDraw.drawHandleGen
