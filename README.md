@@ -19,7 +19,7 @@
 - [ ] 指定卡池寻访
 - [x] 定时清理缓存
 - [ ] Web管理面板
-- [ ] 自动更新
+- [x] 自动更新
 - [ ] 单次寻访
 - [ ] 自定义卡池
 - [ ] 寻访记录查询
@@ -40,7 +40,18 @@
 
 https://baimianxiao.github.io/AcgDraw/
 
-## Docker运行
+## 开始
+该项目基于python3.8开发
+
+PS:在高版本中可能会出现`RuntimeError: cannot schedule new futures after shutdown`的错误,导致自动更新无法使用
+
+### Windows运行
+
+### Linux运行
+
+### 源码运行
+
+### Docker运行
 1.在编译镜像之前请手动运行一次init以下载素材。如果data中已经下载好素材了(即已经手动运行成功过)则可以跳过这一步 \
 请注意运行init也需要先在本机安装requirements.txt中的依赖
 ```shell
@@ -56,6 +67,12 @@ docker build -t acgdraw .
 ```shell
 docker run -d -p 11451:11451 --name=acgdraw acgdraw
 ```
+
+## 配置文件
+### 全局配置文件
+位于`根目录/conf/global`
+``
+
 
 ## 协议
 GPL-3.0 license

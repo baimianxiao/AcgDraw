@@ -6,7 +6,9 @@ from flask import Flask, send_file
 from flask_apscheduler import APScheduler
 from io import BytesIO
 from gevent import pywsgi
+from AcgDraw.systemAction import log_output
 import AcgDraw.drawHandleArk
+import AcgDraw.updateArk
 
 
 class Config(object):
@@ -16,10 +18,6 @@ class Config(object):
 app = Flask(__name__)
 
 scheduler = APScheduler()
-
-app.config.from_object(Config())
-scheduler.init_app(app)
-scheduler.start()
 
 
 # 方舟抽卡API地址
@@ -32,8 +30,7 @@ def arknights():
     return send_file(file_object, mimetype='image/PNG')
 
 
-# 原神抽卡API地址
-
+# 根目录
 @app.route('/', methods=['POST', 'GET'])
 def arknights_draw():
     img = AcgDraw.drawHandleArk.ten_draw()
@@ -43,11 +40,11 @@ def arknights_draw():
     return send_file(file_object, mimetype='image/PNG')
 
 
-@scheduler.task('interval', id='do_job_1', seconds=5, misfire_grace_time=900)
-def job1():
-    now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
-    print(now)
+# 自动更新任务
+@scheduler.task('interval', id='api_auto_update', days=1, misfire_grace_time=900)
+def api_auto_update():
+    log_output("INFO", "开始自动更新任务")
+    AcgDraw.updateArk.UpdateHandleArk("../data/Arknights/", "../conf/Arknights/").start_update()
 
 
 def server_start(mode="", host="127.0.0.1", port=11451):
@@ -56,8 +53,11 @@ def server_start(mode="", host="127.0.0.1", port=11451):
         print("测试环境")
     else:
         try:
-            print("图片服务器已启动：http://" + host + ":" + str(port))
+            app.config.from_object(Config())
+            scheduler.init_app(app)
+            scheduler.start()
             server = pywsgi.WSGIServer((host, port), app)
+            print("图片服务器已启动：http://" + host + ":" + str(port))
             server.serve_forever()
         except OSError:
             print("端口被占用，请修改端口")
