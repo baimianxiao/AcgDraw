@@ -38,7 +38,7 @@ def log_output(type: str, message: str) -> None:
         font_color = 30
         back_color = 41
     else:
-        print_type = 4
+        print_type = 0
         font_color = 37
         back_color = 40
     print("\033[{};{};{}m{}[{}]{}\033[0m".format(print_type, font_color, back_color,
