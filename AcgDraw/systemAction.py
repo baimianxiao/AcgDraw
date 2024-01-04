@@ -23,8 +23,26 @@ def json_read(path):
         return False
 
 
+# 日志输出
 def log_output(type: str, message: str) -> None:
-    print("{}[{}]{}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), type, message))
+    if type == "INFO":
+        print_type = 0
+        font_color = 37
+        back_color = 40
+    elif type == "WARNING":
+        print_type = 0
+        font_color = 30
+        back_color = 43
+    elif type == "ERROR":
+        print_type = 1
+        font_color = 30
+        back_color = 41
+    else:
+        print_type = 4
+        font_color = 37
+        back_color = 40
+    print("\033[{};{};{}m{}[{}]{}\033[0m".format(print_type, font_color, back_color,
+                                                 datetime.now().strftime("%Y-%m-%d %H:%M:%S"), type, message))
 
 
 class UserDataHandle:
@@ -75,3 +93,10 @@ class UserDataHandle:
             return True
         except:
             return False
+
+
+if __name__ == "__main__":
+    log_output("INFO", "这是一个测试段落")
+    log_output("WARNING", "这是一个测试段落")
+    log_output("ERROR", "这是一个测试段落")
+    log_output("ABC", "这是一个测试段落")
