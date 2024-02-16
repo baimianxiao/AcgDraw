@@ -81,6 +81,8 @@ GPL-3.0 license
 
 - API地址：<http://api.elapsetower.com/arknightsdraw>
 
-- 感谢分子对图片素材的处理
+- 感谢[@分子](https://github.com/yigefz)对图片素材的处理
+
+- 感谢[@LTY_CK_TS](https://github.com/sahuidhsu)完善的docker部署
 
 - 快来和咱一起找bug（指有问题在issue中反馈）
