@@ -2,7 +2,7 @@
 import os
 from datetime import datetime
 
-from flask import Flask, send_file
+from flask import Flask, send_file, make_response
 from flask_apscheduler import APScheduler
 from io import BytesIO
 from gevent import pywsgi
@@ -27,7 +27,9 @@ def arknights():
     file_object = BytesIO()
     img.save(file_object, 'PNG')
     file_object.seek(0)
-    return send_file(file_object, mimetype='image/PNG')
+    response = make_response(file_object)
+    response.headers["Content-Type"] = "image/png"
+    return response
 
 
 # 根目录
@@ -37,8 +39,9 @@ def arknights_draw():
     file_object = BytesIO()
     img.save(file_object, 'PNG')
     file_object.seek(0)
-    return send_file(file_object, mimetype='image/PNG')
-
+    response = make_response(file_object)
+    response.headers["Content-Type"] = "image/png"
+    return response
 
 # 自动更新任务
 @scheduler.task('interval', id='api_auto_update', days=1, misfire_grace_time=900)
