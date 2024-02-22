@@ -1,5 +1,5 @@
 # -*- encoding:utf-8 -*-
-
+from os import getcwd
 from os.path import dirname, abspath, join
 from random import randint, choice
 from PIL import Image
@@ -7,12 +7,12 @@ from AcgDraw.systemAction import json_read
 from AcgDraw.drawHandle import get_mongolia
 
 # 取根目录
-dir = dirname(abspath(__file__))
+dir = getcwd()  # 取根目录
 
 # 图片资源
-background_path = join(dir, "..", "data", "Arknights", "image", "gacha", "background.png")
-gacha_image_path = join(dir, "..", "data", "Arknights", "image", "gacha")
-char_image_path = join(dir, "..", "data", "Arknights", "image", "char")
+background_path = join(dir, "data", "Arknights", "image", "gacha", "background.png")
+gacha_image_path = join(dir, "data", "Arknights", "image", "gacha")
+char_image_path = join(dir, "data", "Arknights", "image", "char")
 
 
 # 单抽图片处理
@@ -26,7 +26,7 @@ def ten_image_handle(draw_list=None):
     if draw_list is None:
         draw_list = {}
         return False
-    char_list = json_read(join(dir, "..", "data", "Arknights", "char_data_list.json"))
+    char_list = json_read(join(dir, "data", "Arknights", "char_data_list.json"))
     main_image = Image.open(background_path, mode="r")
     x = 0
     for char in draw_list:
@@ -55,7 +55,7 @@ def hundred_image_handle():
 
 def ten_draw(mode=None, group=None):
     if mode is None or mode == "default":
-        simple_star_list = join(dir, "..", "data", "Arknights", "simple_star_list.json")
+        simple_star_list = join(dir, "data", "Arknights", "simple_star_list.json")
         char_list = []
         simple_star_list = json_read(simple_star_list)
         limit = 0
@@ -73,7 +73,7 @@ def ten_draw(mode=None, group=None):
             else:
                 char_list.append(choice(simple_star_list["3"]))
         if limit == 0:
-            char_list[randint(0,9)] = choice(simple_star_list["4"])
+            char_list[randint(0, 9)] = choice(simple_star_list["4"])
         im = ten_image_handle(char_list)
         return im
     elif mode == "input":
@@ -82,8 +82,6 @@ def ten_draw(mode=None, group=None):
         pass
     else:
         print("[warning]未知的抽卡模式")
-
-
 
 
 if __name__ == "__main__":
