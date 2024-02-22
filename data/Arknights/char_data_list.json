@@ -1821,7 +1821,8 @@
     "职业": "术师",
     "星级": 5,
     "获取途径": [
-      "标准寻访"
+      "标准寻访",
+      "公开招募"
     ],
     "半身像": "https://prts.wiki/images/9/9b/半身像_蜜蜡_1.png",
     "立绘": "https://prts.wiki/images/9/9b/立绘_蜜蜡_1.png"
@@ -1832,7 +1833,8 @@
     "职业": "先锋",
     "星级": 5,
     "获取途径": [
-      "标准寻访"
+      "标准寻访",
+      "公开招募"
     ],
     "半身像": "https://prts.wiki/images/2/2e/半身像_贾维_1.png",
     "立绘": "https://prts.wiki/images/2/2e/立绘_贾维_1.png"
@@ -1855,7 +1857,8 @@
     "职业": "近卫",
     "星级": 6,
     "获取途径": [
-      "标准寻访"
+      "标准寻访",
+      "公开招募"
     ],
     "半身像": "https://prts.wiki/images/0/08/半身像_棘刺_1.png",
     "立绘": "https://prts.wiki/images/0/08/立绘_棘刺_1.png"
@@ -1866,7 +1869,8 @@
     "职业": "狙击",
     "星级": 5,
     "获取途径": [
-      "标准寻访"
+      "标准寻访",
+      "公开招募"
     ],
     "半身像": "https://prts.wiki/images/8/88/半身像_安哲拉_1.png",
     "立绘": "https://prts.wiki/images/8/88/立绘_安哲拉_1.png"
@@ -1878,7 +1882,8 @@
     "星级": 4,
     "获取途径": [
       "标准寻访",
-      "中坚寻访"
+      "中坚寻访",
+      "公开招募"
     ],
     "半身像": "https://prts.wiki/images/7/7c/半身像_孑_1.png",
     "立绘": "https://prts.wiki/images/7/7c/立绘_孑_1.png"
@@ -1904,7 +1909,8 @@
     "职业": "重装",
     "星级": 6,
     "获取途径": [
-      "标准寻访"
+      "标准寻访",
+      "公开招募"
     ],
     "半身像": "https://prts.wiki/images/4/4a/半身像_森蚺_1.png",
     "立绘": "https://prts.wiki/images/4/4a/立绘_森蚺_1.png"
@@ -1915,7 +1921,8 @@
     "职业": "近卫",
     "星级": 5,
     "获取途径": [
-      "标准寻访"
+      "标准寻访",
+      "公开招募"
     ],
     "半身像": "https://prts.wiki/images/4/4f/半身像_燧石_1.png",
     "立绘": "https://prts.wiki/images/4/4f/立绘_燧石_1.png"
@@ -1939,7 +1946,8 @@
     "星级": 4,
     "获取途径": [
       "标准寻访",
-      "中坚寻访"
+      "中坚寻访",
+      "公开招募"
     ],
     "半身像": "https://prts.wiki/images/8/82/半身像_酸糖_1.png",
     "立绘": "https://prts.wiki/images/8/82/立绘_酸糖_1.png"
@@ -1951,7 +1959,8 @@
     "星级": 4,
     "获取途径": [
       "标准寻访",
-      "中坚寻访"
+      "中坚寻访",
+      "公开招募"
     ],
     "半身像": "https://prts.wiki/images/d/dc/半身像_芳汀_1.png",
     "立绘": "https://prts.wiki/images/d/dc/立绘_芳汀_1.png"
@@ -1974,7 +1983,8 @@
     "职业": "狙击",
     "星级": 5,
     "获取途径": [
-      "标准寻访"
+      "标准寻访",
+      "公开招募"
     ],
     "半身像": "https://prts.wiki/images/0/05/半身像_四月_1.png",
     "立绘": "https://prts.wiki/images/0/05/立绘_四月_1.png"
@@ -1985,7 +1995,8 @@
     "职业": "近卫",
     "星级": 6,
     "获取途径": [
-      "标准寻访"
+      "标准寻访",
+      "公开招募"
     ],
     "半身像": "https://prts.wiki/images/5/58/半身像_史尔特尔_1.png",
     "立绘": "https://prts.wiki/images/5/58/立绘_史尔特尔_1.png"
@@ -2228,8 +2239,8 @@
     "职业": "狙击",
     "星级": 6,
     "获取途径": [
-      "联动",
-      "【进攻 防守 战术交汇】限时寻访"
+      "【进攻 防守 战术交汇】限时寻访",
+      "联动"
     ],
     "半身像": "https://prts.wiki/images/f/fa/半身像_灰烬_1.png",
     "立绘": "https://prts.wiki/images/f/fa/立绘_灰烬_1.png"
@@ -2562,8 +2573,7 @@
     "职业": "术师",
     "星级": 4,
     "获取途径": [
-      "凭证交易所",
-      "采购凭证区"
+      "凭证交易所"
     ],
     "半身像": "https://prts.wiki/images/3/3a/半身像_布丁_1.png",
     "立绘": "https://prts.wiki/images/3/3a/立绘_布丁_1.png"
@@ -2575,8 +2585,8 @@
     "星级": 1,
     "获取途径": [
       "公开招募",
-      "感谢庆典2021签到活动获得",
-      "活动获取"
+      "活动获取",
+      "【感谢庆典2021签到活动】获取"
     ],
     "半身像": "https://prts.wiki/images/c/c3/半身像_正义骑士号_1.png",
     "立绘": "https://prts.wiki/images/c/c3/立绘_正义骑士号_1.png"
@@ -2587,8 +2597,7 @@
     "职业": "医疗",
     "星级": 5,
     "获取途径": [
-      "凭证交易所",
-      "采购凭证区"
+      "凭证交易所"
     ],
     "半身像": "https://prts.wiki/images/6/6f/半身像_蜜莓_1.png",
     "立绘": "https://prts.wiki/images/6/6f/立绘_蜜莓_1.png"
@@ -2599,8 +2608,8 @@
     "职业": "术师",
     "星级": 5,
     "获取途径": [
-      "活动获得",
-      "活动获得"
+      "活动获取",
+      "【风雪过境】活动获取"
     ],
     "半身像": "https://prts.wiki/images/a/a2/半身像_耶拉_1.png",
     "立绘": "https://prts.wiki/images/a/a2/立绘_耶拉_1.png"
@@ -2644,9 +2653,10 @@
     "职业": "辅助",
     "星级": 5,
     "获取途径": [
-      "活动获得",
+      "联动",
       "获得",
-      "联动"
+      "获得",
+      "活动获取"
     ],
     "半身像": "https://prts.wiki/images/7/73/半身像_九色鹿_1.png",
     "立绘": "https://prts.wiki/images/7/73/立绘_九色鹿_1.png"
@@ -2658,7 +2668,7 @@
     "星级": 5,
     "获取途径": [
       "活动获取",
-      "活动获得"
+      "【将进酒】活动获取"
     ],
     "半身像": "https://prts.wiki/images/7/72/半身像_寒芒克洛丝_1.png",
     "立绘": "https://prts.wiki/images/7/72/立绘_寒芒克洛丝_1.png"
@@ -2725,8 +2735,8 @@
     "职业": "特种",
     "星级": 5,
     "获取途径": [
-      "活动获得",
-      "活动获得"
+      "【吾导先路】活动获取",
+      "活动获取"
     ],
     "半身像": "https://prts.wiki/images/9/96/半身像_见行者_1.png",
     "立绘": "https://prts.wiki/images/9/96/立绘_见行者_1.png"
@@ -2839,8 +2849,8 @@
     "职业": "医疗",
     "星级": 6,
     "获取途径": [
-      "活动获得",
-      "活动及其记录修复"
+      "活动获取",
+      "【愚人号】活动获取"
     ],
     "半身像": "https://prts.wiki/images/9/9f/半身像_流明_1.png",
     "立绘": "https://prts.wiki/images/9/9f/立绘_流明_1.png"
@@ -2851,8 +2861,8 @@
     "职业": "狙击",
     "星级": 5,
     "获取途径": [
-      "活动获得",
-      "后机密圣所"
+      "后机密圣所",
+      "活动获取"
     ],
     "半身像": "https://prts.wiki/images/5/57/半身像_埃拉托_1.png",
     "立绘": "https://prts.wiki/images/5/57/立绘_埃拉托_1.png"
@@ -2885,8 +2895,8 @@
     "职业": "重装",
     "星级": 5,
     "获取途径": [
-      "活动获得",
-      "通关LE-5"
+      "【尘影余音】活动获取",
+      "活动获取"
     ],
     "半身像": "https://prts.wiki/images/1/1f/半身像_车尔尼_1.png",
     "立绘": "https://prts.wiki/images/1/1f/立绘_车尔尼_1.png"
@@ -2919,7 +2929,7 @@
     "职业": "术师",
     "星级": 5,
     "获取途径": [
-      "活动获得"
+      "活动获取"
     ],
     "半身像": "https://prts.wiki/images/7/7c/半身像_星源_1.png",
     "立绘": "https://prts.wiki/images/7/7c/立绘_星源_1.png"
@@ -3011,8 +3021,8 @@
     "职业": "近卫",
     "星级": 5,
     "获取途径": [
-      "【水月与深蓝之树】集成战略活动获得",
-      "活动获取"
+      "活动获取",
+      "【水月与深蓝之树】集成战略活动获取"
     ],
     "半身像": "https://prts.wiki/images/f/f2/半身像_海沫_1.png",
     "立绘": "https://prts.wiki/images/f/f2/立绘_海沫_1.png"
@@ -3103,7 +3113,8 @@
     "职业": "先锋",
     "星级": 6,
     "获取途径": [
-      "叙拉古人活动获取"
+      "活动获取",
+      "【叙拉古人】活动获取"
     ],
     "半身像": "https://prts.wiki/images/f/fc/半身像_伺夜_1.png",
     "立绘": "https://prts.wiki/images/f/fc/立绘_伺夜_1.png"
@@ -3114,7 +3125,6 @@
     "职业": "近卫",
     "星级": 4,
     "获取途径": [
-      "采购凭证区",
       "凭证交易所"
     ],
     "半身像": "https://prts.wiki/images/b/b2/半身像_石英_1.png",
@@ -3137,7 +3147,8 @@
     "职业": "先锋",
     "星级": 5,
     "获取途径": [
-      "照我以火活动获得"
+      "【照我以火】活动获取",
+      "活动获取"
     ],
     "半身像": "https://prts.wiki/images/5/59/半身像_谜图_1.png",
     "立绘": "https://prts.wiki/images/5/59/立绘_谜图_1.png"
@@ -3182,7 +3193,8 @@
     "职业": "狙击",
     "星级": 5,
     "获取途径": [
-      "活动获得"
+      "【登临意】活动获取",
+      "活动获取"
     ],
     "半身像": "https://prts.wiki/images/a/a3/半身像_截云_1.png",
     "立绘": "https://prts.wiki/images/a/a3/立绘_截云_1.png"
@@ -3231,9 +3243,9 @@
     "半身像": "https://prts.wiki/images/4/40/半身像_仇白_1.png",
     "立绘": "https://prts.wiki/images/4/40/立绘_仇白_1.png"
   },
-  "麒麟X夜刀": {
-    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/e/e9/h0iaimnwvv1ld6fhulj7a6tid3ty1q9.jpg/120px-麒麟X夜刀hd.jpg.png",
-    "名称": "麒麟X夜刀",
+  "麒麟R夜刀": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/4/47/h0iaimnwvv1ld6fhulj7a6tid3ty1q9.jpg/120px-麒麟R夜刀hd.jpg.png",
+    "名称": "麒麟R夜刀",
     "职业": "特种",
     "星级": 6,
     "获取途径": [
@@ -3241,8 +3253,8 @@
       "狩猎凯旋寻访",
       "联动"
     ],
-    "半身像": "https://prts.wiki/images/6/66/半身像_麒麟X夜刀_1.png",
-    "立绘": "https://prts.wiki/images/6/66/立绘_麒麟X夜刀_1.png"
+    "半身像": "https://prts.wiki/images/1/16/半身像_麒麟R夜刀_1.png",
+    "立绘": "https://prts.wiki/images/1/16/立绘_麒麟R夜刀_1.png"
   },
   "火龙S黑角": {
     "头像": "https://patchwiki.biligame.com/images/arknights/thumb/0/07/izs5208mqglcsl3h8rd0f5hx3hlwr6q.jpg/120px-火龙S黑角hd.jpg",
@@ -3263,9 +3275,9 @@
     "职业": "狙击",
     "星级": 1,
     "获取途径": [
-      "落叶逐火活动获得",
       "活动获取",
-      "联动"
+      "联动",
+      "【落叶逐火】活动获取"
     ],
     "半身像": "https://prts.wiki/images/6/61/半身像_泰拉大陆调查团_1.png",
     "立绘": "https://prts.wiki/images/6/61/立绘_泰拉大陆调查团_1.png"
@@ -3442,5 +3454,324 @@
     ],
     "半身像": "https://prts.wiki/images/7/74/半身像_寒檀_1.png",
     "立绘": "https://prts.wiki/images/7/74/立绘_寒檀_1.png"
+  },
+  "凛视": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/8/8b/67ecw48fw2sggcl2a8byoijwbud9rre.jpg/120px-凛视hd.jpg.png",
+    "名称": "凛视",
+    "职业": "辅助",
+    "星级": 5,
+    "获取途径": [
+      "活动获取",
+      "【探索者的银凇止境】集成战略活动获取"
+    ],
+    "半身像": "https://prts.wiki/images/7/71/半身像_凛视_1.png",
+    "立绘": "https://prts.wiki/images/7/71/立绘_凛视_1.png"
+  },
+  "纯烬艾雅法拉": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/0/04/n5hrscyl3xy1lixvovka3cadac4tlwt.jpg/120px-纯烬艾雅法拉hd.jpg",
+    "名称": "纯烬艾雅法拉",
+    "职业": "医疗",
+    "星级": 6,
+    "获取途径": [
+      "【云间清醒梦】限定寻访",
+      "限定寻访"
+    ],
+    "半身像": "https://prts.wiki/images/b/bd/半身像_纯烬艾雅法拉_1.png",
+    "立绘": "https://prts.wiki/images/b/bd/立绘_纯烬艾雅法拉_1.png"
+  },
+  "青枳": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/2/26/nwfery52valacp0wemjedtlmezz9i18.jpg/120px-青枳hd.jpg",
+    "名称": "青枳",
+    "职业": "先锋",
+    "星级": 5,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/2/27/半身像_青枳_1.png",
+    "立绘": "https://prts.wiki/images/2/27/立绘_青枳_1.png"
+  },
+  "琳琅诗怀雅": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/5/55/843hds8ttmdnek5sjkwesvz20j4dotm.jpg/120px-琳琅诗怀雅hd.jpg",
+    "名称": "琳琅诗怀雅",
+    "职业": "特种",
+    "星级": 6,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/9/99/半身像_琳琅诗怀雅_1.png",
+    "立绘": "https://prts.wiki/images/9/99/立绘_琳琅诗怀雅_1.png"
+  },
+  "苍苔": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/a/ad/bsvp8evexwxnuodhvqaynaqt4182glm.jpg/120px-苍苔hd.jpg",
+    "名称": "苍苔",
+    "职业": "近卫",
+    "星级": 5,
+    "获取途径": [
+      "活动获取",
+      "【火山旅梦】活动获取"
+    ],
+    "半身像": "https://prts.wiki/images/1/1d/半身像_苍苔_1.png",
+    "立绘": "https://prts.wiki/images/1/1d/立绘_苍苔_1.png"
+  },
+  "涤火杰西卡": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/6/60/kopjvxfn84wk6d03odpnma1gfm9jic5.jpg/120px-涤火杰西卡hd.jpg",
+    "名称": "涤火杰西卡",
+    "职业": "重装",
+    "星级": 6,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/1/1e/半身像_涤火杰西卡_1.png",
+    "立绘": "https://prts.wiki/images/1/1e/立绘_涤火杰西卡_1.png"
+  },
+  "杏仁": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/1/1a/66zrpepjb53xajiu171brtdphorosts.jpg/120px-杏仁hd.jpg",
+    "名称": "杏仁",
+    "职业": "特种",
+    "星级": 5,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/c/c2/半身像_杏仁_1.png",
+    "立绘": "https://prts.wiki/images/c/c2/立绘_杏仁_1.png"
+  },
+  "冰酿": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/e/e5/h8vx0yjjcaofw57s51veueufxajzi4t.jpg/120px-冰酿hd.jpg",
+    "名称": "冰酿",
+    "职业": "狙击",
+    "星级": 5,
+    "获取途径": [
+      "活动获取",
+      "【不义之财】活动获取"
+    ],
+    "半身像": "https://prts.wiki/images/e/e0/半身像_冰酿_1.png",
+    "立绘": "https://prts.wiki/images/e/e0/立绘_冰酿_1.png"
+  },
+  "赫德雷": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/6/60/h4241chs6o58idurrw9p2mkdt77wh0j.jpg/120px-赫德雷hd.jpg.png",
+    "名称": "赫德雷",
+    "职业": "近卫",
+    "星级": 6,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/b/b4/半身像_赫德雷_1.png",
+    "立绘": "https://prts.wiki/images/b/b4/立绘_赫德雷_1.png"
+  },
+  "刺玫": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/a/a0/sboiz2tvm77rd8irulx23w9foprdbyx.jpg/120px-刺玫hd.jpg.png",
+    "名称": "刺玫",
+    "职业": "医疗",
+    "星级": 5,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/b/bf/半身像_刺玫_1.png",
+    "立绘": "https://prts.wiki/images/b/bf/立绘_刺玫_1.png"
+  },
+  "维荻": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/e/e1/3ndd8pkbqqe7d9tb5fh8aurb4ircgyl.jpg/120px-维荻hd.jpg.png",
+    "名称": "维荻",
+    "职业": "特种",
+    "星级": 4,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/2/2d/半身像_维荻_1.png",
+    "立绘": "https://prts.wiki/images/2/2d/立绘_维荻_1.png"
+  },
+  "戴菲恩": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/4/4a/gjf6uy2wmlbsukdmo89aoxpduegigva.jpg/120px-戴菲恩hd.jpg.png",
+    "名称": "戴菲恩",
+    "职业": "术师",
+    "星级": 5,
+    "获取途径": [
+      "主线获得",
+      "关卡13-5首次通关掉落"
+    ],
+    "半身像": "https://prts.wiki/images/3/38/半身像_戴菲恩_1.png",
+    "立绘": "https://prts.wiki/images/3/38/立绘_戴菲恩_1.png"
+  },
+  "止颂": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/2/2a/8ye4iaptmfcpduvmuafd4aefbz107e4.jpg/120px-止颂hd.jpg",
+    "名称": "止颂",
+    "职业": "近卫",
+    "星级": 6,
+    "获取途径": [
+      "活动获取",
+      "【崔林特尔梅之金】活动获取"
+    ],
+    "半身像": "https://prts.wiki/images/4/49/半身像_止颂_1.png",
+    "立绘": "https://prts.wiki/images/4/49/立绘_止颂_1.png"
+  },
+  "深律": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/0/09/5obh5sd7vwa8i8ro9kkw0lfrzeb4rhe.jpg/120px-深律hd.jpg",
+    "名称": "深律",
+    "职业": "重装",
+    "星级": 5,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/2/25/半身像_深律_1.png",
+    "立绘": "https://prts.wiki/images/2/25/立绘_深律_1.png"
+  },
+  "折光": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/e/e6/0o6z603f8qjw1dzwob3kmjajq2vphw3.jpg/120px-折光hd.jpg",
+    "名称": "折光",
+    "职业": "术师",
+    "星级": 5,
+    "获取途径": [
+      "凭证交易所"
+    ],
+    "半身像": "https://prts.wiki/images/a/a1/半身像_折光_1.png",
+    "立绘": "https://prts.wiki/images/a/a1/立绘_折光_1.png"
+  },
+  "跃跃": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/c/c9/7xgwoniuktv3xvsicot75tsxaghse4j.jpg/120px-跃跃hd.jpg",
+    "名称": "跃跃",
+    "职业": "狙击",
+    "星级": 4,
+    "获取途径": [
+      "凭证交易所"
+    ],
+    "半身像": "https://prts.wiki/images/5/5b/半身像_跃跃_1.png",
+    "立绘": "https://prts.wiki/images/5/5b/立绘_跃跃_1.png"
+  },
+  "塑心": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/3/3e/4b3q45esvqicvih7d8ksdelvvn0uy3m.jpg/120px-塑心hd.jpg",
+    "名称": "塑心",
+    "职业": "辅助",
+    "星级": 6,
+    "获取途径": [
+      "【宿愿】限定寻访",
+      "限定寻访"
+    ],
+    "半身像": "https://prts.wiki/images/7/7e/半身像_塑心_1.png",
+    "立绘": "https://prts.wiki/images/7/7e/立绘_塑心_1.png"
+  },
+  "薇薇安娜": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/8/8e/fmtexcm6rnq54ifpxk05kw1n2bf6md1.jpg/120px-薇薇安娜hd.jpg",
+    "名称": "薇薇安娜",
+    "职业": "近卫",
+    "星级": 6,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/5/5d/半身像_薇薇安娜_1.png",
+    "立绘": "https://prts.wiki/images/5/5d/立绘_薇薇安娜_1.png"
+  },
+  "锏": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/4/46/0emffyx0hkvlsj936bd71101640bypi.jpg/120px-锏hd.jpg",
+    "名称": "锏",
+    "职业": "近卫",
+    "星级": 6,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/7/72/半身像_锏_1.png",
+    "立绘": "https://prts.wiki/images/7/72/立绘_锏_1.png"
+  },
+  "烈夏": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/b/b6/tuv37l48ctpn2o36a12146fr4wdxlzx.jpg/120px-烈夏hd.jpg",
+    "名称": "烈夏",
+    "职业": "近卫",
+    "星级": 5,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/9/96/半身像_烈夏_1.png",
+    "立绘": "https://prts.wiki/images/9/96/立绘_烈夏_1.png"
+  },
+  "哈洛德": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/9/9d/qnl94lojlcjoy7w5jl090uo0qatvzmo.jpg/120px-哈洛德hd.jpg",
+    "名称": "哈洛德",
+    "职业": "医疗",
+    "星级": 5,
+    "获取途径": [
+      "银心湖列车活动获取",
+      "活动获取"
+    ],
+    "半身像": "https://prts.wiki/images/0/06/半身像_哈洛德_1.png",
+    "立绘": "https://prts.wiki/images/0/06/立绘_哈洛德_1.png"
+  },
+  "莱伊": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/c/c7/tv8zy3ikxprkk4pt3fcf3wh06v2pg2e.jpg/120px-莱伊hd.jpg",
+    "名称": "莱伊",
+    "职业": "狙击",
+    "星级": 6,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/c/c8/半身像_莱伊_1.png",
+    "立绘": "https://prts.wiki/images/c/c8/立绘_莱伊_1.png"
+  },
+  "温米": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/4/4f/gjmfqe89qkd6i2srgr4hy6mvl6fnbrb.jpg/120px-温米hd.jpg",
+    "名称": "温米",
+    "职业": "术师",
+    "星级": 5,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/2/29/半身像_温米_1.png",
+    "立绘": "https://prts.wiki/images/2/29/立绘_温米_1.png"
+  },
+  "黍": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/4/4f/bllw8gvchsip0aasctjc8tgfsjcjtfp.jpg/120px-黍hd.jpg",
+    "名称": "黍",
+    "职业": "重装",
+    "星级": 6,
+    "获取途径": [
+      "【千秋一粟】限定寻访",
+      "限定寻访"
+    ],
+    "半身像": "https://prts.wiki/images/5/52/半身像_黍_1.png",
+    "立绘": "https://prts.wiki/images/5/52/立绘_黍_1.png"
+  },
+  "左乐": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/0/08/n2r9bbhbyhly8ag24p6lcdqwmn1ehaj.jpg/120px-左乐hd.jpg",
+    "名称": "左乐",
+    "职业": "近卫",
+    "星级": 6,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/9/93/半身像_左乐_1.png",
+    "立绘": "https://prts.wiki/images/9/93/立绘_左乐_1.png"
+  },
+  "小满": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/1/14/id09ir2n94wt5incnhe5kb8cml9ypku.jpg/120px-小满hd.jpg",
+    "名称": "小满",
+    "职业": "辅助",
+    "星级": 5,
+    "获取途径": [
+      "标准寻访"
+    ],
+    "半身像": "https://prts.wiki/images/3/3f/半身像_小满_1.png",
+    "立绘": "https://prts.wiki/images/3/3f/立绘_小满_1.png"
+  },
+  "红隼": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/2/2a/hpx4if5n9yks152cg0zv2omaxu3zfk6.jpg/120px-红隼hd.jpg",
+    "名称": "红隼",
+    "职业": "先锋",
+    "星级": 5,
+    "获取途径": [
+      "【生息演算-沙洲遗闻】活动获取",
+      "活动获取"
+    ],
+    "半身像": "https://prts.wiki/images/7/70/半身像_红隼_1.png",
+    "立绘": "https://prts.wiki/images/7/70/立绘_红隼_1.png"
+  },
+  "万顷": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/8/8a/3p1cry1oeioa233l54xkji1g8zkx3ck.jpg/120px-万顷hd.jpg",
+    "名称": "万顷",
+    "职业": "先锋",
+    "星级": 5,
+    "获取途径": [
+      "【怀黍离】活动获取",
+      "活动获取"
+    ],
+    "半身像": "https://prts.wiki/images/a/ae/半身像_万顷_1.png",
+    "立绘": "https://prts.wiki/images/a/ae/立绘_万顷_1.png"
   }
 }
