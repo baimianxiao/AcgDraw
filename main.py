@@ -10,7 +10,7 @@ import AcgDraw
 from AcgDraw.systemAction import json_read, json_write
 
 # 取根目录
-dir = dirname(abspath(__file__))
+dir = os.getcwd()  # 取根目录
 
 
 # 判断目录是否存在，并且在不存在时创建目录
@@ -42,7 +42,7 @@ def log_output(type: str, message: str) -> None:
     print("{}[{}]{}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), type, message))
 
 
-print("Arknights-Draw")
+log_output("INFO", "Arknights-Draw")
 
 # 自动运行
 if len(sys.argv) > 1:
@@ -55,7 +55,7 @@ if len(sys.argv) > 1:
             with open("./data/lock.lock", 'w', encoding='utf-8') as f:
                 f.write("")
         except:
-            log_output( "Error", "部署发生错误，请重试")
+            log_output("Error", "部署发生错误，请重试")
             exit(1)
         exit(0)
     elif sys.argv[1] == "update":
@@ -64,13 +64,13 @@ if len(sys.argv) > 1:
     elif sys.argv[1] == "start":
         AcgDraw.server.server_start(host=host, port=port)
     else:
-        log_output( "Error","参数错误")
+        log_output("Error", "参数错误")
         exit(1)
 # 交互式
 else:
     input("按任意键继续")
     if not os.path.exists("./data/lock.lock"):
-        log_output("INFO","服务器未部署，开始部署")
+        log_output("INFO", "服务器未部署，开始部署")
         for create_dir in create_dir_list:
             mkdir(create_dir)
         try:
@@ -79,10 +79,10 @@ else:
                 f.write("")
             AcgDraw.server.server_start(host=host, port=port)
         except:
-            log_output("Error","部署发生错误，请重试")
+            log_output("Error", "部署发生错误，请重试")
             input("按任意键继续")
     else:
-        log_output("INFO","服务器已部署\n1.启动服务器\n2.启动更新")
+        log_output("INFO", "服务器已部署 1.启动服务器 2.启动更新")
         x = input("请选择操作:")
         if int(x) == 1:
             AcgDraw.server.server_start(host=host, port=port)
