@@ -30,7 +30,7 @@ async def auto_update():
 
 scheduler = AsyncIOScheduler()
 
-# 添加定时任务，这里以每分钟执行一次为例
+
 scheduler.add_job(
     func=auto_update,
     trigger=IntervalTrigger(minutes=1),
@@ -51,7 +51,7 @@ async def arknights():
     pil_image = await image.get_mongolia(im1, im2)
     # 将PIL图片保存到BytesIO对象中
     img_byte_arr = BytesIO()
-    pil_image.save(img_byte_arr, format="PNG")  # 根据实际情况选择合适的图片格式（如PNG、JPEG等）
+    pil_image.save(img_byte_arr, format="PNG")
     # 重置BytesIO对象指针到开始位置
     img_byte_arr.seek(0)
     # 使用流式传输返回图片
