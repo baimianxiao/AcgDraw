@@ -13,7 +13,7 @@ from apscheduler.triggers.interval import IntervalTrigger
 import uvicorn
 
 from AcgDraw import DrawHandleArk
-from AcgDraw.image import get_mongolia, ImageHandleArk
+from AcgDraw.image import ImageHandleArk
 
 work_dir = getcwd()
 
@@ -46,18 +46,18 @@ scheduler = AsyncIOScheduler()
 
 scheduler.add_job(
     func=auto_update,
-    trigger=IntervalTrigger(minutes=1),
-    id="periodic_task",
+    trigger=IntervalTrigger(days=1),
+    id="auto_update",
     replace_existing=True,
 )
 
 
 @api_app.get("/")
 async def root():
-    return {"message": "又一个AcgDraw的站点被发现了", "version": "1.0"}
+    return {"message": "又一个AcgDraw的站点被发现了", "version": "1.0","ArknightsDraw":"/arknightsdraw"}
 
 
-@api_app.get("/Arknights")
+@api_app.get("/arknightsdraw")
 async def arknights():
     result = await api_app.state.draw.char_ten_pulls()
     pil_image = await api_app.state.image.char_ten_pulls(result)
