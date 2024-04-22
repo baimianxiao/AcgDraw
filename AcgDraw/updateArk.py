@@ -79,8 +79,8 @@ class UpdateHandleArk(UpdateHandle):
             char_data_list[name] = char_dict
 
         # print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
-        json_write(self.data_path + 'simple_star_list.json', simple_star_list)
-        json_write(self.data_path + 'char_data_list.json', char_data_list)
+        json_write(self.data_path + 'char_star_list.json', simple_star_list)
+        json_write(self.data_path + 'char_data_dict.json', char_data_list)
         return char_data_list
 
     # 下载图片数据
