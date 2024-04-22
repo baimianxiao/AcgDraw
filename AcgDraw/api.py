@@ -1,9 +1,9 @@
 # -*- encoding：utf-8 -*-
 
-import asyncio
 from datetime import datetime
 from io import BytesIO
-from PIL import Image
+from os import getcwd
+from os.path import join
 
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
@@ -11,25 +11,38 @@ from contextlib import asynccontextmanager
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 import uvicorn
-import image
+
+from AcgDraw import DrawHandleArk
+from AcgDraw.image import get_mongolia, ImageHandleArk
+
+work_dir = getcwd()
+
+
+async def initialize_app(app: FastAPI):
+    app.state.draw = DrawHandleArk(join(work_dir, "data", "Arknights", "char_star_list.json"))
+    app.state.image = ImageHandleArk(join(work_dir, "data", "Arknights", "char_data_dict.json"),
+                                     join(work_dir, "data", "Arknights", "image"))
+    await app.state.draw.data_reload()
+    await app.state.image.data_reload()
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    await initialize_app(app)
     await auto_update()
     scheduler.start()
     yield
     scheduler.shutdown()
 
 
-app = FastAPI(lifespan=lifespan)
+api_app = FastAPI(lifespan=lifespan)
 
 
 async def auto_update():
     print("定时任务执行：当前时间:", datetime.now())
 
-scheduler = AsyncIOScheduler()
 
+scheduler = AsyncIOScheduler()
 
 scheduler.add_job(
     func=auto_update,
@@ -39,16 +52,15 @@ scheduler.add_job(
 )
 
 
-@app.get("/")
+@api_app.get("/")
 async def root():
     return {"message": "又一个AcgDraw的站点被发现了", "version": "1.0"}
 
 
-@app.get("/Arknights")
+@api_app.get("/Arknights")
 async def arknights():
-    im1 = Image.open("../test/1.png", mode="r")
-    im2 = Image.open("../test/2.png", mode="r")
-    pil_image = await image.get_mongolia(im1, im2)
+    result = await api_app.state.draw.char_ten_pulls()
+    pil_image = await api_app.state.image.char_ten_pulls(result)
     # 将PIL图片保存到BytesIO对象中
     img_byte_arr = BytesIO()
     pil_image.save(img_byte_arr, format="PNG")
@@ -61,10 +73,10 @@ async def arknights():
     )
 
 
-@app.get("/api-admin")
+@api_app.get("/api-admin")
 async def api_admin():
     return {"message": "管理员"}
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(api_app, host="0.0.0.0", port=8000)
