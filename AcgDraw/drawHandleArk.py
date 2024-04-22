@@ -1,6 +1,6 @@
 # -*- encoding:utf-8 -*-
 from os import getcwd
-from os.path import dirname, abspath, join
+from os.path import  join
 from random import randint, choice
 from PIL import Image
 from AcgDraw.systemAction import json_read

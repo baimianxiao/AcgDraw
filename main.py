@@ -2,11 +2,16 @@
 """
 
 """
+import logging
 import os
 import sys
 from datetime import datetime
 from os.path import abspath, dirname, join
+
+import uvicorn
+
 import AcgDraw
+from AcgDraw import api
 from AcgDraw.systemAction import json_read, json_write
 
 # 取根目录
@@ -43,7 +48,7 @@ def log_output(type: str, message: str) -> None:
 
 
 log_output("INFO", "Arknights-Draw")
-
+app = api.api_app
 # 自动运行
 if len(sys.argv) > 1:
     if sys.argv[1] == "init":
@@ -60,9 +65,9 @@ if len(sys.argv) > 1:
         exit(0)
     elif sys.argv[1] == "update":
         AcgDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
-        AcgDraw.server.server_start(host=host, port=port)
+        uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
     elif sys.argv[1] == "start":
-        AcgDraw.server.server_start(host=host, port=port)
+        uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
     else:
         log_output("Error", "参数错误")
         exit(1)
@@ -77,7 +82,7 @@ else:
             AcgDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
             with open("./data/lock.lock", 'w', encoding='utf-8') as f:
                 f.write("")
-            AcgDraw.server.server_start(host=host, port=port)
+            uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
         except:
             log_output("Error", "部署发生错误，请重试")
             input("按任意键继续")
@@ -85,7 +90,9 @@ else:
         log_output("INFO", "服务器已部署 1.启动服务器 2.启动更新")
         x = input("请选择操作:")
         if int(x) == 1:
-            AcgDraw.server.server_start(host=host, port=port)
+            uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
+
         elif int(x) == 2:
             AcgDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
-            AcgDraw.server.server_start(host=host, port=port)
+            uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
+
