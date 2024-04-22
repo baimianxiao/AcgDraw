@@ -51,7 +51,7 @@ class UpdateHandleArk(UpdateHandle):
                     return ""
                 dom = etree.HTML(result, etree.HTMLParser())
                 image_url_1 = dom.xpath("//img[@decoding='async' and @width='180'and @height='360']/@src")
-                image_url_path = re.search("\/\w+\/\w+\/\w+", image_url_1[0], re.M | re.I)
+                image_url_path = re.search(r"/[a-zA-Z0-9]{1,2}/[a-zA-Z0-9]{1,2}/", str( image_url_1[0]))
             except IndexError:
                 continue
             char_dict = {
