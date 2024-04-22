@@ -516,7 +516,7 @@
     "职业": "医疗",
     "星级": 5,
     "获取途径": [
-      "凭证交易所"
+      "采购凭证区"
     ],
     "半身像": "https://prts.wiki/images/f/fb/半身像_微风_1.png",
     "立绘": "https://prts.wiki/images/f/fb/立绘_微风_1.png"
@@ -527,7 +527,7 @@
     "职业": "特种",
     "星级": 4,
     "获取途径": [
-      "凭证交易所"
+      "采购凭证区"
     ],
     "半身像": "https://prts.wiki/images/e/e8/半身像_伊桑_1.png",
     "立绘": "https://prts.wiki/images/e/e8/立绘_伊桑_1.png"
@@ -1540,7 +1540,9 @@
     "星级": 5,
     "获取途径": [
       "【危机合约#0荒芜行动】获取",
-      "活动获取"
+      "活动获取",
+      "常驻高级凭证区",
+      "常驻通用凭证区"
     ],
     "半身像": "https://prts.wiki/images/7/7f/半身像_柏喙_1.png",
     "立绘": "https://prts.wiki/images/7/7f/立绘_柏喙_1.png"
@@ -2449,7 +2451,8 @@
     "职业": "狙击",
     "星级": 6,
     "获取途径": [
-      "限定寻访"
+      "限定寻访",
+      "【盛夏新星】限定寻访"
     ],
     "半身像": "https://prts.wiki/images/5/51/半身像_假日威龙陈_1.png",
     "立绘": "https://prts.wiki/images/5/51/立绘_假日威龙陈_1.png"
@@ -2573,7 +2576,7 @@
     "职业": "术师",
     "星级": 4,
     "获取途径": [
-      "凭证交易所"
+      "采购凭证区"
     ],
     "半身像": "https://prts.wiki/images/3/3a/半身像_布丁_1.png",
     "立绘": "https://prts.wiki/images/3/3a/立绘_布丁_1.png"
@@ -2597,7 +2600,7 @@
     "职业": "医疗",
     "星级": 5,
     "获取途径": [
-      "凭证交易所"
+      "采购凭证区"
     ],
     "半身像": "https://prts.wiki/images/6/6f/半身像_蜜莓_1.png",
     "立绘": "https://prts.wiki/images/6/6f/立绘_蜜莓_1.png"
@@ -3102,7 +3105,7 @@
     "职业": "术师",
     "星级": 5,
     "获取途径": [
-      "凭证交易所"
+      "采购凭证区"
     ],
     "半身像": "https://prts.wiki/images/8/84/半身像_雪绒_1.png",
     "立绘": "https://prts.wiki/images/8/84/立绘_雪绒_1.png"
@@ -3125,7 +3128,7 @@
     "职业": "近卫",
     "星级": 4,
     "获取途径": [
-      "凭证交易所"
+      "采购凭证区"
     ],
     "半身像": "https://prts.wiki/images/b/b2/半身像_石英_1.png",
     "立绘": "https://prts.wiki/images/b/b2/立绘_石英_1.png"
@@ -3621,7 +3624,7 @@
     "职业": "术师",
     "星级": 5,
     "获取途径": [
-      "凭证交易所"
+      "采购凭证区"
     ],
     "半身像": "https://prts.wiki/images/a/a1/半身像_折光_1.png",
     "立绘": "https://prts.wiki/images/a/a1/立绘_折光_1.png"
@@ -3632,7 +3635,7 @@
     "职业": "狙击",
     "星级": 4,
     "获取途径": [
-      "凭证交易所"
+      "采购凭证区"
     ],
     "半身像": "https://prts.wiki/images/5/5b/半身像_跃跃_1.png",
     "立绘": "https://prts.wiki/images/5/5b/立绘_跃跃_1.png"
@@ -3773,5 +3776,54 @@
     ],
     "半身像": "https://prts.wiki/images/a/ae/半身像_万顷_1.png",
     "立绘": "https://prts.wiki/images/a/ae/立绘_万顷_1.png"
+  },
+  "艾拉": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/b/b1/lztftx69n7ed00818tgvhz6qn65jhkk.jpg/120px-艾拉hd.jpg",
+    "名称": "艾拉",
+    "职业": "特种",
+    "星级": 6,
+    "获取途径": [
+      "【突破，援助，任务循环】限时寻访",
+      "联动"
+    ],
+    "半身像": "https://prts.wiki/images/1/12/半身像_艾拉_1.png",
+    "立绘": "https://prts.wiki/images/1/12/立绘_艾拉_1.png"
+  },
+  "导火索": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/4/43/g85a01hwcs4u0yczyfg9rz7hvatjb5b.jpg/120px-导火索hd.jpg",
+    "名称": "导火索",
+    "职业": "近卫",
+    "星级": 5,
+    "获取途径": [
+      "【水晶箭行动】活动获取",
+      "活动获取",
+      "联动"
+    ],
+    "半身像": "https://prts.wiki/images/2/2b/半身像_导火索_1.png",
+    "立绘": "https://prts.wiki/images/2/2b/立绘_导火索_1.png"
+  },
+  "双月": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/f/ff/gqtgcs54ybaq4dnpyb5mxsfb4yo2wzd.jpg/120px-双月hd.jpg",
+    "名称": "双月",
+    "职业": "特种",
+    "星级": 5,
+    "获取途径": [
+      "【突破，援助，任务循环】限时寻访",
+      "联动"
+    ],
+    "半身像": "https://prts.wiki/images/6/66/半身像_双月_1.png",
+    "立绘": "https://prts.wiki/images/6/66/立绘_双月_1.png"
+  },
+  "医生": {
+    "头像": "https://patchwiki.biligame.com/images/arknights/thumb/d/df/3l1vwd6k96hbexakktambi14kk1hkqx.jpg/120px-医生hd.jpg",
+    "名称": "医生",
+    "职业": "近卫",
+    "星级": 5,
+    "获取途径": [
+      "【突破，援助，任务循环】限时寻访",
+      "联动"
+    ],
+    "半身像": "https://prts.wiki/images/9/93/半身像_医生_1.png",
+    "立绘": "https://prts.wiki/images/9/93/立绘_医生_1.png"
   }
 }
