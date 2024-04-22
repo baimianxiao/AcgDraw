@@ -1,5 +1,5 @@
 # -*- encoding:utf-8 -*-
-
+import json
 import re
 from urllib.parse import unquote
 
@@ -51,8 +51,9 @@ class UpdateHandleArk(UpdateHandle):
                     return ""
                 dom = etree.HTML(result, etree.HTMLParser())
                 image_url_1 = dom.xpath("//img[@decoding='async' and @width='180'and @height='360']/@src")
-                image_url_path = re.search(r"/[a-zA-Z0-9]{1,2}/[a-zA-Z0-9]{1,2}/", str( image_url_1[0]))
+                image_url_path = re.search(r"/[a-zA-Z0-9]{1,2}/[a-zA-Z0-9]{1,2}/", str(image_url_1[0]))
             except IndexError:
+                print("获取人物更新信息失败")
                 continue
             char_dict = {
                 "头像": unquote(str(avatar).split(" ")[-2]),
@@ -63,7 +64,7 @@ class UpdateHandleArk(UpdateHandle):
                 "半身像": "https://prts.wiki" + str(image_url_path.group()) + "/半身像_" + name + "_1.png",
                 "立绘": "https://prts.wiki" + str(image_url_path.group()) + "/立绘_" + name + "_1.png"
             }
-            # print(json.dumps(char_dict, ensure_ascii=False, indent=2))
+            #print(json.dumps(char_dict, ensure_ascii=False, indent=2))
 
             # 稀有度分类
             if "标准寻访" in char_dict["获取途径"]:
@@ -81,6 +82,7 @@ class UpdateHandleArk(UpdateHandle):
         # print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
         json_write(self.data_path + 'char_star_list.json', simple_star_list)
         json_write(self.data_path + 'char_data_dict.json', char_data_list)
+        #print(char_data_list)
         return char_data_list
 
     # 下载图片数据
