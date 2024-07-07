@@ -43,6 +43,7 @@ def arknights_draw():
     response.headers["Content-Type"] = "image/png"
     return response
 
+
 # 自动更新任务
 @scheduler.task('interval', id='api_auto_update', days=1, misfire_grace_time=900)
 def api_auto_update():

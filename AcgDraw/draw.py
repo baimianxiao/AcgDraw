@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from random import randint, choice
-from AcgDraw.systemAction import json_read
+
+from AcgDraw.util import json_read
 
 
 # 明日方舟抽卡数据处理类
@@ -10,14 +11,14 @@ class DrawHandleArk:
         self.char_star_path = char_star_path
         self.char_star_dict = {}
 
-    async def data_reload(self, mode=None):
+    async def data_reload(self):
         self.char_star_dict = await json_read(self.char_star_path)
         pass
 
-    async def char_once_draw(self, mode=None, group=None):
+    async def char_once_pull(self, mode=None, group=None):
         pass
 
-    async def char_ten_draw(self, mode=None, group=None):
+    async def char_ten_pulls(self, mode=None):
         if mode is None or mode == "default":
             draw_result = []
             limit = 0

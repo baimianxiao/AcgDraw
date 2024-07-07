@@ -3,7 +3,7 @@ import json
 import re
 from urllib.parse import unquote
 
-from lxml import etree
+from lxml import etree, html
 from tqdm import tqdm, trange
 
 from AcgDraw.systemAction import json_write
@@ -36,6 +36,9 @@ class UpdateHandleArk(UpdateHandle):
         char_list = dom.xpath("//table[@id='CardSelectTr']/tbody/tr")
         for char in trange(len(char_list), desc="处理人物素材", unit="char"):
             char = char_list[char]
+            html.tostring(char , encoding='utf-8').decode('utf-8')
+            print(html.tostring(char , encoding='utf-8').decode('utf-8'))
+            print("############################################################\n\n\n\n\n")
             try:
                 # 获取基本信息
                 avatar = char.xpath("./td[1]/div/div/div/a/img/@srcset")[0]
@@ -52,37 +55,36 @@ class UpdateHandleArk(UpdateHandle):
                 dom = etree.HTML(result, etree.HTMLParser())
                 image_url_1 = dom.xpath("//img[@decoding='async' and @width='180'and @height='360']/@src")
                 image_url_path = re.search(r"/[a-zA-Z0-9]{1,2}/[a-zA-Z0-9]{1,2}/", str(image_url_1[0]))
+
+                char_dict = {
+                    "头像": unquote(str(avatar).split(" ")[-2]),
+                    "名称": name,
+                    "职业": str(profession),
+                    "星级": int(str(star).strip()),
+                    "获取途径": sources,
+                    "半身像": "https://prts.wiki" + str(image_url_path.group()) + "/半身像_" + name + "_1.png",
+                    "立绘": "https://prts.wiki" + str(image_url_path.group()) + "/立绘_" + name + "_1.png"
+                }
+                print(json.dumps(char_dict, ensure_ascii=False, indent=2))
+
+                # 稀有度分类
+                if "标准寻访" in char_dict["获取途径"]:
+                    if char_dict["星级"] == 6:
+                        simple_star_list[6].append(name)
+                    elif char_dict["星级"] == 5:
+                        simple_star_list[5].append(name)
+                    elif char_dict["星级"] == 4:
+                        simple_star_list[4].append(name)
+                    elif char_dict["星级"] == 3:
+                        simple_star_list[3].append(name)
             except IndexError:
-                print("获取人物更新信息失败")
                 continue
-            char_dict = {
-                "头像": unquote(str(avatar).split(" ")[-2]),
-                "名称": name,
-                "职业": str(profession),
-                "星级": int(str(star).strip()),
-                "获取途径": sources,
-                "半身像": "https://prts.wiki" + str(image_url_path.group()) + "/半身像_" + name + "_1.png",
-                "立绘": "https://prts.wiki" + str(image_url_path.group()) + "/立绘_" + name + "_1.png"
-            }
-            #print(json.dumps(char_dict, ensure_ascii=False, indent=2))
-
-            # 稀有度分类
-            if "标准寻访" in char_dict["获取途径"]:
-                if char_dict["星级"] == 6:
-                    simple_star_list[6].append(name)
-                elif char_dict["星级"] == 5:
-                    simple_star_list[5].append(name)
-                elif char_dict["星级"] == 4:
-                    simple_star_list[4].append(name)
-                elif char_dict["星级"] == 3:
-                    simple_star_list[3].append(name)
-
             char_data_list[name] = char_dict
 
         # print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
         json_write(self.data_path + 'char_star_list.json', simple_star_list)
         json_write(self.data_path + 'char_data_dict.json', char_data_list)
-        #print(char_data_list)
+        # print(char_data_list)
         return char_data_list
 
     # 下载图片数据
