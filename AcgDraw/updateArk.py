@@ -34,19 +34,14 @@ class UpdateHandleArk(UpdateHandle):
             return ""
         dom = etree.HTML(result, etree.HTMLParser())
         char_list = dom.xpath("//table[@id='CardSelectTr']/tbody/tr")
-        for char in trange(len(char_list), desc="处理人物素材", unit="char"):
-            char = char_list[char]
-            html.tostring(char , encoding='utf-8').decode('utf-8')
-            print(html.tostring(char , encoding='utf-8').decode('utf-8'))
-            print("############################################################\n\n\n\n\n")
+        char_raw = char_list[1]
+        name_list = char_raw.xpath("//center/a/@title")
+        profession_list = char_raw.xpath("//tr[@data-param1]/@data-param1")
+        star_list = char_raw.xpath("//tr[@data-param2]/@data-param2")
+        sources_list = char_raw.xpath("//tr[@data-param6]/@data-param6")
+        for char_id in trange(len(name_list), desc="处理人物素材", unit="char"):
+            name = name_list[char_id]
             try:
-                # 获取基本信息
-                avatar = char.xpath("./td[1]/div/div/div/a/img/@srcset")[0]
-                name = char.xpath("./td[2]/a/text()")[0]
-                profession = char.xpath("./td[4]/img/@alt")[0]
-                star = char.xpath("./td[5]/text()")[0]
-                sources = [_.strip('\n') for _ in char.xpath("./td[8]/text()")]
-
                 # 获取半身图/全身立绘
                 url_root = "https://prts.wiki/w/文件:半身像_" + name + "_1.png"
                 result = await self.get_url(url_root)
@@ -55,37 +50,50 @@ class UpdateHandleArk(UpdateHandle):
                 dom = etree.HTML(result, etree.HTMLParser())
                 image_url_1 = dom.xpath("//img[@decoding='async' and @width='180'and @height='360']/@src")
                 image_url_path = re.search(r"/[a-zA-Z0-9]{1,2}/[a-zA-Z0-9]{1,2}/", str(image_url_1[0]))
-
-                char_dict = {
-                    "头像": unquote(str(avatar).split(" ")[-2]),
-                    "名称": name,
-                    "职业": str(profession),
-                    "星级": int(str(star).strip()),
-                    "获取途径": sources,
-                    "半身像": "https://prts.wiki" + str(image_url_path.group()) + "/半身像_" + name + "_1.png",
-                    "立绘": "https://prts.wiki" + str(image_url_path.group()) + "/立绘_" + name + "_1.png"
-                }
-                print(json.dumps(char_dict, ensure_ascii=False, indent=2))
-
-                # 稀有度分类
-                if "标准寻访" in char_dict["获取途径"]:
-                    if char_dict["星级"] == 6:
-                        simple_star_list[6].append(name)
-                    elif char_dict["星级"] == 5:
-                        simple_star_list[5].append(name)
-                    elif char_dict["星级"] == 4:
-                        simple_star_list[4].append(name)
-                    elif char_dict["星级"] == 3:
-                        simple_star_list[3].append(name)
             except IndexError:
                 continue
-            char_data_list[name] = char_dict
 
-        # print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
+            char_dict = {
+                "名称": name,
+                "职业": str(profession_list[char_id]),
+                "星级": int(star_list[char_id][0]),
+                "获取途径": [item.strip() for item in sources_list[char_id].split(',')],
+                "半身像": "https://media.prts.wiki" + str(image_url_path.group()) + "半身像_" + name + "_1.png",
+                "立绘": "https://media.prts.wiki" + str(image_url_path.group()) + "立绘_" + name + "_1.png"
+            }
+            # print(json.dumps(char_dict, ensure_ascii=False, indent=4))
+
+            # 稀有度分类
+            if "标准寻访" in char_dict["获取途径"]:
+                if char_dict["星级"] == 6:
+                    simple_star_list[6].append(name)
+                elif char_dict["星级"] == 5:
+                    simple_star_list[5].append(name)
+                elif char_dict["星级"] == 4:
+                    simple_star_list[4].append(name)
+                elif char_dict["星级"] == 3:
+                    simple_star_list[3].append(name)
+
+            char_data_list[name] = char_dict
+            # print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
         json_write(self.data_path + 'char_star_list.json', simple_star_list)
         json_write(self.data_path + 'char_data_dict.json', char_data_list)
         # print(char_data_list)
         return char_data_list
+        """profession = char.xpath("./tr/@data-param1")[0]
+            sources = [_.strip('\n') for _ in char.xpath("./td[8]/text()")]
+            print("############################################################\n\n\n\n\n")
+            
+            char_dict = {
+                "名称": name_list[id],
+                "职业": str(profession[id]),
+                "星级": int(str(star).strip()),
+                "获取途径": sources,
+                "半身像": "https://prts.wiki" + str(image_url_path.group()) + "/半身像_" + name + "_1.png",
+                "立绘": "https://prts.wiki" + str(image_url_path.group()) + "/立绘_" + name + "_1.png"
+            }        
+            print(json.dumps(char_dict, ensure_ascii=False, indent=2))
+    """
 
     # 下载图片数据
     async def char_image_download(self, char_list):
@@ -107,3 +115,6 @@ class UpdateHandleArk(UpdateHandle):
 
 if __name__ == "__main__":
     UpdateHandleArk("../data/Arknights/", "../conf/Arknights/").start_update()
+
+
+
