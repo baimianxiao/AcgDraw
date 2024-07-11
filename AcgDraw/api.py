@@ -67,11 +67,15 @@ async def arknights():
     # 重置BytesIO对象指针到开始位置
     img_byte_arr.seek(0)
     # 使用流式传输返回图片
-    return StreamingResponse(
+    response= StreamingResponse(
         img_byte_arr,
         media_type="image/PNG",
     )
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
 
+    return response
 
 @api_app.get("/api-admin")
 async def api_admin():
