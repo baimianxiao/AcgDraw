@@ -1,0 +1,16 @@
+{
+  "global": {
+    "host": "127.0.0.1",
+    "port": "11451"
+  },
+  "apiArk": {
+    "route": "/ArknightsDraw"
+  },
+  "autoTask": {
+    "autoUpdate": {
+      "globalMode": 1,
+      "globalCycle": "week",
+      "globalTime": "1:00"
+    }
+  }
+}
