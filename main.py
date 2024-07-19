@@ -31,8 +31,8 @@ def mkdir(path):
 # 写入json
 
 
-host = json_read(join(dir, "conf", "global.json"))["host"]
-port = int(json_read(join(dir, "conf", "global.json"))["port"])
+host = json_read(join(dir, "conf", "config.json"))["host"]
+port = int(json_read(join(dir, "conf", "config.json"))["port"])
 
 # 初始化目录
 create_dir_list = [
@@ -42,8 +42,8 @@ create_dir_list = [
 ]
 
 
-def log_output(type: str, message: str) -> None:
-    print("{}[{}]{}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), type, message))
+def log_output(log_type: str, message: str) -> None:
+    print("{}[{}]{}".format(datetime.now().strftime("%Y-%m-%d %H:%M:%S"), log_type, message))
 
 
 log_output("INFO", "Arknights-Draw")
