@@ -1,7 +1,6 @@
 # -*- encoding：utf-8 -*-
 
 from datetime import datetime
-from io import BytesIO
 from os import getcwd
 from os.path import join
 
@@ -13,7 +12,7 @@ from apscheduler.triggers.interval import IntervalTrigger
 import uvicorn
 
 from AcgDraw import DrawHandleArk
-from AcgDraw.image import ImageHandleArk
+from AcgDraw.image import image_output, ImageHandleArk
 
 work_dir = getcwd()
 
@@ -54,20 +53,16 @@ scheduler.add_job(
 
 @api_app.get("/")
 async def root():
-    return {"message": "又一个AcgDraw的站点被发现了", "version": "1.0","ArknightsDraw":"/arknightsdraw"}
+    return {"message": "又一个AcgDraw的站点被发现了", "version": "1.0", "ArknightsDraw": "/arknightsdraw"}
 
 
 @api_app.get("/arknightsdraw")
 async def arknights():
     result = await api_app.state.draw.char_ten_pulls()
     pil_image = await api_app.state.image.char_ten_pulls(result)
-    # 将PIL图片保存到BytesIO对象中
-    img_byte_arr = BytesIO()
-    pil_image.save(img_byte_arr, format="PNG")
-    # 重置BytesIO对象指针到开始位置
-    img_byte_arr.seek(0)
+    img_byte_arr = await image_output(pil_image)
     # 使用流式传输返回图片
-    response= StreamingResponse(
+    response = StreamingResponse(
         img_byte_arr,
         media_type="image/PNG",
     )
@@ -76,6 +71,7 @@ async def arknights():
     response.headers["Expires"] = "0"
 
     return response
+
 
 @api_app.get("/api-admin")
 async def api_admin():

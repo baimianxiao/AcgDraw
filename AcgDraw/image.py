@@ -2,6 +2,7 @@
 
 from os.path import join
 from PIL import Image
+from io import BytesIO
 
 from AcgDraw.util import json_read_async
 
@@ -35,6 +36,16 @@ async def get_mongolia(im1: Image.Image, im2: Image.Image, width=0, height=0):
     except Exception as e:
         # 异常处理
         raise RuntimeError("图像处理失败。") from e
+
+
+# 输出图片
+async def image_output(pil_image):
+    # 将PIL图片保存到BytesIO对象中
+    img_byte_arr = BytesIO()
+    pil_image.save(img_byte_arr, format="PNG")
+    # 重置BytesIO对象指针到开始位置
+    img_byte_arr.seek(0)
+    return img_byte_arr
 
 
 class ImageHandleArk:
