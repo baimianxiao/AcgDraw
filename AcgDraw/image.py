@@ -3,7 +3,7 @@
 from os.path import join
 from PIL import Image
 
-from AcgDraw.util import json_read
+from AcgDraw.util import json_read_async
 
 
 # 透明通道合成
@@ -49,7 +49,7 @@ class ImageHandleArk:
 
     # 装载数据
     async def data_reload(self):
-        self.char_data_dict = await json_read(self.char_data_path)
+        self.char_data_dict = await json_read_async(self.char_data_path)
 
     # 十连抽图片合成处理
     async def char_ten_pulls(self, char_list: list):

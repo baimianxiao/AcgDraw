@@ -1,12 +1,10 @@
 # -*- encoding:utf-8 -*-
-import json
 import re
-from urllib.parse import unquote
 
 from lxml import etree, html
 from tqdm import tqdm, trange
 
-from AcgDraw.systemAction import json_write
+from AcgDraw.util import json_write_async
 from AcgDraw.update import *
 
 
@@ -76,24 +74,10 @@ class UpdateHandleArk(UpdateHandle):
 
             char_data_list[name] = char_dict
             # print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
-        json_write(self.data_path + 'char_star_list.json', simple_star_list)
-        json_write(self.data_path + 'char_data_dict.json', char_data_list)
+        await json_write_async(self.data_path + 'char_star_list.json', simple_star_list)
+        await json_write_async(self.data_path + 'char_data_dict.json', char_data_list)
         # print(char_data_list)
         return char_data_list
-        """profession = char.xpath("./tr/@data-param1")[0]
-            sources = [_.strip('\n') for _ in char.xpath("./td[8]/text()")]
-            print("############################################################\n\n\n\n\n")
-            
-            char_dict = {
-                "名称": name_list[id],
-                "职业": str(profession[id]),
-                "星级": int(str(star).strip()),
-                "获取途径": sources,
-                "半身像": "https://prts.wiki" + str(image_url_path.group()) + "/半身像_" + name + "_1.png",
-                "立绘": "https://prts.wiki" + str(image_url_path.group()) + "/立绘_" + name + "_1.png"
-            }        
-            print(json.dumps(char_dict, ensure_ascii=False, indent=2))
-    """
 
     # 下载图片数据
     async def char_image_download(self, char_list):
@@ -115,6 +99,3 @@ class UpdateHandleArk(UpdateHandle):
 
 if __name__ == "__main__":
     UpdateHandleArk("../data/Arknights/", "../conf/Arknights/").start_update()
-
-
-

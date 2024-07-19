@@ -12,7 +12,7 @@ import uvicorn
 
 import AcgDraw
 from AcgDraw import api
-from AcgDraw.systemAction import json_read, json_write
+from AcgDraw.util import json_read, json_write
 
 # 取根目录
 dir = os.getcwd()  # 取根目录
@@ -37,7 +37,6 @@ port = int(json_read(join(dir, "conf", "global.json"))["port"])
 # 初始化目录
 create_dir_list = [
     "./static/image",
-    "./templates",
     "./data/",
     "./conf"
 ]
