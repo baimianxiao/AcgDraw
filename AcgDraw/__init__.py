@@ -2,7 +2,6 @@
 
 import AcgDraw.drawHandle
 import AcgDraw.drawHandleArk
-import AcgDraw.systemAction
 import AcgDraw.update
 import AcgDraw.updateArk
 from AcgDraw.draw import DrawHandleArk

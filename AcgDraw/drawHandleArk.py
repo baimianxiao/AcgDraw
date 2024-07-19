@@ -3,7 +3,7 @@ from os import getcwd
 from os.path import  join
 from random import randint, choice
 from PIL import Image
-from AcgDraw.systemAction import json_read
+from AcgDraw.util import json_read
 from AcgDraw.drawHandle import get_mongolia
 
 # 取根目录
