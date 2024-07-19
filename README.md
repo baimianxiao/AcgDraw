@@ -71,15 +71,13 @@ docker run -d -p 11451:11451 --name=acgdraw acgdraw
 ## 配置文件
 ### 全局配置文件
 位于`根目录/conf/global`
-``
-
 
 ## 协议
 GPL-3.0 license
 
 ## 其他
 
-- API地址：<http://api.elapsetower.com/arknightsdraw>
+- API地址：<http://api.elapsetower.com/arknightsdraw>(目前已失效)
 
 - 感谢[@分子](https://github.com/yigefz)对图片素材的处理
 
