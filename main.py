@@ -31,8 +31,8 @@ def mkdir(path):
 # 写入json
 
 
-host = json_read(join(dir, "conf", "config.json"))["host"]
-port = int(json_read(join(dir, "conf", "config.json"))["port"])
+host = json_read(join(dir, "conf", "config.json"))["global"]["host"]
+port = int(json_read(join(dir, "conf", "config.json"))["global"]["port"])
 
 # 初始化目录
 create_dir_list = [
@@ -55,7 +55,7 @@ if len(sys.argv) > 1:
         for create_dir in create_dir_list:
             mkdir(create_dir)
         try:
-            AcgDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
+            AcgDraw.update.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
             with open("./data/lock.lock", 'w', encoding='utf-8') as f:
                 f.write("")
         except:
@@ -63,7 +63,7 @@ if len(sys.argv) > 1:
             exit(1)
         exit(0)
     elif sys.argv[1] == "update":
-        AcgDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
+        AcgDraw.update.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
         uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
     elif sys.argv[1] == "start":
         uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
@@ -78,7 +78,7 @@ else:
         for create_dir in create_dir_list:
             mkdir(create_dir)
         try:
-            AcgDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
+            AcgDraw.update.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
             with open("./data/lock.lock", 'w', encoding='utf-8') as f:
                 f.write("")
             uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
@@ -92,6 +92,6 @@ else:
             uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
 
         elif int(x) == 2:
-            AcgDraw.updateArk.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
+            AcgDraw.update.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
             uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
 
