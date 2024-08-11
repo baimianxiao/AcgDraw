@@ -6,6 +6,9 @@
   "apiArk": {
     "route": "/ArknightsDraw"
   },
+  "apiGen": {
+    "route": "/GenshinDraw"
+  },
   "autoTask": {
     "autoUpdate": {
       "globalMode": 1,

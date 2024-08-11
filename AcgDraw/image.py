@@ -47,7 +47,7 @@ async def image_output(pil_image):
     img_byte_arr.seek(0)
     return img_byte_arr
 
-
+# 方舟图片处理
 class ImageHandleArk:
 
     def __init__(self, char_data_path: str, image_path: str):
@@ -87,27 +87,29 @@ class ImageHandleArk:
         return main_image
 
 
-
-class ImageHandleArk:
+# 原神图片处理
+class ImageHandleGen:
 
     def __init__(self, char_data_path: str, image_path: str):
-        self.char_data_path = char_data_path
+        """self.char_data_path = char_data_path
         self.char_data_dict = {}
         self.image_path = image_path
         self.gacha_image_path = join(self.image_path, "gacha")
         self.char_image_path = join(self.image_path, "char")
-        self.background_image_path = join(self.gacha_image_path, "background.png")
+        self.background_image_path = join(self.gacha_image_path, "background.png")"""
+        pass
 
     # 装载数据
     async def data_reload(self):
-        self.char_data_dict = await json_read_async(self.char_data_path)
+        # self.char_data_dict = await json_read_async(self.char_data_path)
+        pass
 
     # 十连抽图片合成处理
     async def char_ten_pulls(self, char_list: list):
         if char_list is None:
             return False
         main_image = Image.open(self.background_image_path, mode="r")
-        x = 0
+        """x = 0
         for char in char_list:
             x = x + 1
             # 获取单次光效/背景/图标
@@ -125,3 +127,7 @@ class ImageHandleArk:
             main_image = await get_mongolia(main_image, star_image, 18 + x * 84, 5)
             main_image = await get_mongolia(main_image, profession_image, 18 + x * 84, 0)
         return main_image
+        """
+
+if __name__ == "__main__":
+    ImageHandleGen("", "")
