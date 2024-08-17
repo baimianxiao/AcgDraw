@@ -4,19 +4,559 @@
       "rarity": 5,
       "element": "火"
     },
+    "林尼": {
+      "rarity": 5,
+      "element": "火"
+    },
+    "迪希雅": {
+      "rarity": 5,
+      "element": "火"
+    },
+    "霄宫": {
+      "rarity": 5,
+      "element": "火"
+    },
+    "可莉": {
+      "rarity": 5,
+      "element": "火"
+    },
+    "迪卢克": {
+      "rarity": 5,
+      "element": "火"
+    },
     "刻晴": {
+      "rarity": 5,
+      "element": "雷"
+    },
+    "赛诺": {
+      "rarity": 5,
+      "element": "雷"
+    },
+    "八重神子": {
       "rarity": 5,
       "element": "雷"
     },
     "雷电将军": {
       "rarity": 5,
       "element": "雷"
+    },
+    "流浪者": {
+      "rarity": 5,
+      "element": "风"
+    },
+    "枫原万叶": {
+      "rarity": 5,
+      "element": "风"
+    },
+    "魈": {
+      "rarity": 5,
+      "element": "风"
+    },
+    "温迪": {
+      "rarity": 5,
+      "element": "风"
+    },
+    "流琴": {
+      "rarity": 5,
+      "element": "风"
+    },
+    "白术": {
+      "rarity": 5,
+      "element": "草"
+    },
+    "艾尔海森": {
+      "rarity": 5,
+      "element": "草"
+    },
+    "纳西妲": {
+      "rarity": 5,
+      "element": "草"
+    },
+    "提纳里": {
+      "rarity": 5,
+      "element": "草"
+    },
+    "申鹤": {
+      "rarity": 5,
+      "element": "冰"
+    },
+    "神里绫华": {
+      "rarity": 5,
+      "element": "冰"
+    },
+    "优菈": {
+      "rarity": 5,
+      "element": "冰"
+    },
+    "甘雨": {
+      "rarity": 5,
+      "element": "冰"
+    },
+    "七七": {
+      "rarity": 5,
+      "element": "冰"
+    },
+    "荒泷一斗": {
+      "rarity": 5,
+      "element": "岩"
+    },
+    "阿贝多": {
+      "rarity": 5,
+      "element": "岩"
+    },
+    "钟离": {
+      "rarity": 5,
+      "element": "岩"
+    },
+    "云瑾": {
+      "rarity": 4,
+      "element": "岩"
+    },
+    "五郎": {
+      "rarity": 4,
+      "element": "岩"
+    },
+    "凝光": {
+      "rarity": 4,
+      "element": "岩"
+    },
+    "诺艾尔": {
+      "rarity": 4,
+      "element": "岩"
+    },
+    "莱依拉": {
+      "rarity": 4,
+      "element": "冰"
+    },
+    "罗莎莉亚": {
+      "rarity": 4,
+      "element": "冰"
+    },
+    "迪奥娜": {
+      "rarity": 4,
+      "element": "冰"
+    },
+    "重云": {
+      "rarity": 4,
+      "element": "冰"
+    },
+    "凯亚": {
+      "rarity": 4,
+      "element": "冰"
+    },
+    "米卡": {
+      "rarity": 4,
+      "element": "冰"
+    },
+    "绮良良": {
+      "rarity": 4,
+      "element": "草"
+    },
+    "卡维": {
+      "rarity": 4,
+      "element": "草"
+    },
+    "瑶瑶": {
+      "rarity": 4,
+      "element": "草"
+    },
+    "柯莱": {
+      "rarity": 4,
+      "element": "草"
+    },
+    "多莉": {
+      "rarity": 4,
+      "element": "雷"
+    },
+    "久歧忍": {
+      "rarity": 4,
+      "element": "雷"
+    },
+    "九条裟罗": {
+      "rarity": 4,
+      "element": "雷"
+    },
+    "北斗": {
+      "rarity": 4,
+      "element": "雷"
+    },
+    "雷泽": {
+      "rarity": 4,
+      "element": "雷"
+    },
+    "菲谢尔": {
+      "rarity": 4,
+      "element": "雷"
+    },
+    "丽莎": {
+      "rarity": 4,
+      "element": "雷"
+    },
+    "珐露珊": {
+      "rarity": 4,
+      "element": "风"
+    },
+    "鹿野院平藏": {
+      "rarity": 4,
+      "element": "风"
+    },
+    "早柚": {
+      "rarity": 4,
+      "element": "风"
+    },
+    "砂糖": {
+      "rarity": 4,
+      "element": "风"
+    },
+    "坎蒂丝": {
+      "rarity": 4,
+      "element": "水"
+    },
+    "芭芭拉": {
+      "rarity": 4,
+      "element": "水"
+    },
+    "行秋": {
+      "rarity": 4,
+      "element": "水"
+    },
+    "托马": {
+      "rarity": 4,
+      "element": "火"
+    },
+    "烟绯": {
+      "rarity": 4,
+      "element": "火"
+    },
+    "辛焱": {
+      "rarity": 4,
+      "element": "火"
+    },
+    "香菱": {
+      "rarity": 4,
+      "element": "火"
+    },
+    "安柏": {
+      "rarity": 4,
+      "element": "火"
+    },
+    "班尼特": {
+      "rarity": 4,
+      "element": "火"
     }
   },
   "weapons_data_list": {
-    "西风剑": {
+    "裁叶萃光": {
       "rarity": 5,
       "weapons_type": "单手剑"
+    },
+    "圣显之钥": {
+      "rarity": 5,
+      "weapons_type": "单手剑"
+    },
+    "波乱月白经津": {
+      "rarity": 5,
+      "weapons_type": "单手剑"
+    },
+    "雾切之回光": {
+      "rarity": 5,
+      "weapons_type": "单手剑"
+    },
+    "苍古自由之誓": {
+      "rarity": 5,
+      "weapons_type": "单手剑"
+    },
+    "磐岩结绿": {
+      "rarity": 5,
+      "weapons_type": "单手剑"
+    },
+    "斫峰之刃": {
+      "rarity": 5,
+      "weapons_type": "单手剑"
+    },
+    "风鹰剑": {
+      "rarity": 5,
+      "weapons_type": "单手剑"
+    },
+    "天空之刃": {
+      "rarity": 5,
+      "weapons_type": "单手剑"
+    },
+    "西福斯的月光": {
+      "rarity": 4,
+      "weapons_type": "单手剑"
+    },
+    "暗巷闪光": {
+      "rarity": 4,
+      "weapons_type": "单手剑"
+    },
+    "匣里龙吟": {
+      "rarity": 4,
+      "weapons_type": "单手剑"
+    },
+    "祭礼剑": {
+      "rarity": 4,
+      "weapons_type": "单手剑"
+    },
+    "笛剑": {
+      "rarity": 4,
+      "weapons_type": "单手剑"
+    },
+    "西风剑": {
+      "rarity": 4,
+      "weapons_type": "单手剑"
+    },
+    "冷刃": {
+      "rarity": 3,
+      "weapons_type": "单手剑"
+    },
+    "飞天御剑": {
+      "rarity": 3,
+      "weapons_type": "单手剑"
+    },
+    "黎明神剑": {
+      "rarity": 3,
+      "weapons_type": "单手剑"
+    },
+    "赤角石溃杵": {
+      "rarity": 5,
+      "weapons_type": "双手剑"
+    },
+    "松籁响起之时": {
+      "rarity": 5,
+      "weapons_type": "双手剑"
+    },
+    "无工之剑": {
+      "rarity": 5,
+      "weapons_type": "双手剑"
+    },
+    "天空之傲": {
+      "rarity": 5,
+      "weapons_type": "双手剑"
+    },
+    "狼的末路": {
+      "rarity": 5,
+      "weapons_type": "双手剑"
+    },
+    "玛海菈的水色": {
+      "rarity": 4,
+      "weapons_type": "双手剑"
+    },
+    "恶王丸": {
+      "rarity": 4,
+      "weapons_type": "双手剑"
+    },
+    "千岩古剑": {
+      "rarity": 4,
+      "weapons_type": "双手剑"
+    },
+    "钟剑": {
+      "rarity": 4,
+      "weapons_type": "双手剑"
+    },
+    "雨裁": {
+      "rarity": 4,
+      "weapons_type": "双手剑"
+    },
+    "祭礼大剑": {
+      "rarity": 4,
+      "weapons_type": "双手剑"
+    },
+    "西风大剑": {
+      "rarity": 4,
+      "weapons_type": "双手剑"
+    },
+    "沐浴龙血的剑": {
+      "rarity": 3,
+      "weapons_type": "双手剑"
+    },
+    "铁影阔剑": {
+      "rarity": 3,
+      "weapons_type": "双手剑"
+    },
+    "以理服人": {
+      "rarity": 3,
+      "weapons_type": "双手剑"
+    },
+    "赤沙之杖": {
+      "rarity": 5,
+      "weapons_type": "长柄武器"
+    },
+    "息灾": {
+      "rarity": 5,
+      "weapons_type": "长柄武器"
+    },
+    "薙草之稻光": {
+      "rarity": 5,
+      "weapons_type": "长柄武器"
+    },
+    "护墨之杖": {
+      "rarity": 5,
+      "weapons_type": "长柄武器"
+    },
+    "和璞鸢": {
+      "rarity": 5,
+      "weapons_type": "长柄武器"
+    },
+    "天空之脊": {
+      "rarity": 5,
+      "weapons_type": "长柄武器"
+    },
+    "断浪长鳍": {
+      "rarity": 4,
+      "weapons_type": "长柄武器"
+    },
+    "千岩长枪": {
+      "rarity": 4,
+      "weapons_type": "长柄武器"
+    },
+    "匣里灭辰": {
+      "rarity": 4,
+      "weapons_type": "长柄武器"
+    },
+    "西风长枪": {
+      "rarity": 4,
+      "weapons_type": "长柄武器"
+    },
+    "黑缨枪": {
+      "rarity": 3,
+      "weapons_type": "长柄武器"
+    },
+    "碧落之珑": {
+      "rarity": 5,
+      "weapons_type": "法器"
+    },
+    "图莱杜拉的回忆": {
+      "rarity": 5,
+      "weapons_type": "法器"
+    },
+    "千夜浮梦": {
+      "rarity": 5,
+      "weapons_type": "法器"
+    },
+    "神乐之真意": {
+      "rarity": 5,
+      "weapons_type": "法器"
+    },
+    "不灭月华": {
+      "rarity": 5,
+      "weapons_type": "法器"
+    },
+    "尘世之锁": {
+      "rarity": 5,
+      "weapons_type": "法器"
+    },
+    "天空之卷": {
+      "rarity": 5,
+      "weapons_type": "法器"
+    },
+    "四风原典": {
+      "rarity": 5,
+      "weapons_type": "法器"
+    },
+    "流浪的晚星": {
+      "rarity": 4,
+      "weapons_type": "法器"
+    },
+    "暗巷的酒与诗": {
+      "rarity": 4,
+      "weapons_type": "法器"
+    },
+    "流浪乐章": {
+      "rarity": 4,
+      "weapons_type": "法器"
+    },
+    "祭礼残章": {
+      "rarity": 4,
+      "weapons_type": "法器"
+    },
+    "西风秘典": {
+      "rarity": 4,
+      "weapons_type": "法器"
+    },
+    "昭心": {
+      "rarity": 4,
+      "weapons_type": "法器"
+    },
+    "魔导绪论": {
+      "rarity": 3,
+      "weapons_type": "法器"
+    },
+    "翡玉法球": {
+      "rarity": 3,
+      "weapons_type": "法器"
+    },
+    "讨龙英杰谭": {
+      "rarity": 3,
+      "weapons_type": "法器"
+    },
+    "猎人之径": {
+      "rarity": 5,
+      "weapons_type": "弓"
+    },
+    "若水": {
+      "rarity": 5,
+      "weapons_type": "弓"
+    },
+    "冬极白星": {
+      "rarity": 5,
+      "weapons_type": "弓"
+    },
+    "飞雷之弦震": {
+      "rarity": 5,
+      "weapons_type": "弓"
+    },
+    "终末嗟叹之诗": {
+      "rarity": 5,
+      "weapons_type": "弓"
+    },
+    "阿莫斯之弓": {
+      "rarity": 5,
+      "weapons_type": "弓"
+    },
+    "天空之翼": {
+      "rarity": 5,
+      "weapons_type": "弓"
+    },
+    "曚云之月": {
+      "rarity": 4,
+      "weapons_type": "弓"
+    },
+    "幽夜华尔兹": {
+      "rarity": 4,
+      "weapons_type": "弓"
+    },
+    "暗巷猎手": {
+      "rarity": 4,
+      "weapons_type": "弓"
+    },
+    "祭礼弓": {
+      "rarity": 4,
+      "weapons_type": "弓"
+    },
+    "绝弦": {
+      "rarity": 4,
+      "weapons_type": "弓"
+    },
+    "弓藏": {
+      "rarity": 4,
+      "weapons_type": "弓"
+    },
+    "西风猎弓": {
+      "rarity": 4,
+      "weapons_type": "弓"
+    },
+    "鸦羽弓": {
+      "rarity": 3,
+      "weapons_type": "弓"
+    },
+    "神射手之誓": {
+      "rarity": 3,
+      "weapons_type": "弓"
+    },
+    "弹弓": {
+      "rarity": 3,
+      "weapons_type": "弓"
     }
   }
 }
