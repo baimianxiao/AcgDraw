@@ -80,7 +80,7 @@ async def arknights():
 
 @api_app.get("/GenshinDraw")
 async def arknights():
-    pil_image = await api_app.state.image.char_ten_pulls("a")
+    pil_image = await api_app.state.gen_image.char_ten_pulls("a")
     img_byte_arr = await image_output(pil_image)
     # 使用流式传输返回图片
     response = StreamingResponse(
