@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
 from os.path import join
-from PIL import Image
+from PIL import Image,ImageFont,ImageDraw
 from io import BytesIO
 from random import randint
 from AcgDraw.util import json_read_async
+
 
 
 # 透明通道合成
@@ -93,97 +94,25 @@ class ImageHandleArk:
 class ImageHandleGen:
 
     def __init__(self, char_data_path: str, image_path: str):
-        """self.char_data_path = char_data_path
-        self.char_data_dict = {}
-        self.image_path = image_path
-        self.gacha_image_path = join(self.image_path, "gacha")
-        self.char_image_path = join(self.image_path, "char")
-        self.background_image_path = join(self.gacha_image_path, "background.png")"""
-        self.test = [
-            {
-                "name": "刻晴",
-                "type": "char",
-                "rarity": 5,
-                "element": "雷",
-            },
-            {
-                "name": "早柚",
-                "type": "char",
-                "rarity": 4,
-                "element": "草",
-            },
-            {
-                "name": "飞天御剑",
-                "type": "weapons",
-                "rarity": 3,
-                "weapons_type": "单手剑",
-            },
-            {
-                "name": "飞天御剑",
-                "type": "weapons",
-                "rarity": 3,
-                "weapons_type": "单手剑",
-            },
-            {
-                "name": "飞天御剑",
-                "type": "weapons",
-                "rarity": 3,
-                "weapons_type": "单手剑",
-            },
-            {
-                "name": "飞天御剑",
-                "type": "weapons",
-                "rarity": 3,
-                "weapons_type": "单手剑",
-            },
-            {
-                "name": "飞天御剑",
-                "type": "weapons",
-                "rarity": 3,
-                "weapons_type": "单手剑",
-            },
-            {
-                "name": "飞天御剑",
-                "type": "weapons",
-                "rarity": 3,
-                "weapons_type": "单手剑",
-            },
-            {
-                "name": "飞天御剑",
-                "type": "weapons",
-                "rarity": 3,
-                "weapons_type": "单手剑",
-            },
-            {
-                "name": "飞天御剑",
-                "type": "weapons",
-                "rarity": 3,
-                "weapons_type": "单手剑",
-            },
-        ]
-        self.test.reverse()
-        pass
-
-    # 装载数据
-    async def data_reload(self):
-        # self.char_data_dict = await json_read_async(self.char_data_path)
-        pass
+        self.font = ImageFont.truetype("data/Genshin/zh-cn.ttf", size=20)
+        self.background = Image.open("data/Genshin/image/gacha/background.png", mode="r")
 
     # 十连抽图片合成处理
     async def char_ten_pulls(self, char_list: list):
         if char_list is None:
             return False
-        main_image = Image.open("data/Genshin/image/gacha/background.png", mode="r")
+        else:
+            char_list.reverse()
+        main_image = self.background
         x = 0
         close_image = Image.open("data/Genshin/image/gacha/ui_close.png")
-        for char in self.test:
-            print(char)
+        for char in char_list:
             if char["rarity"] == 3:
                 light_offsets = 104
                 y_offsets = 0
             elif char["rarity"] == 4:
                 light_offsets = 5
-                y_offsets = -12
+                y_offsets = 0
             else:
                 light_offsets = 0
                 y_offsets = 0
@@ -201,9 +130,10 @@ class ImageHandleGen:
             else:
                 char_image = Image.open(join("data/Genshin/image/char/weapons/", f"{char['name']}.png"))
                 char_image = char_image.resize((306, 612), resample=Image.LANCZOS)
+                char_image = char_image.crop((84, 0, 222, 550))
                 element_image = Image.open(join("data/Genshin/image/gacha/", f"weapons/{char['weapons_type']}.png"))
                 element_image = element_image.resize((100, 100), resample=Image.LANCZOS)
-                char_x = 1510 - (x * 148)
+                char_x = 1594 - (x * 148)
                 char_y = 234
                 element_x = 1614 - (x * 148)
                 element_y = 663
@@ -212,9 +142,7 @@ class ImageHandleGen:
                 join("data/Genshin/image/gacha/frame/", str(char["rarity"]), f"{randint(0, 9)}.png"))
             back_image = Image.open("data/Genshin/image/gacha/frame/back.png")
             stripe_image = Image.open("data/Genshin/image/gacha/frame/stripe.png")
-
             rarity_image = Image.open(join("data/Genshin/image/gacha/rarity", f"star_{char['rarity']}.png"))
-
             min_star_image = Image.open("data/Genshin/image/gacha/frame/星星.png")
 
             # 合成图片
@@ -228,6 +156,9 @@ class ImageHandleGen:
             main_image = await get_mongolia(main_image, element_image, element_x, element_y)
             x = x + 1
         main_image = await get_mongolia(main_image, close_image, 1815, 20)
+        #draw = ImageDraw.Draw(main_image)
+        #draw.text( (1700, 800), "UID:114514", fill=(255, 255, 255), font=self.font)
+
         return main_image
 
 
