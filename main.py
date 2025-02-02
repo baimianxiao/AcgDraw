@@ -48,8 +48,12 @@ def log_output(log_type: str, message: str) -> None:
 
 log_output("INFO", "Arknights-Draw")
 app = api.api_app
+debug=True
+debug = False
+if debug:
+    uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
 # 自动运行
-if len(sys.argv) > 1:
+elif len(sys.argv) > 1:
     if sys.argv[1] == "init":
         log_output("INFO", "服务器未部署，开始部署")
         for create_dir in create_dir_list:
