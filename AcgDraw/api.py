@@ -20,14 +20,13 @@ async def initialize_app(app: FastAPI):
     app.state.ark_draw = DrawHandleArk(join(work_dir, "data", "Arknights", "char_star_list.json"))
     app.state.ark_image = ImageHandleArk(join(work_dir, "data", "Arknights", "char_data_dict.json"),
                                          join(work_dir, "data", "Arknights", "image"))
-    app.state.gen_draw = DrawHandleArk(join(work_dir, "data", "Arknights", "char_star_list.json"))
+    app.state.gen_draw = DrawHandleGen()
     app.state.gen_image = ImageHandleGen(join(work_dir, "data", "Arknights", "char_data_dict.json"),
                                          join(work_dir, "data", "Arknights", "image"))
     # 装载图片
     await app.state.ark_draw.data_reload()
     await app.state.ark_image.data_reload()
     await app.state.gen_draw.data_reload()
-    await app.state.gen_image.data_reload()
 
 
 @asynccontextmanager
@@ -64,7 +63,7 @@ async def root():
 @api_app.get("/ArknightsDraw")
 async def arknights():
     result = await api_app.state.ark_draw.char_ten_pulls()
-    pil_image = await api_app.state.image.char_ten_pulls(result)
+    pil_image = await api_app.state.ark_image.char_ten_pulls(result)
     img_byte_arr = await image_output(pil_image)
     # 使用流式传输返回图片
     response = StreamingResponse(
@@ -80,7 +79,8 @@ async def arknights():
 
 @api_app.get("/GenshinDraw")
 async def arknights():
-    pil_image = await api_app.state.gen_image.char_ten_pulls("a")
+    result = await api_app.state.gen_draw.char_ten_pulls()
+    pil_image = await api_app.state.gen_image.char_ten_pulls(result)
     img_byte_arr = await image_output(pil_image)
     # 使用流式传输返回图片
     response = StreamingResponse(
