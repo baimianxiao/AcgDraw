@@ -134,15 +134,17 @@ class UpdateHandleArk(UpdateHandle
                 image_url_path = re.search(r"/[a-zA-Z0-9]{1,2}/[a-zA-Z0-9]{1,2}/", str(image_url_1[0]))
             except IndexError:
                 continue
-
-            char_dict = {
-                "名称": name,
-                "职业": str(profession_list[char_id]),
-                "星级": int(star_list[char_id][0]),
-                "获取途径": [item.strip() for item in sources_list[char_id].split(',')],
-                "半身像": "https://media.prts.wiki" + str(image_url_path.group()) + "半身像_" + name + "_1.png",
-                "立绘": "https://media.prts.wiki" + str(image_url_path.group()) + "立绘_" + name + "_1.png"
-            }
+            try:
+                char_dict = {
+                    "名称": name,
+                    "职业": str(profession_list[char_id]),
+                    "星级": int(star_list[char_id][0]),
+                    "获取途径": [item.strip() for item in sources_list[char_id].split(',')],
+                    "半身像": "https://media.prts.wiki" + str(image_url_path.group()) + "半身像_" + name + "_1.png",
+                    "立绘": "https://media.prts.wiki" + str(image_url_path.group()) + "立绘_" + name + "_1.png"
+                }
+            except:
+                continue
             # print(json.dumps(char_dict, ensure_ascii=False, indent=4))
 
             # 稀有度分类
