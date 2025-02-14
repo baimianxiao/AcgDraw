@@ -121,6 +121,12 @@ class UpdateHandleArk(UpdateHandle
         profession_list = char_raw.xpath("//tr[@data-param1]/@data-param1")
         star_list = char_raw.xpath("//tr[@data-param2]/@data-param2")
         sources_list = char_raw.xpath("//tr[@data-param6]/@data-param6")
+        # 过滤掉空值和逗号
+        name_list = [item for item in name_list if item not in ("", ",")]
+        profession_list = [item for item in profession_list if item not in ("", ",")]
+        star_list = [item for item in star_list if item not in ("", ",")]
+        sources_list = [item for item in sources_list if item not in ("", ",")]
+
         for char_id in trange(len(name_list), desc="处理人物素材", unit="char"):
             name = name_list[char_id]
             try:
