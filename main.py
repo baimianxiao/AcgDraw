@@ -54,6 +54,10 @@ debug_mode=2
 debug=False
 if debug and debug_mode==1:
     uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
+elif debug and debug_mode==2:
+    AcgDraw.update.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
+    uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
+
 # 自动运行
 elif len(sys.argv) > 1:
     if sys.argv[1] == "init":
