@@ -48,9 +48,11 @@ def log_output(log_type: str, message: str) -> None:
 
 log_output("INFO", "Arknights-Draw")
 app = api.api_app
-debug=True
-debug = False
-if debug:
+
+# 测试模式
+debug_mode=2
+debug=False
+if debug and debug_mode==1:
     uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
 # 自动运行
 elif len(sys.argv) > 1:

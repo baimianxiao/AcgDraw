@@ -241,7 +241,7 @@
       "element": "火"
     }
   },
-  "weapons_data_list": {
+  "weapons_data_dict": {
     "裁叶萃光": {
       "rarity": 5,
       "weapons_type": "单手剑"
