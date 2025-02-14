@@ -91,11 +91,14 @@ else:
             input("按任意键继续")
     else:
         log_output("INFO", "服务器已部署 1.启动服务器 2.启动更新")
-        x = input("请选择操作:")
+        x = input("请选择操作(default：1.启动服务器):")
         if int(x) == 1:
             uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
 
         elif int(x) == 2:
             AcgDraw.update.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
+            uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
+
+        else:
             uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
 
