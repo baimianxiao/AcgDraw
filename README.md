@@ -10,6 +10,9 @@
 
 ## 进度
 
+### 全局
+- [ ] Web管理面板
+
 ### 明日方舟
 - [x] 寻访十连
 - [ ] 卡池六星up
@@ -18,14 +21,19 @@
 - [x] 一键更新干员信息
 - [ ] 指定卡池寻访
 - [x] 定时清理缓存
-- [ ] Web管理面板
 - [x] 自动更新
 - [ ] 单次寻访
 - [ ] 自定义卡池
 - [ ] ~~寻访记录查询~~
 
 ### 原神
-**正在咕咕咕**
+- [x] 寻访十连
+- [ ] 卡池五星up
+- [ ] 一键更新卡池信息
+- [ ] 一键更新干员信息
+- [ ] 指定卡池寻访
+- [x] 定时清理缓存
+
 
 ### 崩坏：星穹铁道
 **正在咕咕咕**
@@ -36,14 +44,13 @@
 ### Apex
 **正在咕咕咕**
 
+~~一个人做不过来QAQ~~
 ## 文档
 
 https://baimianxiao.github.io/AcgDraw/
 
 ## 开始
-该项目基于python3.8开发
-
-PS:在高版本中可能会出现`RuntimeError: cannot schedule new futures after shutdown`的错误,导致自动更新无法使用
+该项目基于python3.10开发
 
 ### Windows运行
 
@@ -82,5 +89,7 @@ GPL-3.0 license
 - 感谢[@分子](https://github.com/yigefz)对图片素材的处理
 
 - 感谢[@LTY_CK_TS](https://github.com/sahuidhsu)完善的docker部署
+
+- 感谢[@KQDXBWL](https://github.com/kqdxbwl)的BUG反馈
 
 - 快来和咱一起找bug（指有问题在issue中反馈）
