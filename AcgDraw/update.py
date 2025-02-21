@@ -54,7 +54,7 @@ class UpdateHandle:
             return True
         try:
             async with aiohttp.ClientSession(headers=self.headers) as session:
-                async with session.get(url, timeout=10) as response:
+                async with session.get(url, timeout=10,ssl=False) as response:
                     async with aiofiles.open(str(file_path), "wb") as f:
                         await f.write(await response.read())
             # print(f"下载文件{name}成功")
@@ -78,7 +78,7 @@ class UpdateHandle:
 
             try:
                 async with aiohttp.ClientSession(headers=self.headers) as session:
-                    async with session.get(url) as resp:
+                    async with session.get(url,ssl=False) as resp:
                         result = await resp.text()
                 break
             except TimeoutError:
