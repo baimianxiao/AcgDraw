@@ -6,7 +6,8 @@
 
 ## 简介
 
-基于python的模拟抽卡图片合成API，使用了flask以及pillow
+基于python的模拟抽卡图片合成API，使用了fastapi以及pillow
+API地址：<http://api.elapsetower.com/arknightsdraw>(目前已失效)
 
 ## 进度
 
@@ -45,9 +46,6 @@
 **正在咕咕咕**
 
 ~~一个人做不过来QAQ~~
-## 文档
-
-https://baimianxiao.github.io/AcgDraw/
 
 ## 开始
 该项目基于python3.10开发
@@ -77,14 +75,14 @@ docker run -d -p 11451:11451 --name=acgdraw acgdraw
 
 ## 配置文件
 ### 全局配置文件
-位于`根目录/conf/global`
+位于`根目录/conf/config.json`
 
 ## 协议
 GPL-3.0 license
 
-## 其他
 
-- API地址：<http://api.elapsetower.com/arknightsdraw>(目前已失效)
+
+## 鸣谢
 
 - 感谢[@分子](https://github.com/yigefz)对图片素材的处理
 
@@ -92,4 +90,8 @@ GPL-3.0 license
 
 - 感谢[@KQDXBWL](https://github.com/kqdxbwl)的BUG反馈
 
-- 快来和咱一起找bug（指有问题在issue中反馈）
+
+### 如果感兴趣可以点一个Star~你的认可是我更新的动力！
+
+[![如果感兴趣可以点一个Star~](https://api.star-history.com/svg?repos=baimianxiao/AcgDraw&type=Date)](https://star-history.com/#baimianxiao/AcgDraw&Date)
+##### 快来和咱一起找bug（指有问题在issue中反馈）
