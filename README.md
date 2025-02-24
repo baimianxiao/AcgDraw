@@ -7,6 +7,7 @@
 ## 简介
 
 基于python的模拟抽卡图片合成API，使用了fastapi以及pillow
+
 API地址：<http://api.elapsetower.com/arknightsdraw>(目前已失效)
 
 ## 进度
@@ -91,7 +92,7 @@ GPL-3.0 license
 - 感谢[@KQDXBWL](https://github.com/kqdxbwl)的BUG反馈
 
 
-### 如果感兴趣可以点一个Star~你的认可是我更新的动力！
+### 如果感兴趣可以点一个Star，你的认可是我更新的动力！
 
 [![如果感兴趣可以点一个Star~](https://api.star-history.com/svg?repos=baimianxiao/AcgDraw&type=Date)](https://star-history.com/#baimianxiao/AcgDraw&Date)
 ##### 快来和咱一起找bug（指有问题在issue中反馈）
