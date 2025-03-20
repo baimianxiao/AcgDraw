@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import asyncio
 from random import randint, choice, random
-import json
-
 from AcgDraw.util import json_read_async
 
 
