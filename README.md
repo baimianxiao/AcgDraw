@@ -95,4 +95,4 @@ GPL-3.0 license
 ### 如果感兴趣可以点一个Star，你的认可是我更新的动力！
 
 [![如果感兴趣可以点一个Star~](https://api.star-history.com/svg?repos=baimianxiao/AcgDraw&type=Date)](https://star-history.com/#baimianxiao/AcgDraw&Date)
-##### 快来和咱一起找bug（指有问题在issue中反馈）
+##### 快来和咱一起找bug（指有问题在issue中反馈，当然也可以加群直接敲我：822417015（划掉））
