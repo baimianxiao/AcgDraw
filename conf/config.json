@@ -15,5 +15,9 @@
       "globalCycle": "week",
       "globalTime": "1:00"
     }
+  },
+  "url": {
+    "enable": true,
+    "domain": ""
   }
 }

@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from typing import Union
-
+import time
 import aiofiles
 from json import dumps, loads, JSONDecodeError
 import os
 import aiohttp
-import asyncio
 from aiohttp import ClientError
 
 
@@ -113,6 +112,8 @@ def json_write(path: str, data) -> bool:
         return False
 
 
+
+
 # 读取json文件
 def json_read(path):
     """
@@ -126,3 +127,61 @@ def json_read(path):
         return loads(data)
     except JSONDecodeError:
         return False
+
+# 日志等级映射
+level_map = {"TRACE": 0,"DEBUG": 1,"INFO": 2,"NOTICE": 3,"WARNING": 4,"ERROR": 5,"FATAL": 6}
+
+# 日志工具
+class Logger:
+    def __init__(self, log_path: str):
+        self.log_path = log_path
+        self.level = 2
+        self.log_file = open(log_path, 'a', encoding='utf-8')
+
+    def set_level(self, level: str):
+        level = level.upper()
+        self.level = level_map.get(level, 0)
+
+    def print(self, level: str, message: str):
+        level = level.upper()
+        if level_map.get(level, 0) >= self.level:
+            timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
+            log_line = f"[{timestamp}][{level}] {message}"
+
+            # 控制台输出带颜色
+            if level == "ERROR":
+                print(f"\033[91m{log_line}\033[0m")  # 红色
+            elif level == "WARN":
+                print(f"\033[93m{log_line}\033[0m")  # 黄色
+            else:
+                print(log_line)
+
+    def trace(self, message: str):
+        self.print("TRACE", message)
+
+    def debug(self, message: str):
+        self.print("DEBUG", message)
+
+    def info(self, message: str):
+        self.print("INFO", message)
+
+    def notice(self, message: str):
+        self.print("NOTICE", message)
+
+    def warning(self, message: str):
+        self.print("WARNING", message)
+
+    def error(self, message: str):
+        self.print("ERROR", message)
+
+    def fatal(self, message: str):
+        self.print("FATAL", message)
+
+    def close(self):
+        self.log_file.close()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close()
