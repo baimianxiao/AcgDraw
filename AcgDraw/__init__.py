@@ -4,13 +4,15 @@ import AcgDraw.update
 from AcgDraw.draw import DrawHandleArk, DrawHandleGen
 from AcgDraw.image import ImageHandleArk, ImageHandleGen
 from AcgDraw.util import *
+from AcgDraw.url_tool import *
 
 __all__ = [
     "DrawHandleArk",
     "DrawHandleGen",
     "ImageHandleArk",
     "ImageHandleGen",
-    "util"
+    "util",
+    "url_tool"
 ]
 
 __version__ = "v3.1.3"
@@ -41,6 +43,10 @@ __default_global_config__ = {
             "globalCycle": "week",
             "globalTime": "1:00"
         }
+    },
+    "url": {
+        "enable": False,
+        "domain": ""
     }
 }
 

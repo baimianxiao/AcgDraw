@@ -1,3 +1,6 @@
 .idea/*
 /data/Arknights/image/char/
 /site/
+.venv
+log.txt
+.DS_Store

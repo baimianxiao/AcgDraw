@@ -6,13 +6,13 @@ import logging
 import os
 import sys
 from datetime import datetime
-from os.path import abspath, dirname, join
+from os.path import  join
 
 import uvicorn
 
 import AcgDraw
 from AcgDraw import api
-from AcgDraw.util import json_read, json_write
+from AcgDraw.util import json_read
 
 # 取根目录
 dir = os.getcwd()  # 取根目录
