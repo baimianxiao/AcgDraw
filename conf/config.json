@@ -17,7 +17,7 @@
     }
   },
   "url": {
-    "enable": true,
+    "enable": false,
     "domain": ""
   }
 }
