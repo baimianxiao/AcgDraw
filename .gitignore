@@ -4,3 +4,4 @@
 .venv
 log.txt
 .DS_Store
+/temp-images/
