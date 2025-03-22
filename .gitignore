@@ -5,3 +5,6 @@
 log.txt
 .DS_Store
 /temp-images/
+*/__pycache__/
+*.pyc
+*.pyo

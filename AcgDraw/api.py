@@ -3,6 +3,8 @@
 from datetime import datetime
 from os import getcwd
 from os.path import join
+from unittest import case
+
 from fastapi.staticfiles import StaticFiles
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
@@ -49,6 +51,27 @@ api_app.mount("/tmp", StaticFiles(directory="temp-images"), name="temp-images")
 async def auto_update():
     print("定时任务执行：当前时间:", datetime.now())
 
+async def result_get(mode: str, game: str):
+    if game == "arknights" and mode=="ten":
+        result = await api_app.state.ark_draw.char_ten_pulls()
+        return result
+    elif game == "genshin" and mode=="ten":
+        result = await api_app.state.gen_draw.char_ten_pulls()
+        return result
+    else:
+        return None
+
+async def pil_image_get(mode: str, game: str,result: list):
+    if result is None:
+        return None
+    if game == "arknights" and mode=="ten":
+        pil_image = await api_app.state.ark_image.char_ten_pulls(result)
+        return pil_image
+    elif game == "genshin" and mode=="ten":
+        pil_image = await api_app.state.gen_image.char_ten_pulls(result)
+        return pil_image
+    else:
+        return None
 
 scheduler = AsyncIOScheduler()
 
@@ -99,7 +122,7 @@ async def arknights(request: Request):
 
 
 @api_app.get("/GenshinDraw")
-async def arknights(request: Request):
+async def genshin(request: Request):
     result = await api_app.state.gen_draw.char_ten_pulls()
     pil_image = await api_app.state.gen_image.char_ten_pulls(result)
     img_byte_arr = await image_output(pil_image)
@@ -111,6 +134,56 @@ async def arknights(request: Request):
             temp_image_url = generate_temp_image_url(pil_image)
             return {"image_url": temp_image_url}
 
+    # 使用流式传输返回图片
+    response = StreamingResponse(
+        img_byte_arr,
+        media_type="image/PNG",
+    )
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+
+    return response
+
+@api_app.post("/api/draw/json")
+async def draw_json(request: Request):
+    try:
+        data = await request.json()
+        uid = str(data.get("uid"))
+        game = str(data.get("game")).lower()
+        mode = str(data.get("mode")).lower()
+        need_url = bool(data.get("need_url"))
+    except Exception as e:
+        response = {"code": 400, "msg": f"bad request: {e}", "data": None}
+        return response
+
+    result = await result_get(mode, game)
+    if result is None:
+        response = {"code": 400, "msg": "bad request: wrong game or mode", "data": None}
+    resultObj = {"uid": uid, "game": game, "mode": mode, "result": result}
+
+    if url_enable and need_url:
+        pil_image = await pil_image_get(mode, game, result)
+        temp_image_url = generate_temp_image_url(pil_image)
+        resultObj["image_url"] = temp_image_url
+    response = {"code": 200, "msg": "success", "data": resultObj}
+    return response
+
+@api_app.post("/api/draw/image")
+async def draw_image(request: Request):
+    try:
+        data = await request.json()
+        uid = str(data.get("uid"))
+        game = str(data.get("game")).lower()
+        mode = str(data.get("mode")).lower()
+    except Exception as e:
+        response = {"code": 400, "msg": f"bad request: {e}", "data": None}
+        return response
+    result = await result_get(mode, game)
+    if result is None:
+        response = {"code": 400, "msg": "bad request: wrong game or mode", "data": None}
+    pil_image = await pil_image_get(mode, game, result)
+    img_byte_arr = await image_output(pil_image)
     # 使用流式传输返回图片
     response = StreamingResponse(
         img_byte_arr,
