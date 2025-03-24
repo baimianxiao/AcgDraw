@@ -3,12 +3,6 @@
     "host": "127.0.0.1",
     "port": "11451"
   },
-  "apiArk": {
-    "route": "/ArknightsDraw"
-  },
-  "apiGen": {
-    "route": "/GenshinDraw"
-  },
   "autoTask": {
     "autoUpdate": {
       "globalMode": 1,
