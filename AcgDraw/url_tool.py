@@ -28,6 +28,8 @@ if url_enable and domain == "":
 
 
 def generate_temp_image_url(pil_image):
+    if pil_image is None:
+        return None
     # 创建专用临时目录
     temp_dir = os.path.join(work_dir, "temp-images")
     os.makedirs(temp_dir, exist_ok=True)
