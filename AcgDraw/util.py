@@ -132,7 +132,8 @@ def json_read(path):
 
 work_dir = os.getcwd()
 config = json_read(join(work_dir, "conf", "config.json"))
-
+temp_dir = os.path.join(work_dir, "temp-images")
+os.makedirs(temp_dir, exist_ok=True)
 
 # 日志等级映射
 level_map = {"TRACE": 0,"DEBUG": 1,"INFO": 2,"NOTICE": 3,"WARNING": 4,"ERROR": 5,"FATAL": 6}
