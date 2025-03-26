@@ -8,3 +8,4 @@ log.txt
 */__pycache__/
 *.pyc
 *.pyo
+/data/lock.lock
