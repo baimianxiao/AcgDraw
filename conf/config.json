@@ -1,7 +1,9 @@
 {
   "global": {
     "host": "127.0.0.1",
-    "port": "11451"
+    "port": "11451",
+    "url_enable": false,
+    "domain": ""
   },
   "autoTask": {
     "autoUpdate": {
@@ -9,9 +11,5 @@
       "globalCycle": "week",
       "globalTime": "1:00"
     }
-  },
-  "url": {
-    "enable": false,
-    "domain": ""
   }
 }
