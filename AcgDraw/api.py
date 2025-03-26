@@ -102,30 +102,14 @@ async def arknights(request: Request):
     pil_image = await api_app.state.ark_image.char_ten_pulls(result)
     img_byte_arr = await image_output(pil_image)
 
-    if url_enable:
-        # 检查请求参数 type 是否为 url
-        type_param = request.query_params.get("type")
-        if type_param == "url":
-            temp_image_url = generate_temp_image_url(pil_image)
-            return {"image_url": temp_image_url}
-
-    # 使用流式传输返回图片
-    response = StreamingResponse(
-        img_byte_arr,
-        media_type="image/PNG",
-    )
-    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    response.headers["Pragma"] = "no-cache"
-    response.headers["Expires"] = "0"
-
-    return response
+@api_app.get("/api/draw/json")
+async def get_draw_json(uid,game,mode):
+    pass
 
 
-@api_app.get("/GenshinDraw")
-async def genshin(request: Request):
-    result = await api_app.state.gen_draw.char_ten_pulls()
-    pil_image = await api_app.state.gen_image.char_ten_pulls(result)
-    img_byte_arr = await image_output(pil_image)
+@api_app.get("/api/draw/image")
+async def get_draw_image(uid,game,mode,need):
+    pass
 
     if url_enable:
         # 检查请求参数 type 是否为 url
