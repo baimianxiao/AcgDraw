@@ -13,8 +13,8 @@ log = Logger(f"{work_dir}/log.txt")
 
 try:
 
-    url_enable = bool(config["url"]["enable"])
-    domain = str(config["url"]["domain"])
+    url_enable = bool(config["global"]["url_enable"])
+    domain = str(config["global"]["domain"])
     port = int(config["global"]["port"])
 except Exception as e:
     url_enable = False
