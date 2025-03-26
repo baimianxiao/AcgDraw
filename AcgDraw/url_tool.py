@@ -6,13 +6,13 @@ from os.path import join
 import tempfile
 import os
 
-from AcgDraw.util import json_read,Logger
+from AcgDraw.util import config,Logger
 
 work_dir = getcwd()
 log = Logger(f"{work_dir}/log.txt")
 
 try:
-    config = json_read(join(work_dir, "conf", "config.json"))
+
     url_enable = bool(config["url"]["enable"])
     domain = str(config["url"]["domain"])
     port = int(config["global"]["port"])

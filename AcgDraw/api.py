@@ -18,6 +18,7 @@ from fastapi import Request
 from AcgDraw import DrawHandleArk, DrawHandleGen
 from AcgDraw.image import image_output, ImageHandleArk,ImageHandleGen
 from AcgDraw.url_tool import generate_temp_image_url,clean_temp_folder,url_enable
+from AcgDraw.util import work_dir
 
 work_dir = getcwd()
 

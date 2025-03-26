@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from os.path import join
 from typing import Union
 import time
 import aiofiles
@@ -6,6 +7,7 @@ from json import dumps, loads, JSONDecodeError
 import os
 import aiohttp
 from aiohttp import ClientError
+
 
 
 # 异步下载GitHub文件
@@ -127,6 +129,10 @@ def json_read(path):
         return loads(data)
     except JSONDecodeError:
         return False
+
+work_dir = os.getcwd()
+config = json_read(join(work_dir, "conf", "config.json"))
+
 
 # 日志等级映射
 level_map = {"TRACE": 0,"DEBUG": 1,"INFO": 2,"NOTICE": 3,"WARNING": 4,"ERROR": 5,"FATAL": 6}
