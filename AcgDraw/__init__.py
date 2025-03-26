@@ -12,10 +12,11 @@ __all__ = [
     "ImageHandleArk",
     "ImageHandleGen",
     "util",
-    "url_tool"
+    "url_tool",
+    "version"
 ]
 
-__version__ = "v3.1.3"
+version = "v3.1.3"
 
 __init_dict__ = {
     "path_list":{
