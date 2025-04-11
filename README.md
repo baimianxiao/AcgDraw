@@ -8,7 +8,7 @@
 
 基于python的模拟抽卡图片合成API，使用了fastapi以及pillow
 
-API地址：<http://api.elapsetower.com/arknightsdraw>(目前已失效)
+API地址：<http://api.sheyiyuan.cn/acgDraw/>
 
 ## 进度
 
@@ -89,7 +89,10 @@ GPL-3.0 license
 
 - 感谢[@LTY_CK_TS](https://github.com/sahuidhsu)完善的docker部署
 
+- 感谢[@Sheyiyuan](https://github.com/Sheyiyuan)提供的强力技术支持
+
 - 感谢[@KQDXBWL](https://github.com/kqdxbwl)的BUG反馈
+
 
 
 ### 如果感兴趣可以点一个Star，你的认可是我更新的动力！
