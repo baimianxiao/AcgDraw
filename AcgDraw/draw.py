@@ -1,18 +1,21 @@
 # -*- coding: utf-8 -*-
 import asyncio
 from random import randint, choice, random
-from AcgDraw.util import json_read_async
+from AcgDraw.util import json_read_async,data_dir,join
 
 
 # 明日方舟抽卡数据处理类
 class DrawHandleArk:
-    def __init__(self, char_star_path):
-        self.char_star_path = char_star_path
-        self.char_star_dict = {}
+    def __init__(self):
+        self.char_data_path = join(data_dir,"Arknights","data_dict.json")
+        self.rarity_dict_path = join(data_dir,"Arknights","rarity_dict.json")
+        self.char_dict = {}
+        self.rarity_dict = {}
 
     async def data_reload(self):
-        self.char_star_dict = await json_read_async(self.char_star_path)
-        pass
+        self.char_dict = await json_read_async(self.char_data_path)
+        self.rarity_dict = await json_read_async(self.rarity_dict_path)
+
 
     async def char_once_pull(self, mode=None, group=None):
         pass
@@ -48,14 +51,15 @@ class DrawHandleArk:
 # 原神抽卡数据处理类
 class DrawHandleGen:
     def __init__(self):
-        self.data_dict_path = "data/Genshin/data_dict.json"
-        self.rarity_dict_path = "data/Genshin/rarity_dict.json"
+        self.data_dict_path = join(data_dir, "Genshin", "data_dict.json")
+        self.rarity_dict_path = join(data_dir, "Genshin", "rarity_dict.json")
         self.data_dict = {}
         self.rarity_dict = {}
 
     async def data_reload(self):
         self.data_dict = await json_read_async(self.data_dict_path)
         self.rarity_dict = await json_read_async(self.rarity_dict_path)
+
 
     # 对抽卡的结果进行初始化，使其转化为image.py能识别的dict
     def preprocess_result(self, name):
@@ -101,7 +105,7 @@ class DrawHandleGen:
                            range(draw_4_num)] + \
                           [self.preprocess_result(choice(self.rarity_dict["weapons_list"]["3"])) for _ in
                            range(draw_3_num)]
-            # (json.dumps(draw_result,indent=4)) #输出结果
+            # print(json.dumps(draw_result,indent=4)) #输出结果
             return draw_result
         elif mode == "input":
             pass
