@@ -166,8 +166,8 @@ class UpdateHandleArk(UpdateHandle
 
             char_data_list[name] = char_dict
             # print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
-        await json_write_async(self.data_path + 'char_star_list.json', simple_star_list)
-        await json_write_async(self.data_path + 'char_data_dict.json', char_data_list)
+        await json_write_async(self.data_path + 'rarity_dict.json', simple_star_list)
+        await json_write_async(self.data_path + 'data_dict.json', char_data_list)
         # print(char_data_list)
         return char_data_list
 
@@ -255,8 +255,8 @@ class UpdateHandleGen(UpdateHandle):
 
             char_data_list[name] = char_dict
             # print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
-        await json_write_async(self.data_path + 'char_star_list.json', simple_star_list)
-        await json_write_async(self.data_path + 'char_data_dict.json', char_data_list)
+        await json_write_async(self.data_path + 'rarity_dict.json', simple_star_list)
+        await json_write_async(self.data_path + 'data_dict.json', char_data_list)
         # print(char_data_list)
         return char_data_list
 
