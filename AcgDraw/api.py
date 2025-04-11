@@ -19,11 +19,11 @@ from AcgDraw.util import work_dir
 
 
 async def initialize_app(app: FastAPI):
-    app.state.ark_draw = DrawHandleArk(join(work_dir, "data", "Arknights", "char_star_list.json"))
-    app.state.ark_image = ImageHandleArk(join(work_dir, "data", "Arknights", "char_data_dict.json"),
+    app.state.ark_draw = DrawHandleArk()
+    app.state.ark_image = ImageHandleArk(join(work_dir, "data", "Arknights", "data_dict.json"),
                                          join(work_dir, "data", "Arknights", "image"))
     app.state.gen_draw = DrawHandleGen()
-    app.state.gen_image = ImageHandleGen(join(work_dir, "data", "Arknights", "char_data_dict.json"),
+    app.state.gen_image = ImageHandleGen(join(work_dir, "data", "Arknights", "data_dict.json"),
                                          join(work_dir, "data", "Arknights", "image"))
     # 装载图片
     await app.state.ark_draw.data_reload()
