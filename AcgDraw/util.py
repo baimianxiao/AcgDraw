@@ -114,9 +114,6 @@ def json_write(path: str, data) -> bool:
         return False
 
 
-
-
-# 读取json文件
 def json_read(path):
     """
         同步读取json文件
@@ -131,7 +128,9 @@ def json_read(path):
         return False
 
 work_dir = os.getcwd()
+data_dir = os.path.join(work_dir, "data")
 config = json_read(join(work_dir, "conf", "config.json"))
+
 temp_dir = os.path.join(work_dir, "temp-images")
 os.makedirs(temp_dir, exist_ok=True)
 
