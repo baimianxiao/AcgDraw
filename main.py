@@ -30,9 +30,13 @@ def mkdir(path):
 
 # 写入json
 
-
-host = json_read(join(dir, "conf", "config.json"))["global"]["host"]
-port = int(json_read(join(dir, "conf", "config.json"))["global"]["port"])
+try:
+    host = json_read(join(work_dir, "conf", "config.json"))["global"]["host"]
+    port = int(json_read(join(work_dir, "conf", "config.json"))["global"]["port"])
+except TypeError:
+    print("配置文件错误:使用默认的host和post")
+    host = "127.0.0.1"
+    port = 11451
 
 # 初始化目录
 create_dir_list = [
