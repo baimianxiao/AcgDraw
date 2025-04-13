@@ -304,6 +304,76 @@ POST /api/text2img
 | 404 | 未找到资源  |                  |
 | 500 | 服务器错误  |                  |
 
+### 抽卡生成设计
+
+抽卡部分涉及的程序为`AcgDraw/draw`
+
+抽卡类必须继承父类DrawHandle，并且实现
+
+draw部分输出类型为一个list类型，其中包含以下字段：
+```
+[
+  {
+    "name":"人物名",
+    “rarity”:"稀有度",
+    "type":"职业",
+  },
+  {
+    "name":"人物名",
+    “rarity”:"稀有度",
+    "type":"职业",
+  },
+  ……
+  {
+    "name":"人物名",
+    “rarity”:"稀有度",
+    "type":"职业",
+  }
+]
+```
+
+### 数据记录
+
+数据储存位置位于`根目录/data/游戏名`
+
+数据格式为
+
+- image 图片合成素材储存目录
+  
+
+  内部结构根据游戏合成模式自定
+
+
+- data_dict.json 人物数据储存
+  
+  ```
+  {
+      "char_data_dict": {
+          "狮蝎": {
+            "name": "狮蝎", 
+            "type": "特种",
+            "rarity": 5, 
+            "获取途径": [
+              "公开招募",
+              "中坚寻访"
+            ],
+            "半身像": "https://media.prts.wiki/c/ce/半身像_狮蝎_1.png",  # 额外的一些记录
+            "立绘": "https://media.prts.wiki/c/ce/立绘_狮蝎_1.png"
+          },
+      }，
+      "weapon_data_dict":{
+          "胡桃": {
+          "rarity": 5,
+          "element": "火"
+        }
+    },
+      }
+  } 
+  ```  
+  
+- rarity_dict.json 稀有度数据记录
+
+
 ### 数据库设计
 
 - **抽卡请求记录表（记录单次抽卡操作）**
@@ -335,6 +405,10 @@ CREATE TABLE gacha_items (
 ### 管理面板设计
 
 // TODO: 等一个好心人来补充
+
+
+
+
 
 ## 其他杂项TODO
 
