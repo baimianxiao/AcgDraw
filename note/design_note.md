@@ -7,7 +7,7 @@
 基于目前已有功能进行进一步改良升级，实现更多功能。大致分为以下几个部分：
 
 - [ ] 管理面板
-- [ ] 接口格式优化 
+- [ ] 接口格式优化
 - [ ] 添加抽卡保底机制（基于数据库）
 - [ ] 优化抽卡算法
 - [ ] 自定义结果图片合成
@@ -18,9 +18,11 @@
 #### 1. 抽卡(json格式结果)
 
 - **api方法：**
+
 ```
 POST /api/draw/json
 ```
+
 - **请求头：**
 
 | 参数名           | 值                | 备注       |
@@ -39,9 +41,9 @@ POST /api/draw/json
 
 - **响应头：**
 
-| 参数名         | 值           | 备注       |
-|-------------|-------------|----------|
-| Content-Type | application/json   | 响应体格式    |
+| 参数名          | 值                | 备注    |
+|--------------|------------------|-------|
+| Content-Type | application/json | 响应体格式 |
 
 - **响应体：**
 
@@ -62,6 +64,7 @@ POST /api/draw/json
 | img_url | string | 抽卡结果图片URL                               | 仅当need_url为true时返回 |
 
 - **例子：**
+
 ```
 POST /api/draw/json
 Authorization: Bearer {token}
@@ -96,15 +99,15 @@ Authorization: Bearer {token}
 ```
 
 - **失败情况：**
-  - 400 Bad Request：请求体格式错误
-  - 401 Unauthorized：未提供token或token无效
-  - 404 Not Found：未找到指定的游戏或抽卡模式
-  - 500 Internal Server Error：服务器内部错误
-
+    - 400 Bad Request：请求体格式错误
+    - 401 Unauthorized：未提供token或token无效
+    - 404 Not Found：未找到指定的游戏或抽卡模式
+    - 500 Internal Server Error：服务器内部错误
 
 #### 2. 抽卡(流式图片格式结果)
 
 - **api方法：**
+
 ```
 POST /api/draw/img
 ```
@@ -118,22 +121,25 @@ POST /api/draw/img
 
 - **请求体：**
 
-| 参数名      | 类型     | 是否必填 | 描述                                      | 备注                 |
-|----------|--------|------|-----------------------------------------|--------------------|
-| uid      | string | 否    | 抽卡用户uid,用于记录抽卡记录和保底计算，若未提供则不记录抽卡记录和保底计算 | 需要api提供方开放相关功能后才可用 |
-| game     | string | 是    | 游戏名称                                    |                    |
-| mode     | string | 是    | 抽卡模式                                    | "single"或"ten"     |
+| 参数名  | 类型     | 是否必填 | 描述                                      | 备注                 |
+|------|--------|------|-----------------------------------------|--------------------|
+| uid  | string | 否    | 抽卡用户uid,用于记录抽卡记录和保底计算，若未提供则不记录抽卡记录和保底计算 | 需要api提供方开放相关功能后才可用 |
+| game | string | 是    | 游戏名称                                    |                    |
+| mode | string | 是    | 抽卡模式                                    | "single"或"ten"     |
 
 - **响应头：**
-- 
+-
+
 | 参数名          | 值         | 备注    |
 |--------------|-----------|-------|
 | Content-Type | image/png | 响应体格式 |
+
 - **响应体：**
 
 抽卡结果图片
 
 - **例子：**
+
 ```
 POST /api/draw/img
 Authorization: Bearer {token}
@@ -147,17 +153,20 @@ Authorization: Bearer {token}
 成功响应（200）:
 抽卡结果图片
 ```
+
 - **失败情况：**
-  - 400 Bad Request：请求体格式错误
-  - 401 Unauthorized：未提供token或token无效
-  - 404 Not Found：未找到指定的游戏或抽卡模式
+    - 400 Bad Request：请求体格式错误
+    - 401 Unauthorized：未提供token或token无效
+    - 404 Not Found：未找到指定的游戏或抽卡模式
 
 ##### 3. 抽卡记录查询
 
 - **api方法：**
+
 ```
 POST /api/record/query
 ```
+
 - **说明：**
 
 查询抽卡记录，支持分页查询和按条件查询。
@@ -217,6 +226,7 @@ POST /api/record/query
 | timestamp | int    | 记录创建时间戳    | 秒级时间戳      |
 
 - **例子：**
+
 ```
 POST /api/record/query
 Authorization: Bearer {token}
@@ -252,14 +262,16 @@ Authorization: Bearer {token}
     }
 }
 ```
+
 - **失败情况：**
-  - 400 Bad Request：请求体格式错误
-  - 401 Unauthorized：未提供token或token无效
-  - 404 Not Found：未找到符合条件的抽卡记录
+    - 400 Bad Request：请求体格式错误
+    - 401 Unauthorized：未提供token或token无效
+    - 404 Not Found：未找到符合条件的抽卡记录
 
 ##### 4. 由文本生成图片
 
 - **api方法：**
+
 ```
 POST /api/text2img
 ```
@@ -287,8 +299,9 @@ POST /api/text2img
 | 参数名          | 值         | 备注    |
 |--------------|-----------|-------|
 | Content-Type | image/png | 响应体格式 |
+
 - **响应体：**
-抽卡结果图片
+  抽卡结果图片
 - **例子：**
 
 // TODO: 等一个好心人来补充
@@ -306,11 +319,16 @@ POST /api/text2img
 
 ### 抽卡生成设计
 
-抽卡部分涉及的程序为`AcgDraw/draw`
+抽卡结果生成部分涉及的程序位于`AcgDraw/draw`
 
-抽卡类必须继承父类DrawHandle，并且实现
+抽卡类必须继承父类DrawHandle，并且必须实现`char_once_pull`,`char_ten_pulls`两个方法
 
-draw部分输出类型为一个list类型，其中包含以下字段：
+命名规则:DrawHandle+游戏标志
+
+例如:DrawHandleArk(明日方舟),DrawHandleGen(原神)
+
+抽卡类中`char_ten_pulls`输出类型为list，其中包含以下字段：
+
 ```
 [
   {
@@ -332,6 +350,8 @@ draw部分输出类型为一个list类型，其中包含以下字段：
 ]
 ```
 
+抽卡图片合成部分涉及的程序位于`AcgDraw/image`
+
 ### 数据记录
 
 数据储存位置位于`根目录/data/游戏名`
@@ -339,76 +359,108 @@ draw部分输出类型为一个list类型，其中包含以下字段：
 数据格式为
 
 - image 图片合成素材储存目录
-  
 
-  内部结构根据游戏合成模式自定
-
+内部结构根据游戏合成模式自定
 
 - data_dict.json 人物数据储存
-  
+
   ```
   {
       "char_data_dict": {
           "狮蝎": {
             "name": "狮蝎", 
             "type": "特种",
-            "rarity": 5, 
-            "获取途径": [
-              "公开招募",
-              "中坚寻访"
-            ],
-            "半身像": "https://media.prts.wiki/c/ce/半身像_狮蝎_1.png",  # 额外的一些记录
-            "立绘": "https://media.prts.wiki/c/ce/立绘_狮蝎_1.png"
+            "rarity": 5,
           },
       }，
       "weapon_data_dict":{
           "胡桃": {
-          "rarity": 5,
-          "element": "火"
-        }
-    },
-      }
+            "rarity": 5,
+            "element": "火"
+          }
+      },
   } 
   ```  
-  
-- rarity_dict.json 稀有度数据记录
+  // 待确定
 
+  rarity_dict.json 稀有度数据记录
+
+  ```
+  {
+    "char_list": {
+      "6": [
+        "锏",
+        "老鲤",
+        ……
+        "Mon3tr"
+      ],
+      "3": [
+        "芬",
+        "炎熔",
+        ……
+        "安赛尔"
+      ]
+    },
+    "weapons_list":{
+    
+    }
+  }
+  ```
+
+### 添加新的游戏抽卡步骤
+
+1.在`AcgDraw/draw`中创建对应游戏的抽卡结果生成器
+  
+  - 在文件头导入`from AcgDraw.draw import *`
+
+  - 创建抽卡结果合成器类,并且继承抽象类`DrawHandle`
+
+  - super.__init__(游戏标识名)
+  
+  - 实现`char_once_pull`,`char_ten_pulls`两个方法
+
+2.在`AcgDraw/image`中创建对应游戏的抽卡的图片合成器(非必要)
+
+3.在`AcgDraw/__init__.py`中引入对应的抽卡结果生成器和图片合成器
+
+4.在`AcgDraw/api.py`中实现接口
 
 ### 数据库设计
 
 - **抽卡请求记录表（记录单次抽卡操作）**
 
 ```sql
-CREATE TABLE gacha_records (
-    record_id VARCHAR(36) PRIMARY KEY COMMENT '唯一记录ID',
-    uid VARCHAR(64) NOT NULL COMMENT '用户UID',
-    game VARCHAR(50) NOT NULL COMMENT '游戏名称',
-    gacha_mode ENUM('single', 'ten') NOT NULL COMMENT '抽卡模式',
-    gacha_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '抽卡时间',
+CREATE TABLE gacha_records
+(
+    record_id   VARCHAR(36) PRIMARY KEY COMMENT '唯一记录ID',
+    uid         VARCHAR(64) NOT NULL COMMENT '用户UID',
+    game        VARCHAR(50) NOT NULL COMMENT '游戏名称',
+    gacha_mode  ENUM('single', 'ten') NOT NULL COMMENT '抽卡模式',
+    gacha_time  TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT '抽卡时间',
     gacha_count INT UNSIGNED NOT NULL COMMENT '累计抽卡数',
-    INDEX idx_user (uid, game)
+    INDEX       idx_user (uid, game)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
+
 - **抽卡结果明细表（记录每次抽卡的具体结果）**
+
 ```sql
-CREATE TABLE gacha_items (
-    item_id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY COMMENT '物品记录ID',
-    record_id VARCHAR(36) NOT NULL COMMENT '关联记录ID',
+CREATE TABLE gacha_items
+(
+    item_id   BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY COMMENT '物品记录ID',
+    record_id VARCHAR(36)  NOT NULL COMMENT '关联记录ID',
     item_name VARCHAR(100) NOT NULL COMMENT '物品名称',
-    rarity TINYINT UNSIGNED NOT NULL COMMENT '稀有度等级',
-    item_type VARCHAR(50) NOT NULL COMMENT '物品类型/职业',
-    FOREIGN KEY (record_id) REFERENCES gacha_records(record_id) ON DELETE CASCADE,
-    INDEX idx_rarity (rarity),
-    INDEX idx_record (record_id)
+    rarity    TINYINT UNSIGNED NOT NULL COMMENT '稀有度等级',
+    item_type VARCHAR(50)  NOT NULL COMMENT '物品类型/职业',
+    FOREIGN KEY (record_id) REFERENCES gacha_records (record_id) ON DELETE CASCADE,
+    INDEX     idx_rarity (rarity),
+    INDEX     idx_record (record_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
+
 ### 管理面板设计
 
 // TODO: 等一个好心人来补充
-
-
-
-
 
 ## 其他杂项TODO
 
