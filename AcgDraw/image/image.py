@@ -7,7 +7,6 @@ from random import randint
 from AcgDraw.util import json_read_async
 
 
-
 # 透明通道合成
 async def get_mongolia(im1: Image.Image, im2: Image.Image, width=0, height=0):
     # 参数校验
