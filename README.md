@@ -79,7 +79,8 @@ docker run -d -p 11451:11451 --name=acgdraw acgdraw
 位于`根目录/conf/config.json`
 
 ## 协议
-GPL-3.0 license
+
+MIT
 
 
 
