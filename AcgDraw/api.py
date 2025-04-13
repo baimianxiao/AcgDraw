@@ -12,22 +12,18 @@ from apscheduler.triggers.interval import IntervalTrigger
 import uvicorn
 from fastapi import Request
 
-from AcgDraw import DrawHandleArk, DrawHandleGen, version
-from AcgDraw.image import image_output, ImageHandleArk, ImageHandleGen
+from AcgDraw import DrawHandleArk, DrawHandleGen,ImageHandleArk, ImageHandleGen, version
+from AcgDraw.image import image_output
 from AcgDraw.url_tool import generate_temp_image_url, clean_temp_folder, url_enable
-from AcgDraw.util import work_dir
 
 
 async def initialize_app(app: FastAPI):
     app.state.ark_draw = DrawHandleArk()
-    app.state.ark_image = ImageHandleArk(join(work_dir, "data", "Arknights", "data_dict.json"),
-                                         join(work_dir, "data", "Arknights", "image"))
+    app.state.ark_image = ImageHandleArk()
     app.state.gen_draw = DrawHandleGen()
-    app.state.gen_image = ImageHandleGen(join(work_dir, "data", "Arknights", "data_dict.json"),
-                                         join(work_dir, "data", "Arknights", "image"))
+    app.state.gen_image = ImageHandleGen()
     # 装载图片
     await app.state.ark_draw.data_reload()
-    await app.state.ark_image.data_reload()
     await app.state.gen_draw.data_reload()
 
 
