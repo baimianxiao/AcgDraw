@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from AcgDraw.draw import *
+from random import randint, choice, random
 
 # 原神抽卡数据处理类
 class DrawHandleGen(DrawHandle):
     def __init__(self):
-        super().__init__()
-        self.data_dict_path = join(data_dir, "Genshin", "data_dict.json")
-        self.rarity_dict_path = join(data_dir, "Genshin", "rarity_dict.json")
+        super().__init__("genshin")
 
     async def char_once_pull(self, mode=None, group=None):
         pass
