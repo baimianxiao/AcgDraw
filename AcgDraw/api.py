@@ -69,6 +69,9 @@ async def result_get(draw_mode: str, game: str, result_list: list = None):
         return None
 
 
+
+
+
 async def pil_image_get(draw_mode: str, game: str, result):
     if result is None:
         return None
@@ -106,13 +109,43 @@ async def root():
 
 
 @api_app.get("/api/draw/json")
-async def get_draw_json(uid, game, mode):
-    pass
+async def get_draw_json(uid: int, game:str, draw_mode:str,result_list):
+    try:
+        uid = str(uid)
+        game = str(game).lower()
+        draw_mode = str(draw_mode).lower()
+        result_list = list(result_list)
+        result_obj = {"uid": uid, "game": game, "mode": draw_mode, "result": "result"}
+        response = {"code": 200, "msg": "success", "data": result_obj}
+        return response
+    except Exception as e:
+        response = {"code": 400, "msg": f"bad request: {e}", "data": None}
+        return response
 
 
 @api_app.get("/api/draw/image")
-async def get_draw_image(uid, game, mode, need):
-    pass
+async def get_draw_image(game, draw_mode):
+    try:
+        game = str(game).lower()
+        draw_mode = str(draw_mode).lower()
+    except Exception as e:
+        response = {"code": 400, "msg": f"bad request: {e}", "data": None}
+        return response
+    result = await result_get(draw_mode, game)
+    if result is None:
+        response = {"code": 400, "msg": "bad request: wrong game or mode", "data": None}
+    pil_image = await pil_image_get(draw_mode, game, result['json'])
+    img_byte_arr = await image_output(pil_image)
+    # 使用流式传输返回图片
+    response = StreamingResponse(
+        img_byte_arr,
+        media_type="image/PNG",
+    )
+    response.headers["message"] = "success"
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+    return response
 
 
 @api_app.post("/api/draw/json")
