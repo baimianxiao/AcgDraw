@@ -48,7 +48,6 @@ async def result_get(draw_mode: str, game: str, result_list: list = None):
     result = {}
     if not result_list:
         result_list = ['json']
-    print(result_list)
     if game == "arknights" and draw_mode == "ten":
         if "json" in result_list:
             result['json'] = await api_app.state.ark_draw.char_ten_pulls()
@@ -124,7 +123,7 @@ async def get_draw_json(uid: int, game:str, draw_mode:str,result_list):
 
 
 @api_app.get("/api/draw/image")
-async def get_draw_image(game, draw_mode):
+async def get_draw_image(game="arknights", draw_mode="ten"):
     try:
         game = str(game).lower()
         draw_mode = str(draw_mode).lower()
