@@ -12,7 +12,7 @@ import uvicorn
 
 import AcgDraw
 from AcgDraw import api
-from AcgDraw.util import json_read
+from AcgDraw.util import json_read,work_dir
 
 # 取根目录
 dir = os.getcwd()  # 取根目录
@@ -54,13 +54,13 @@ log_output("INFO", "Arknights-Draw")
 app = api.api_app
 
 # 测试模式
-debug_mode=2
-debug=False
+debug_mode=1
+debug=True
 if debug and debug_mode==1:
-    uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
+    uvicorn.run(app, host=host, port=port, log_level=logging.INFO,reload=False)
 elif debug and debug_mode==2:
     AcgDraw.update.UpdateHandleArk("./data/Arknights/", "./conf/Arknights/").start_update()
-    uvicorn.run(app, host=host, port=port, log_level=logging.INFO)
+    uvicorn.run(app, host=host, port=port, log_level=logging.INFO,reload=False)
 
 # 自动运行
 elif len(sys.argv) > 1:
