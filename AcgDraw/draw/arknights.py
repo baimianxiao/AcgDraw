@@ -31,7 +31,8 @@ class DrawHandleArk(DrawHandle):
                 else:
                     draw_result.append(self.preprocess_result(choice(self.rarity_dict["char_list"]["3"])))
             if limit == 0:
-                draw_result[randint(0, 9)] = self.preprocess_result(choice(self.rarity_dict["char_list"]["3"]))
+                for i in range(randint(0, 9)):
+                    draw_result[randint(0, 9)] = self.preprocess_result(choice(self.rarity_dict["char_list"]["4"]))
             print(draw_result)
             return draw_result
         elif mode == "input":
