@@ -1,9 +1,9 @@
-name: Build Executables
+name: Build and Release
 
 on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
+  release:
+    types: [published]  # 当新版本发布时触发
+  workflow_dispatch:    # 保留手动触发选项
 
 jobs:
   build:
@@ -14,14 +14,19 @@ jobs:
         include:
           - os: ubuntu-latest
             artifact_name: linux
+            bin_ext: ""
           - os: macos-latest
             artifact_name: macos
+            bin_ext: ""
           - os: windows-latest
             artifact_name: windows
+            bin_ext: ".exe"
 
     steps:
-    - name: Checkout code
+    - name: Checkout code + tags
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # 获取所有历史记录和标签
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -32,18 +37,99 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pyinstaller
+        # 安装项目依赖（如果有）
+        pip install -r requirements.txt
 
     - name: Build executable
       run: |
-        pyinstaller --onefile --name AcgDraw \
-          main.py
-        # Windows 需要处理路径分隔符
-        if [ "${{ runner.os }}" == "Windows" ]; then
-          mv dist/myapp.exe dist/myapp-windows.exe
+        # 使用版本号命名文件
+        VERSION=$(git describe --tags --abbrev=0)
+        OUTPUT_NAME="myapp-$VERSION-${{ matrix.artifact_name }}"
+        
+        pyinstaller --onefile \
+          --name $OUTPUT_NAME \
+            main.py
+        
+        # 重命名输出文件（Windows特殊处理）
+        if [ "${{ runner.os }}" = "Windows" ]; then
+          mv "dist/$OUTPUT_NAME.exe" "dist/$OUTPUT_NAME.exe"
+        else
+          mv "dist/$OUTPUT_NAME" "dist/$OUTPUT_NAME${{ matrix.bin_ext }}"
         fi
 
-    - name: Upload artifact
+    - name: Create distribution package
+      run: |
+        # 创建临时目录存放所有需要分发的文件
+        mkdir -p dist_package
+
+        # 复制可执行文件
+        if [ "${{ runner.os }}" == "Windows" ]; then
+          cp dist/*.exe dist_package/
+        else
+          cp dist/myapp-* dist_package/
+        fi
+
+        # 复制额外需要的文件夹（按需修改）
+        cp -r config dist_package/
+        cp -r templates dist_package/
+        cp README.md dist_package/
+
+        # 创建带版本号的ZIP包
+        VERSION=$(git describe --tags --abbrev=0)
+        ZIP_NAME="myapp-$VERSION-${{ matrix.artifact_name }}.zip"
+
+        # 压缩文件（不同平台命令不同）
+        if [ "${{ runner.os }}" == "Windows" ]; then
+          7z a -r $ZIP_NAME dist_package/*
+        else
+          zip -r $ZIP_NAME dist_package/*
+        fi
+
+        # 移动ZIP到dist目录
+        mkdir -p dist_zip
+        mv $ZIP_NAME dist_zip/
+
+        # 清理临时文件
+        rm -rf dist_package
+
+    - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: myapp-${{ matrix.artifact_name }}
-        path: dist/
+        name: package-${{ matrix.artifact_name }}
+        path: dist_zip/  # 上传ZIP目录
+
+  release:
+    name: Create Release Assets
+    needs: build  # 依赖build任务完成
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v4
+      with:
+        path: artifacts
+
+    - name: Prepare release assets
+      run: |
+        mkdir release
+        # 整理所有平台的二进制文件
+        find artifacts -name '*.exe' -exec cp {} release \;
+        find artifacts -name 'myapp-*-linux' -exec cp {} release \;
+        find artifacts -name 'myapp-*-macos' -exec cp {} release \;
+        
+        # 添加其他文件（如配置文件、文档）
+        cp README.md release/
+        cp LICENSE release/
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          release/*.exe
+          release/*-linux
+          release/*-macos
+          release/README.md
+          release/LICENSE
+        tag_name: ${{ github.ref }}
+        name: Release ${{ github.ref_name }}
+        body: "Pre-built binaries for ${{ github.ref_name }}"
