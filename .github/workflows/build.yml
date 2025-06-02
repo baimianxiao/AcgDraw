@@ -2,8 +2,8 @@ name: Build and Release
 
 on:
   release:
-    types: [published]  # 当新版本发布时触发
-  workflow_dispatch:    # 保留手动触发选项
+    types: [published]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -26,7 +26,7 @@ jobs:
     - name: Checkout code + tags
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0  # 获取所有历史记录和标签
+        fetch-depth: 0
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -37,70 +37,76 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install pyinstaller
-        # 安装项目依赖（如果有）
         pip install -r requirements.txt
+        
+        # Windows 需要额外安装 zip 工具
+        if [ "${{ runner.os }}" == "Windows" ]; then
+          choco install zip -y
+        fi
 
     - name: Build executable
       run: |
-        # 使用版本号命名文件
-        VERSION=$(git describe --tags --abbrev=0)
-        OUTPUT_NAME="myapp-$VERSION-${{ matrix.artifact_name }}"
+        # 获取版本号
+        $VERSION = (git describe --tags --abbrev=0)
+        if ("${{ runner.os }}" -eq "Windows") {
+          $VERSION = $VERSION -replace "v", ""
+        }
         
-        pyinstaller --onefile \
-          --name $OUTPUT_NAME \
-            main.py
+        # 设置输出名称
+        $OUTPUT_NAME = "myapp-$VERSION-${{ matrix.artifact_name }}${{ matrix.bin_ext }}"
         
-        # 重命名输出文件（Windows特殊处理）
-        if [ "${{ runner.os }}" = "Windows" ]; then
-          mv "dist/$OUTPUT_NAME.exe" "dist/$OUTPUT_NAME.exe"
-        else
-          mv "dist/$OUTPUT_NAME" "dist/$OUTPUT_NAME${{ matrix.bin_ext }}"
-        fi
+        # 执行 PyInstaller
+        pyinstaller --onefile --name myapp main.py
+        
+        # 重命名输出文件
+        Move-Item -Path "dist/myapp${{ matrix.bin_ext }}" -Destination "dist/$OUTPUT_NAME"
 
     - name: Create distribution package
       run: |
-        # 创建临时目录存放所有需要分发的文件
-        mkdir -p dist_package
-
+        # 创建临时目录
+        mkdir dist_package
+        
+        # 获取版本号（再次使用）
+        $VERSION = (git describe --tags --abbrev=0)
+        if ("${{ runner.os }}" -eq "Windows") {
+          $VERSION = $VERSION -replace "v", ""
+        }
+        
         # 复制可执行文件
-        if [ "${{ runner.os }}" == "Windows" ]; then
-          cp dist/*.exe dist_package/
-        else
-          cp dist/myapp-* dist_package/
-        fi
-
-        # 复制额外需要的文件夹（按需修改）
-        cp -r config dist_package/
-        cp -r templates dist_package/
-        cp README.md dist_package/
-
-        # 创建带版本号的ZIP包
-        VERSION=$(git describe --tags --abbrev=0)
-        ZIP_NAME="myapp-$VERSION-${{ matrix.artifact_name }}.zip"
-
-        # 压缩文件（不同平台命令不同）
-        if [ "${{ runner.os }}" == "Windows" ]; then
-          7z a -r $ZIP_NAME dist_package/*
-        else
-          zip -r $ZIP_NAME dist_package/*
-        fi
-
-        # 移动ZIP到dist目录
-        mkdir -p dist_zip
-        mv $ZIP_NAME dist_zip/
-
+        $EXE_NAME = "myapp-$VERSION-${{ matrix.artifact_name }}${{ matrix.bin_ext }}"
+        Copy-Item -Path "dist/$EXE_NAME" -Destination "dist_package/"
+        
+        # 复制额外文件夹（根据你的项目修改）
+        Copy-Item -Path "config" -Destination "dist_package/" -Recurse
+        Copy-Item -Path "data" -Destination "dist_package/" -Recurse
+        Copy-Item -Path "templates" -Destination "dist_package/" -Recurse
+        Copy-Item -Path "README.md" -Destination "dist_package/"
+        Copy-Item -Path "LICENSE" -Destination "dist_package/"
+        
+        # 创建 ZIP 文件
+        $ZIP_NAME = "myapp-$VERSION-${{ matrix.artifact_name }}.zip"
+        
+        # 压缩命令（跨平台）
+        if ("${{ runner.os }}" -eq "Windows") {
+          Compress-Archive -Path "dist_package/*" -DestinationPath "dist_zip/$ZIP_NAME"
+        } else {
+          cd dist_package
+          zip -r "../dist_zip/$ZIP_NAME" .
+          cd ..
+        }
+        
         # 清理临时文件
-        rm -rf dist_package
+        Remove-Item -Path "dist_package" -Recurse -Force
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
         name: package-${{ matrix.artifact_name }}
-        path: dist_zip/  # 上传ZIP目录
+        path: dist_zip/
 
   release:
     name: Create Release Assets
-    needs: build  # 依赖build任务完成
+    needs: build
     runs-on: ubuntu-latest
 
     steps:
@@ -112,24 +118,19 @@ jobs:
     - name: Prepare release assets
       run: |
         mkdir release
-        # 整理所有平台的二进制文件
-        find artifacts -name '*.exe' -exec cp {} release \;
-        find artifacts -name 'myapp-*-linux' -exec cp {} release \;
-        find artifacts -name 'myapp-*-macos' -exec cp {} release \;
+        # 收集所有 ZIP 文件
+        find artifacts -name '*.zip' -exec cp {} release \;
         
-        # 添加其他文件（如配置文件、文档）
-        cp README.md release/
-        cp LICENSE release/
+        # 可选：添加校验和文件
+        cd release
+        sha256sum *.zip > SHA256SUMS.txt
 
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          release/*.exe
-          release/*-linux
-          release/*-macos
-          release/README.md
-          release/LICENSE
+          release/*.zip
+          release/SHA256SUMS.txt
         tag_name: ${{ github.ref }}
         name: Release ${{ github.ref_name }}
-        body: "Pre-built binaries for ${{ github.ref_name }}"
+        body: "Pre-built packages for ${{ github.ref_name }}"
