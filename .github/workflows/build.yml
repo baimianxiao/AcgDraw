@@ -7,21 +7,7 @@ on:
 
 jobs:
   build:
-
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        include:
-          - os: ubuntu-latest
-            artifact_name: linux
-            bin_ext: ""
-          - os: macos-latest
-            artifact_name: macos
-            bin_ext: ""
-          - os: windows-latest
-            artifact_name: windows
-            bin_ext: ".exe"
-    runs-on: ${{ matrix.os }}
+    runs-on: windows-latest
 
     steps:
     - name: Checkout code + tags
@@ -39,28 +25,25 @@ jobs:
         python -m pip install --upgrade pip
         pip install pyinstaller
         pip install -r requirements.txt
+        choco install zip -y
         
-        # Windows 需要额外安装 zip 工具
-        if [ "${{ runner.os }}" == "Windows" ]; then
-          choco install zip -y
-        fi
 
     - name: Build executable
       run: |
         # 获取版本号
         $VERSION = (git describe --tags --abbrev=0)
-        if ("${{ runner.os }}" -eq "Windows") {
-          $VERSION = $VERSION -replace "v", ""
-        }
+
+        $VERSION = $VERSION -replace "v", ""
+        
         
         # 设置输出名称
-        $OUTPUT_NAME = "myapp-$VERSION-${{ matrix.artifact_name }}${{ matrix.bin_ext }}"
+        $OUTPUT_NAME = "myapp-$VERSION-win.exe"
         
         # 执行 PyInstaller
         pyinstaller --onefile --name myapp main.py
         
         # 重命名输出文件
-        Move-Item -Path "dist/myapp${{ matrix.bin_ext }}" -Destination "dist/$OUTPUT_NAME"
+        Move-Item -Path "dist/myapp.exe" -Destination "dist/$OUTPUT_NAME"
 
     - name: Create distribution package
       run: |
@@ -69,12 +52,11 @@ jobs:
         
         # 获取版本号（再次使用）
         $VERSION = (git describe --tags --abbrev=0)
-        if ("${{ runner.os }}" -eq "Windows") {
-          $VERSION = $VERSION -replace "v", ""
-        }
+        $VERSION = $VERSION -replace "v", ""
+
         
         # 复制可执行文件
-        $EXE_NAME = "myapp-$VERSION-${{ matrix.artifact_name }}${{ matrix.bin_ext }}"
+        $EXE_NAME = "myapp-$VERSION-win.exe"
         Copy-Item -Path "dist/$EXE_NAME" -Destination "dist_package/"
         
         # 复制额外文件夹（根据你的项目修改）
@@ -85,16 +67,12 @@ jobs:
         Copy-Item -Path "LICENSE" -Destination "dist_package/"
         
         # 创建 ZIP 文件
-        $ZIP_NAME = "myapp-$VERSION-${{ matrix.artifact_name }}.zip"
+        $ZIP_NAME = "myapp-$VERSION-win.zip"
         
         # 压缩命令（跨平台）
-        if ("${{ runner.os }}" -eq "Windows") {
-          Compress-Archive -Path "dist_package/*" -DestinationPath "dist_zip/$ZIP_NAME"
-        } else {
-          cd dist_package
-          zip -r "../dist_zip/$ZIP_NAME" .
-          cd ..
-        }
+
+        Compress-Archive -Path "dist_package/*" -DestinationPath "dist_zip/$ZIP_NAME"
+
         
         # 清理临时文件
         Remove-Item -Path "dist_package" -Recurse -Force
@@ -102,7 +80,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: package-${{ matrix.artifact_name }}
+        name: package-win
         path: dist_zip/
 
   release:
