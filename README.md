@@ -92,7 +92,7 @@ MIT
 
 - 感谢[@Sheyiyuan](https://github.com/Sheyiyuan)提供的强力技术支持
 
-- 感谢[@KQDXBWL](https://github.com/kqdxbwl)的BUG反馈
+- 感谢[@茶云不是茶](https://github.com/cha-yun)的BUG反馈
 
 
 
