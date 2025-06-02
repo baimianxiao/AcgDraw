@@ -8,7 +8,16 @@
 
 基于python的模拟抽卡图片合成API，使用了fastapi以及pillow
 
-API地址：<http://api.sheyiyuan.cn/acgDraw/>
+API地址列表
+
+
+| 地址                                                  | API提供 |
+|-----------------------------------------------------|-------|
+| http://api.sheyiyuan.cn/acgDraw/                    | 社亦园   |
+| http://101.200.166.191:11451/ArknightsDraw（方舟十连）    | 茶云不是茶  |
+| http://101.200.166.191:11451/GenshinDraw（原神十连）      | 茶云不是茶  |
+
+
 
 ## 进度
 
@@ -90,7 +99,7 @@ MIT
 
 - 感谢[@LTY_CK_TS](https://github.com/sahuidhsu)完善的docker部署
 
-- 感谢[@Sheyiyuan](https://github.com/Sheyiyuan)提供的强力技术支持
+- 感谢[@社亦园](https://github.com/Sheyiyuan)提供的强力技术支持
 
 - 感谢[@茶云不是茶](https://github.com/cha-yun)的BUG反馈
 
