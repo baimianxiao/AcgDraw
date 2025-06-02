@@ -88,29 +88,42 @@ jobs:
     name: Create Release Assets
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
-    - name: Download all artifacts
-      uses: actions/download-artifact@v4
-      with:
-        path: artifacts
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
 
-    - name: Prepare release assets
-      run: |
-        mkdir release
-        # 收集所有 ZIP 文件
-        find artifacts -name '*.zip' -exec cp {} release \;
-        
-        # 可选：添加校验和文件
-        cd release
-        sha256sum *.zip > SHA256SUMS.txt
+      - name: Prepare release assets
+        run: |
+          mkdir -p release
+          # 收集所有 ZIP 文件
+          find artifacts -name '*.zip' -exec cp {} release \;
+          
+          # 创建校验和文件
+          cd release
+          sha256sum *.zip > SHA256SUMS.txt
 
-    - name: Create Release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          release/*.zip
-          release/SHA256SUMS.txt
-        tag_name: ${{ github.ref }}
-        name: Release ${{ github.ref_name }}
-        body: "Pre-built packages for ${{ github.ref_name }}"
+      - name: Extract tag name
+        id: get_tag
+        run: |
+          # 从触发事件的引用中提取标签名
+          if [[ "${{ github.event_name }}" == "release" ]]; then
+            echo "TAG_NAME=${{ github.event.release.tag_name }}" >> $GITHUB_OUTPUT
+          else
+            # 对于 workflow_dispatch 或其他触发方式
+            echo "TAG_NAME=$(echo ${{ github.ref }} | sed 's/refs\/tags\///')" >> $GITHUB_OUTPUT
+          fi
+          echo "Extracted tag: $(echo ${{ github.ref }} | sed 's/refs\/tags\///')"
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            release/*.zip
+            release/SHA256SUMS.txt
+          tag_name: ${{ steps.get_tag.outputs.TAG_NAME }}
+          name: Release ${{ steps.get_tag.outputs.TAG_NAME }}
+          body: "Pre-built packages for ${{ steps.get_tag.outputs.TAG_NAME }}"
