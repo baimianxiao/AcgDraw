@@ -49,6 +49,7 @@ jobs:
       run: |
         # 创建临时目录
         mkdir dist_package
+        mkdir dist_zip
         
         # 获取版本号（再次使用）
         $VERSION = (git describe --tags --abbrev=0)
