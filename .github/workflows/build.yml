@@ -60,11 +60,11 @@ jobs:
         Copy-Item -Path "dist/$EXE_NAME" -Destination "dist_package/"
         
         # 复制额外文件夹（根据你的项目修改）
-        Copy-Item -Path "config" -Destination "dist_package/" -Recurse
-        Copy-Item -Path "data" -Destination "dist_package/" -Recurse
-        Copy-Item -Path "templates" -Destination "dist_package/" -Recurse
-        Copy-Item -Path "README.md" -Destination "dist_package/"
-        Copy-Item -Path "LICENSE" -Destination "dist_package/"
+        #Copy-Item -Path "config" -Destination "dist_package/" -Recurse
+        #Copy-Item -Path "data" -Destination "dist_package/" -Recurse
+        #Copy-Item -Path "templates" -Destination "dist_package/" -Recurse
+        #Copy-Item -Path "README.md" -Destination "dist_package/"
+        #Copy-Item -Path "LICENSE" -Destination "dist_package/"
         
         # 创建 ZIP 文件
         $ZIP_NAME = "myapp-$VERSION-win.zip"
