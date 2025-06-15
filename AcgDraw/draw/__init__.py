@@ -2,9 +2,6 @@
 from abc import ABC, abstractmethod
 from AcgDraw.util import json_read_async, data_dir, join
 
-__all__ = [
-    "DrawHandle"
-]
 
 
 class DrawHandle(ABC):
@@ -40,3 +37,14 @@ class DrawHandle(ABC):
     @abstractmethod
     async def char_ten_pulls(self, mode=None):
         pass
+
+
+
+from .arknights import DrawHandleArk
+from .genshin import DrawHandleGen
+
+__all__ = [
+    "DrawHandle",
+    "DrawHandleArk",
+    "DrawHandleGen"
+]

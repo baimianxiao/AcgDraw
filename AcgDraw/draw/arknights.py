@@ -1,6 +1,6 @@
 #-*- encoding:utf-8 -*-
 
-from AcgDraw.draw import *
+from . import DrawHandle
 from random import randint, choice
 
 # 明日方舟抽卡数据处理类
