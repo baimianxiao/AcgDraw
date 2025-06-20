@@ -25,7 +25,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pyinstaller
         pip install -r requirements.txt
-        choco install zip -y --package-parameters="'/SourceUrl=https://downloads.sourceforge.net/project/infozip/Zip%203.x%20%28latest%29/3.0/zip300x64.exe'"
+        choco install 7zip -y
         
 
     - name: Build executable
@@ -72,7 +72,7 @@ jobs:
         
         # 压缩命令（跨平台）
 
-        Compress-Archive -Path "dist_package/*" -DestinationPath "dist_zip/$ZIP_NAME"
+        7z a -tzip "dist_zip/$ZIP_NAME" "dist_package/*"
 
         
         # 清理临时文件
