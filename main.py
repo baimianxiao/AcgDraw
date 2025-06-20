@@ -55,7 +55,7 @@ app = api.api_app
 
 # 测试模式
 debug_mode=1
-debug=True
+debug=False
 if debug and debug_mode==1:
     uvicorn.run(app, host=host, port=port, log_level=logging.INFO,reload=False)
 elif debug and debug_mode==2:
