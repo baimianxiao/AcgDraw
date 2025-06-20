@@ -18,9 +18,8 @@ class UpdateHandleArk(UpdateHandle
 
     # 获取人物更新信息
     async def get_info(self):
-        char_data_list = {}
-        simple_star_list = {
-            ""
+        char_data_dict = {}
+        char_rarity_dict = {
             6: [],
             5: [],
             4: [],
@@ -77,20 +76,24 @@ class UpdateHandleArk(UpdateHandle
             # 稀有度分类
             if "标准寻访" in char_dict["获取途径"]:
                 if char_dict["星级"] == 6:
-                    simple_star_list[6].append(name)
+                    char_rarity_dict[6].append(name)
                 elif char_dict["星级"] == 5:
-                    simple_star_list[5].append(name)
+                    char_rarity_dict[5].append(name)
                 elif char_dict["星级"] == 4:
-                    simple_star_list[4].append(name)
+                    char_rarity_dict[4].append(name)
                 elif char_dict["星级"] == 3:
-                    simple_star_list[3].append(name)
+                    char_rarity_dict[3].append(name)
 
-            char_data_list[name] = char_dict
+            char_data_dict[name] = char_dict
             # print(json.dumps(char_data_list, ensure_ascii=False, indent=2))
-        await json_write_async(self.data_path + 'rarity_dict.json', simple_star_list)
-        await json_write_async(self.data_path + 'data_dict.json', char_data_list)
+        rarity_dict={}
+        data_dict={}
+        rarity_dict['char_list']=char_rarity_dict
+        data_dict['char_data_dict']=char_data_dict
+        await json_write_async(self.data_path + 'rarity_dict.json', char_rarity_dict)
+        await json_write_async(self.data_path + 'data_dict.json', char_data_dict)
         # print(char_data_list)
-        return char_data_list
+        return char_data_dict
 
     # 下载图片数据
     async def char_image_download(self, char_list):
