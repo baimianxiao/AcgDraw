@@ -37,13 +37,13 @@ jobs:
         
         
         # 设置输出名称
-        $OUTPUT_NAME = "myapp-$VERSION-win.exe"
+        $OUTPUT_NAME = "AcgDraw-win-$VERSION.exe"
         
         # 执行 PyInstaller
-        pyinstaller --onefile --name myapp main.py
+        pyinstaller --onefile --name AcgDraw main.py
         
         # 重命名输出文件
-        Move-Item -Path "dist/myapp.exe" -Destination "dist/$OUTPUT_NAME"
+        Move-Item -Path "dist/AcgDraw.exe" -Destination "dist/$OUTPUT_NAME"
 
     - name: Create distribution package
       run: |
@@ -57,7 +57,7 @@ jobs:
 
         
         # 复制可执行文件
-        $EXE_NAME = "myapp-$VERSION-win.exe"
+        $EXE_NAME = "AcgDraw-win-$VERSION.exe"
         Copy-Item -Path "dist/$EXE_NAME" -Destination "dist_package/"
         
         # 复制额外文件夹（根据你的项目修改）
@@ -68,7 +68,7 @@ jobs:
         Copy-Item -Path "LICENSE" -Destination "dist_package/"
         
         # 创建 ZIP 文件
-        $ZIP_NAME = "myapp-$VERSION-win.zip"
+        $ZIP_NAME = "AcgDraw-win-$VERSION.zip"
         
         # 压缩命令（跨平台）
 
@@ -126,4 +126,4 @@ jobs:
             release/SHA256SUMS.txt
           tag_name: ${{ steps.get_tag.outputs.TAG_NAME }}
           name: ${{ steps.get_tag.outputs.TAG_NAME }}
-          append_body: "\n该文件为自动打包"
+          append_body: "\n该发布中文件为自动打包"
