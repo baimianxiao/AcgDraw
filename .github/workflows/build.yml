@@ -25,7 +25,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install pyinstaller
         pip install -r requirements.txt
-        choco install zip -y
+        choco install zip -y --package-parameters="'/SourceUrl=https://downloads.sourceforge.net/project/infozip/Zip%203.x%20%28latest%29/3.0/zip300x64.exe'"
         
 
     - name: Build executable
