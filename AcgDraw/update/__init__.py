@@ -3,13 +3,13 @@ import asyncio
 import os
 import aiofiles as aiofiles
 import aiohttp
-import re
 
-from lxml import etree, html
-from tqdm import tqdm, trange
+
+
+
 from abc import ABC, abstractmethod
 
-__all__=["UpdateHandle"]
+
 
 class UpdateHandle(ABC):
 
@@ -79,3 +79,11 @@ class UpdateHandle(ABC):
             except TimeoutError:
                 await asyncio.sleep(1)
         return result
+
+from .arknights import UpdateHandleArk
+from .genshin import UpdateHandleGen
+
+__all__=[
+    "UpdateHandle",
+    "UpdateHandleArk",
+]

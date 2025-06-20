@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from AcgDraw.draw import *
+from . import DrawHandle
 from random import randint, choice, random
 
 # 原神抽卡数据处理类
